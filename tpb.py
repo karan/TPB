@@ -63,6 +63,34 @@ class TPB():
         Builds and returns a list of Torrent objects from
         the passed source.
         """
+        all_torrents = [] # list to hold all torrents
+        
+        for row in all_rows:
+            # Scrape, strip and build!!!
+            cols = row.findChildren('td') # split the row into it's columns
+            
+            # this column contains the categories
+            cat_col = cols[0].findAll('a')
+            [category, sub_category] = [c.string for c in cat_col]
+            
+            # this column with all important info
+            links = cols[1].findAll('a') # get 4 a tags from this columns
+            
+            title = links[0].string # title of the torrent
+            url = '%s/%s' % (BASE_URL, links[0].get('href')) # the url of the torrent
+            magnet_link = links[1].get('href') # the magnet download link
+            torrent_link = links[2].get('href') # the .torrent download link
+            user = links[4].string # uploaded by user
+            
+            # last 2 columns for seeders and leechers
+            seeders = int(cols[2].string)
+            leechers = int(cols[3].string)
+            
+            t = Torrent()
+            all_torrents.append(t)
+        
+        return all_torrents
+
 
 class Torrent():
     """
@@ -96,5 +124,11 @@ class Torrent():
         print 'Uploaded: %s' % self.created
         print 'Size: %s' % self.size
         print 'User: %s' % self.user
-        print 'Seeders: %s' % self.seeders
-        print 'Leechers: %s' % self.leechers
+        print 'Seeders: %d' % self.seeders
+        print 'Leechers: %d' % self.leechers
+    
+    def __repr__(self):
+        """
+        A string representation of the class object
+        """
+        return '{0} by {1}'.format(self.title, self.user)
