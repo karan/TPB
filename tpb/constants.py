@@ -3,15 +3,20 @@ from new import classobj
 
 class Constants(type):
     def __repr__(cls):
-        for attr in dir(cls):
-            if not attr.startswith('_'):
-                attr = getattr(cls, attr)
+        tree = cls.__name__ + '\n'
+        for name in dir(cls):
+            if not name.startswith('_'):
+                attr = getattr(cls, name)
                 if isinstance(attr, classobj):
                     attr = Constants(attr.__name__, attr.__bases__, attr.__dict__)
-                    print attr
-                    print repr(attr)
-                else:
-                    print attr
+                    setattr(cls, name, attr)
+                attr = '{}: {}'.format(name, repr(attr))
+                tree += '\n'.join([ ' '*4 + line for line in attr.splitlines() ]) + '\n'
+        return tree
+
+    def __str__(cls):
+        return repr(cls)
+
 
 class orders:
     __metaclass__ = Constants
