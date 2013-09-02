@@ -44,7 +44,7 @@ class TPB():
         self.base_url = domain
     
     
-    def get_soup(self, page=''):
+    def __get_soup(self, page=''):
         """
         Returns a bs4 object of the page requested. page can be:
         
@@ -56,7 +56,7 @@ class TPB():
         return BeautifulSoup(content)
     
     
-    def get_torrents_rows(self, soup):
+    def __get_torrents_rows(self, soup):
         """
         Returns all 'tr' tag rows as a list of tuples. Each tuple is for
         a single torrent.
@@ -64,7 +64,7 @@ class TPB():
         table = soup.find('table') # the table with all torrent listing
         return table.findAll('tr')[1:-1] # get all rows but header, pagination
     
-    def build_torrent(self, all_rows):
+    def __build_torrent(self, all_rows):
         """
         Builds and returns a list of Torrent objects from
         the passed source.
@@ -107,10 +107,10 @@ class TPB():
         """
         Returns a list of Torrent objects from the 'recent' page of TPB
         """
-        all_rows = self.get_torrents_rows(
-            self.get_soup(page='recent')
+        all_rows = self.__get_torrents_rows(
+            self.__get_soup(page='recent')
             )
-        return self.build_torrent(all_rows)
+        return self.__build_torrent(all_rows)
 
     def search(self, query, category=0):
         """
@@ -136,13 +136,13 @@ class TPB():
             601 - E-books, 602 - Comics, 603 - Pictures, 604 - Covers,
             605 - Physibles, 699 - Other
         """
-        all_rows = self.get_torrents_rows(
-            self.get_soup(page='search/{0}/0/99/{1}'.format(
+        all_rows = self.__get_torrents_rows(
+            self.__get_soup(page='search/{0}/0/99/{1}'.format(
                 urllib.quote(query),
                 category
                 ))
             )
-        return self.build_torrent(all_rows)
+        return self.__build_torrent(all_rows)
     
 
 class Torrent():
