@@ -35,6 +35,10 @@ BASE_URL = 'https://thepiratebay.sx' # could change!!!
 
 
 class TPB():
+    """
+    The class that parses the torrent listing page, and builds up
+    all Torrent objects.
+    """
     
     def get_soup(self, page=''):
         """
