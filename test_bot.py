@@ -11,7 +11,8 @@ for to in t.get_recent_torrents():
     print '\n'
 """
 
-results = t.search('hello world')
+# search for programming ebooks
+results = t.search('hello world', category=601)
 
 for r in results:
     print '*' * 50
