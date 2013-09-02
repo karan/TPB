@@ -31,16 +31,20 @@ import urllib
 from bs4 import BeautifulSoup
 
 
-BASE_URL = 'https://thepiratebay.sx' # could change!!!
-
-
 class TPB():
     """
     The class that parses the torrent listing page, and builds up
     all Torrent objects.
     """
+        
+    def __init__(self, domain='https://thepiratebay.sx'):
+        """
+        For when using a proxy/domain changes.
+        """
+        self.base_url = domain
     
-    def get_soup(self, page=''):
+    
+    def __get_soup(self, page=''):
         """
         Returns a bs4 object of the page requested. page can be:
         
@@ -48,11 +52,11 @@ class TPB():
         a 'search' page
         a 'top' page
         """
-        content = urllib.urlopen('%s/%s' % (BASE_URL, page)).read()
+        content = urllib.urlopen('%s/%s' % (self.base_url, page)).read()
         return BeautifulSoup(content)
     
     
-    def get_torrents_rows(self, soup):
+    def __get_torrents_rows(self, soup):
         """
         Returns all 'tr' tag rows as a list of tuples. Each tuple is for
         a single torrent.
@@ -60,7 +64,7 @@ class TPB():
         table = soup.find('table') # the table with all torrent listing
         return table.findAll('tr')[1:-1] # get all rows but header, pagination
     
-    def build_torrent(self, all_rows):
+    def __build_torrent(self, all_rows):
         """
         Builds and returns a list of Torrent objects from
         the passed source.
@@ -77,17 +81,19 @@ class TPB():
             
             # this column with all important info
             links = cols[1].findAll('a') # get 4 a tags from this columns
-            title = links[0].string # title of the torrent
-            url = '%s/%s' % (BASE_URL, links[0].get('href'))
+            title = links[0].string.encode('utf8') # title of the torrent
+            url = '%s/%s' % (self.base_url, links[0].get('href'))
             magnet_link = links[1].get('href') # the magnet download link
-            torrent_link = links[2].get('href') # the .torrent download link
+            torrent_link = links[2].get('href') # the torrent download link
+            if not torrent_link.endswith('.torrent'):
+                torrent_link = None
             
             meta_col = cols[1].find('font').text # don't need user
             pat = re.compile('Uploaded (.*), Size (.*), ULed by (.*)')
             match = re.match(pat, meta_col)
             created = match.groups()[0]
             size = match.groups()[1].replace(u'\xa0',u' ')
-            user = match.groups()[2] # uploaded by user
+            user = match.groups()[2].encode('utf8') # uploaded by user
             
             # last 2 columns for seeders and leechers
             seeders = int(cols[2].string)
@@ -103,22 +109,22 @@ class TPB():
         """
         Returns a list of Torrent objects from the 'recent' page of TPB
         """
-        all_rows = self.get_torrents_rows(
-            self.get_soup(page='recent')
+        all_rows = self.__get_torrents_rows(
+            self.__get_soup(page='recent')
             )
-        return self.build_torrent(all_rows)
+        return self.__build_torrent(all_rows)
 
     def search(self, query, category=0):
         """
         Searches TPB for the passed query and returns a list of Torrents.
         """
-        all_rows = self.get_torrents_rows(
-            self.get_soup(page='search/{0}/0/99/{1}'.format(
+        all_rows = self.__get_torrents_rows(
+            self.__get_soup(page='search/{0}/0/99/{1}'.format(
                 urllib.quote(query),
                 category
                 ))
             )
-        return self.build_torrent(all_rows)
+        return self.__build_torrent(all_rows)
     
 
 class Torrent():
