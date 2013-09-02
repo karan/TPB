@@ -93,7 +93,7 @@ class TPB():
             match = re.match(pat, meta_col)
             created = match.groups()[0]
             size = match.groups()[1].replace(u'\xa0',u' ')
-            user = match.groups()[2] # uploaded by user
+            user = match.groups()[2].encode('utf8') # uploaded by user
             
             # last 2 columns for seeders and leechers
             seeders = int(cols[2].string)
