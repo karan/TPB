@@ -111,26 +111,6 @@ class TPB():
     def search(self, query, category=0):
         """
         Searches TPB for the passed query and returns a list of Torrents.
-        
-        category is an int with one of the following values:
-        0 - all
-        100 - audio
-            101 - Music, 102 - Audio books, 103 - Sound clips, 104 - FLAC,
-            199 - Other
-        200 - Video
-            201 - Movies, 202 - Movies DVDR, 203 - Music videos,
-            204 - Movie clips, 205 - TV shows, 206 - Handheld,
-            207 - HD - Movies, 208 - HD - TV shows, 209 - 3D, 299 - Other
-        300 - Applications
-            301 - Windows, 302 - Mac, 303 - UNIX, 304 - Handheld,
-            305 - IOS (iPad/iPhone), 306 - Android, 399 - Other OS
-        400 - Games
-            401 - PC, 402 - Mac, 403 - PSx, 404 - XBOX360, 405 - Wii,
-            406 - Handheld, 407 - IOS (iPad/iPhone), 408 - Android,
-            499 - Other
-        500 - Other
-            601 - E-books, 602 - Comics, 603 - Pictures, 604 - Covers,
-            605 - Physibles, 699 - Other
         """
         all_rows = self.get_torrents_rows(
             self.get_soup(page='search/{0}/0/99/{1}'.format(
