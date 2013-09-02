@@ -25,6 +25,8 @@ The class that parses the torrent listing page, and builds up all Torrent object
 
 #### Methods
 
+`set_url(url)` - Sets the base URL when TPB changes domain and/or using a proxy.
+
 `get_recent_torrents()` - Returns a list of Torrent objects from the 'recent' page of TPB
 
 `search(query, category=0)` - Searches TPB for the passed query and returns a list of Torrents
