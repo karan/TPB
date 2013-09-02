@@ -2,6 +2,13 @@
 
 Unofficial Python API for [ThePirateBay](http://thepiratebay.sx/).
 
+[![Version](https://pypip.in/v/ThePirateBay/badge.png)](https://crate.io/packages/ThePirateBay/)   [![Downloads](https://pypip.in/d/ThePirateBay/badge.png)](https://crate.io/packages/ThePirateBay/)
+
+Installation
+=============
+
+    $ pip install ThePirateBay
+
 
 [Donate](https://www.gittip.com/Karan%20Goel/)
 =============
