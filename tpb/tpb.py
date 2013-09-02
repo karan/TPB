@@ -36,15 +36,12 @@ class TPB():
     The class that parses the torrent listing page, and builds up
     all Torrent objects.
     """
-    
-    base_url = 'https://thepiratebay.sx' # could change!!!
-    
-    def set_url(self, url):
+        
+    def __init__(self, domain='https://thepiratebay.sx'):
         """
-        Sets the base URL when TPB changes domain and/or using a proxy.
+        For when using a proxy/domain changes.
         """
-        global base_url
-        base_url = url
+        self.base_url = domain
     
     
     def get_soup(self, page=''):
@@ -55,7 +52,7 @@ class TPB():
         a 'search' page
         a 'top' page
         """
-        content = urllib.urlopen('%s/%s' % (base_url, page)).read()
+        content = urllib.urlopen('%s/%s' % (self.base_url, page)).read()
         return BeautifulSoup(content)
     
     
@@ -85,7 +82,7 @@ class TPB():
             # this column with all important info
             links = cols[1].findAll('a') # get 4 a tags from this columns
             title = links[0].string # title of the torrent
-            url = '%s/%s' % (base_url, links[0].get('href'))
+            url = '%s/%s' % (self.base_url, links[0].get('href'))
             magnet_link = links[1].get('href') # the magnet download link
             torrent_link = links[2].get('href') # the .torrent download link
             
