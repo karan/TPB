@@ -84,10 +84,13 @@ class TPB():
             title = links[0].string.encode('utf8') # title of the torrent
             url = '%s/%s' % (self.base_url, links[0].get('href'))
             magnet_link = links[1].get('href') # the magnet download link
-            torrent_link = links[2].get('href') # the torrent download link
-            if not torrent_link.endswith('.torrent'):
+            try:
+                torrent_link = links[2].get('href') # the torrent download link
+                if not torrent_link.endswith('.torrent'):
+                    torrent_link = None
+            except IndexError:
                 torrent_link = None
-            
+
             meta_col = cols[1].find('font').text # don't need user
             pat = re.compile('Uploaded (.*), Size (.*), ULed by (.*)')
             match = re.match(pat, meta_col)
