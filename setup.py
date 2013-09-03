@@ -7,7 +7,7 @@ except ImportError:
 
 setup(
     name='ThePirateBay',
-    version='0.0.3',
+    version='0.0.4',
     install_requires=['BeautifulSoup4',],
     author='Karan Goel',
     author_email='karan@goel.im',
