@@ -94,7 +94,7 @@ class TPB():
             meta_col = cols[1].find('font').text # don't need user
             pat = re.compile('Uploaded (.*), Size (.*), ULed by (.*)')
             match = re.match(pat, meta_col)
-            created = match.groups()[0]
+            created = match.groups()[0].replace(u'\xa0',u' ')
             size = match.groups()[1].replace(u'\xa0',u' ')
             user = match.groups()[2].encode('utf8') # uploaded by user
             
