@@ -5,7 +5,7 @@ from tpb import TPB
 t = TPB()
 
 # when using a proxy site
-# t = TPB('http://uberproxy.net/thepiratebay.sx')
+# t = TPB(domain='http://uberproxy.net/thepiratebay.sx')
 
 
 for to in t.get_recent_torrents():
