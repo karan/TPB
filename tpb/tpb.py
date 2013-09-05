@@ -24,130 +24,196 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
+from __future__ import unicode_literals
 
+import os
 import re
 import urllib
+from purl import URL
 
 from bs4 import BeautifulSoup
 
 
-class TPB():
-    """
-    The class that parses the torrent listing page, and builds up
-    all Torrent objects.
-    """
-        
-    def __init__(self, domain='https://thepiratebay.sx'):
-        """
-        For when using a proxy/domain changes.
-        """
-        self.base_url = domain
-    
-    
-    def __get_soup(self, page=''):
-        """
-        Returns a bs4 object of the page requested. page can be:
-        
-        'recent'
-        a 'search' page
-        a 'top' page
-        """
-        content = urllib.urlopen('%s/%s' % (self.base_url, page)).read()
-        return BeautifulSoup(content)
-    
-    
-    def __get_torrents_rows(self, soup):
+class Link(object):
+    def __init__(self, element):
+        self.title = element.text
+        self.link = element.get('href')
+
+    def __str__(self):
+        return self.title
+
+
+class List(object):
+    _meta = re.compile('Uploaded (.*), Size (.*), ULed by (.*)')
+    base_path = '/'
+
+    def __init__(self, base_url):
+        self.url = base_url.add_path_segment(self.base_path)
+
+    def path(self, *defaults):
+        segments = self.url.path_segments()
+        length = len(defaults)
+        before = list(segments[:-length])
+        after = segments[-length:]
+        after = [ seg if defaults[i] is None else defaults[i] \
+                for i, seg in enumerate(after) ]
+        after = [ str(seg) for seg in after ]
+        self.url = self.url.path_segments(before + after)
+        return after
+
+    def items(self):
+        request = urllib.urlopen(self.url.as_string())
+        content = request.read()
+        page = BeautifulSoup(content)
+        for row in self._get_torrent_rows(page):
+            yield self._build_torrent(row)
+
+    def __iter__(self):
+        return self.items()
+
+    def _get_torrent_rows(self, page):
         """
         Returns all 'tr' tag rows as a list of tuples. Each tuple is for
         a single torrent.
         """
-        table = soup.find('table') # the table with all torrent listing
+        table = page.find('table') # the table with all torrent listing
         return table.findAll('tr')[1:-1] # get all rows but header, pagination
     
-    def __build_torrent(self, all_rows):
+    def _build_torrent(self, row):
         """
         Builds and returns a list of Torrent objects from
         the passed source.
         """
-        all_torrents = [] # list to hold all torrents
+        # Scrape, strip and build!!!
+        cols = row.findAll('td') # split the row into it's columns
         
-        for row in all_rows:
-            # Scrape, strip and build!!!
-            cols = row.findAll('td') # split the row into it's columns
-            
-            # this column contains the categories
-            cat_col = cols[0].findAll('a')
-            [category, sub_category] = [c.string for c in cat_col]
-            
-            # this column with all important info
-            links = cols[1].findAll('a') # get 4 a tags from this columns
-            title = links[0].string.encode('utf8') # title of the torrent
-            url = '%s/%s' % (self.base_url, links[0].get('href'))
-            magnet_link = links[1].get('href') # the magnet download link
-            try:
-                torrent_link = links[2].get('href') # the torrent download link
-                if not torrent_link.endswith('.torrent'):
-                    torrent_link = None
-            except IndexError:
+        # this column contains the categories
+        cat_col = cols[0].findAll('a')
+        [category, sub_category] = [c.string for c in cat_col]
+        
+        # this column with all important info
+        links = cols[1].findAll('a') # get 4 a tags from this columns
+        title = unicode(links[0].string.encode('utf8')) # title of the torrent
+        url = self.url.add_path_segment(links[0].get('href'))
+        magnet_link = links[1].get('href') # the magnet download link
+        try:
+            torrent_link = links[2].get('href') # the torrent download link
+            if not torrent_link.endswith('.torrent'):
                 torrent_link = None
+        except IndexError:
+            torrent_link = None
 
-            meta_col = cols[1].find('font').text # don't need user
-            pat = re.compile('Uploaded (.*), Size (.*), ULed by (.*)')
-            match = re.match(pat, meta_col)
-            created = match.groups()[0].replace(u'\xa0',u' ')
-            size = match.groups()[1].replace(u'\xa0',u' ')
-            user = match.groups()[2].encode('utf8') # uploaded by user
-            
-            # last 2 columns for seeders and leechers
-            seeders = int(cols[2].string)
-            leechers = int(cols[3].string)
-            
-            t = Torrent(title, url, category, sub_category, magnet_link,
-                        torrent_link, created, size, user, seeders, leechers)
-            all_torrents.append(t)
+        meta_col = cols[1].find('font').text # don't need user
+        match = self._meta.match(meta_col)
+        created = match.groups()[0].replace(u'\xa0',u' ')
+        size = match.groups()[1].replace(u'\xa0',u' ')
+        user = unicode(match.groups()[2].encode('utf8')) # uploaded by user
         
-        return all_torrents
+        # last 2 columns for seeders and leechers
+        seeders = int(cols[2].string)
+        leechers = int(cols[3].string)
+        
+        t = Torrent(title, url, category, sub_category, magnet_link,
+                    torrent_link, created, size, user, seeders, leechers)
+        return t
 
-    def get_recent_torrents(self):
-        """
-        Returns a list of Torrent objects from the 'recent' page of TPB
-        """
-        all_rows = self.__get_torrents_rows(
-            self.__get_soup(page='recent')
-            )
-        return self.__build_torrent(all_rows)
 
-    def search(self, query, category=0):
+class Paginated(List):
+    def __init__(self, *args, **kwargs):
+        super(Paginated, self).__init__(*args, **kwargs)
+        self.multipage = False
+
+    def items(self):
+        if self.multipage:
+            while True: #TODO: raise StopIteration on last page
+                for item in super(Paginated, self).items():
+                    yield item
+                self.page(self.page() + 1)
+        else:
+            for item in super(Paginated, self).items():
+                yield item
+
+    def multipage(self):
+        self.multipage = True
+        return self
+
+    def page(self):
+        raise NotImplemented
+
+
+class Search(Paginated):
+    base_path = '/search/query/page/ordering/category'
+
+    def __init__(self, base_url, query, page=0, ordering=7, category=0):
+        super(Search, self).__init__(base_url)
+        self.path(query, page, ordering, category)
+
+    def path(self, query=None, page=None, ordering=None, category=None):
+        return super(Search, self).path(query, page, ordering, category)
+
+    def query(self, query=None):
+        return self.path(query=query)[0] if query is None else self
+
+    def page(self, number=None):
+        self.multipage = False
+        return int(self.path(page=number)[1]) if number is None else self
+
+    def order(self, ordering=None):
+        return int(self.path(ordering=ordering)[2]) if ordering is None else self
+
+    def category(self, category=None):
+        return int(self.path(category=category)[3]) if category is None else self
+
+
+class Recent(Paginated):
+    base_path = '/recent/page'
+
+    def __init__(self, base_url, page=0):
+        super(Recent, self).__init__(base_url)
+        self.path(page)
+
+    def path(self, page=None):
+        return super(Recent, self).path(page)
+
+    def page(self, number=None):
+        self.multipage = False
+        return int(self.path(page=number)[0]) if number is None else self
+
+
+class Top(List):
+    base_path = '/top/category'
+
+    def __init__(self, base_url, category=0):
+        super(Recent, self).__init__(base_url)
+        self.path(category)
+
+    def path(self, category=None):
+        return super(Top, self).path(category)
+
+    def category(self, category=None):
+        return self.path(category=category)[0] if category is None else self
+
+
+class TPB(object):
+    """
+    The class that parses the torrent listing page, and builds up
+    all Torrent objects.
+    """
+    
+    def __init__(self, base_url):
+        self.base_url = URL(base_url)
+
+    def search(self, query, page=0, order=7, category=0):
         """
         Searches TPB for the passed query and returns a list of Torrents.
-        
-        category is an int with one of the following values:
-        0 - all
-        100 - audio
-            101 - Music, 102 - Audio books, 103 - Sound clips, 104 - FLAC,
-            199 - Other
-        200 - Video
-            201 - Movies, 202 - Movies DVDR, 203 - Music videos,
-            204 - Movie clips, 205 - TV shows, 206 - Handheld,
-            207 - HD - Movies, 208 - HD - TV shows, 209 - 3D, 299 - Other
-        300 - Applications
-            301 - Windows, 302 - Mac, 303 - UNIX, 304 - Handheld,
-            305 - IOS (iPad/iPhone), 306 - Android, 399 - Other OS
-        400 - Games
-            401 - PC, 402 - Mac, 403 - PSx, 404 - XBOX360, 405 - Wii,
-            406 - Handheld, 407 - IOS (iPad/iPhone), 408 - Android,
-            499 - Other
-        500 - Other
-            601 - E-books, 602 - Comics, 603 - Pictures, 604 - Covers,
-            605 - Physibles, 699 - Other
         """
-        all_rows = self.__get_torrents_rows(
-            self.__get_soup(page='search/{0}/0/99/{1}'.format(
-                urllib.quote(query),
-                category
-                ))
-            )
-        return self.__build_torrent(all_rows)
+        return Search(self.base_url, query, page, order, category)
+
+    def recent(self, page=0):
+        return Recent(self.base_url, page)
+
+    def top(self, category=0):
+        return Top(self.base_url, category)
     
 
 class Torrent():
