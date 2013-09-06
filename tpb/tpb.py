@@ -46,15 +46,6 @@ def self_if_not_none(func):
     return wrapper
 
 
-class Link(object):
-    def __init__(self, element):
-        self.title = element.text
-        self.link = element.get('href')
-
-    def __str__(self):
-        return self.title
-
-
 class List(object):
     """
     Abstract class for parsing a torrent list at some url and generate torrent 
