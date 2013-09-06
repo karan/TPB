@@ -233,7 +233,7 @@ class Recent(Paginated):
         self.path(page)
 
     def path(self, page=None):
-        self._parse_path(page)
+        return self._parse_path(page)
 
     @self_if_not_none
     def page(self, number=None):
