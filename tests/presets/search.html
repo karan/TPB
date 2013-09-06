@@ -1,0 +1,694 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<title>The Pirate Bay - The galaxy's most resilient bittorrent site</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="search" type="application/opensearchdescription+xml" href="https://thepiratebay.sx/opensearch.xml" title="Search The Pirate Bay">
+	<link rel="stylesheet" type="text/css" href="0_fitxategiak/pirate6.css">
+	<style type="text/css">
+		.searchBox{
+			margin: 6px;
+			width: 300px;
+			vertical-align: middle;
+			padding: 2px;
+		        background-image:url('/static/img/icon-https.gif');
+        		background-repeat:no-repeat;
+		        background-position: right;
+		}
+
+		.detLink {
+			font-size: 1.2em;
+			font-weight: 400;
+		}
+		.detDesc {
+			color: #4e5456;
+		}
+		.detDesc a:hover {
+			color: #000099;
+			text-decoration: underline;
+		}
+		.sortby {
+			text-align: left;
+			float: left;
+		}
+		.detName {
+			padding-top: 3px;
+			padding-bottom: 2px;
+		}
+		.viewswitch {
+			font-style: normal;
+			float: right;
+			text-align: right;
+			font-weight: normal;
+		}
+	</style>
+	
+
+
+
+<script src="0_fitxategiak/tpb.js" type="text/javascript"></script>
+
+        <style type="text/css">
+		table#sponsoredLinks a { border: 0; }
+		table#sponsoredLinks a:hover { text-decoration: underline; }
+                table#sponsoredLinks td.downbut a {border: none;}
+                table#sponsoredLinks {min-width: 400px; text-align: left; width: 100%; margin: 0 0 10px 0; border-left: solid 1px #ffffff;}
+                table#sponsoredLinks th {padding: 7px; background-color: #D2B9A6;}
+		table#sponsoredLinks td {padding: 2px 4px; background-color: #F6F1EE; font-weight: bold; font-style: italic; text-align: right; white-space: nowrap;}
+                table#sponsoredLinks td img {border: 0;}
+                table#sponsoredLinks td.first {font-style: normal; text-align: left;}
+                table#sponsoredLinks td.first img {margin: 0 5px 0 0; vertical-align: -7px;}
+                table#sponsoredLinks tr:hover td {background-color: #FFFFFF;}
+                table#sponsoredLinks td.downbut {width: 170px;}
+        </style>
+
+	<script language="javascript" type="text/javascript">if (top.location != self.location) {top.location.replace(self.location);}</script>
+<style>@media print, screen and (view-mode:minimized){#ghostery-purple-bubble{display:none}}</style></head>
+
+<body>
+
+
+	<div id="header">
+
+
+		<div class="ad">
+		 
+		</div>
+			<form method="get" id="q" action="/s/">
+			<a href="https://thepiratebay.sx/" class="img"><img src="0_fitxategiak/tpblogo_sm_ny.gif" id="TPBlogo" alt="The Pirate Bay"></a>
+			<b><a href="https://thepiratebay.sx/" title="Search Torrents">Search Torrents</a></b>&nbsp;&nbsp;|&nbsp;
+			<a href="https://thepiratebay.sx/browse" title="Browse Torrents">Browse Torrents</a>&nbsp;&nbsp;|&nbsp;
+			<a href="https://thepiratebay.sx/recent" title="Recent Torrent">Recent Torrents</a>&nbsp;&nbsp;|&nbsp;
+			<a href="https://thepiratebay.sx/tv" title="TV shows">TV shows</a>&nbsp;&nbsp;|&nbsp;
+			<a href="https://thepiratebay.sx/music" title="Music">Music</a>&nbsp;&nbsp;|&nbsp;
+			<a href="https://thepiratebay.sx/top" title="Top 100">Top 100</a>
+			<br><input title="Pirate Search" name="q" required="" placeholder="Search here..." value="breaking bad" style="background-color: rgb(255, 255, 224);" class="searchBox" type="search"><input value="Pirate Search" class="submitbutton" type="submit"><br>			<label for="audio" title="Audio"><input id="audio" name="audio" onclick="javascript:rmAll();" type="checkbox">Audio</label>
+			<label for="video" title="Video"><input id="video" name="video" onclick="javascript:rmAll();" type="checkbox">Video</label>
+			<label for="apps" title="Applications"><input id="apps" name="apps" onclick="javascript:rmAll();" type="checkbox">Applications</label>
+			<label for="games" title="Games"><input id="games" name="games" onclick="javascript:rmAll();" type="checkbox">Games</label>
+			<label for="other" title="Other"><input id="other" name="other" onclick="javascript:rmAll();" type="checkbox">Other</label>
+
+			<select id="category" name="category" onchange="javascript:setAll();">
+        	        	<option selected="selected" value="0">All</option>
+				<optgroup label="Audio">
+					<option value="101">Music</option>
+					<option value="102">Audio books</option>
+					<option value="103">Sound clips</option>
+					<option value="104">FLAC</option>
+					<option value="199">Other</option>
+				</optgroup>
+				<optgroup label="Video">
+					<option value="201">Movies</option>
+					<option value="202">Movies DVDR</option>
+					<option value="203">Music videos</option>
+					<option value="204">Movie clips</option>
+					<option value="205">TV shows</option>
+					<option value="206">Handheld</option>
+					<option value="207">HD - Movies</option>
+					<option value="208">HD - TV shows</option>
+					<option value="209">3D</option>
+					<option value="299">Other</option>
+				</optgroup>
+				<optgroup label="Applications">
+					<option value="301">Windows</option>
+					<option value="302">Mac</option>
+					<option value="303">UNIX</option>
+					<option value="304">Handheld</option>
+					<option value="305">IOS (iPad/iPhone)</option>
+					<option value="306">Android</option>
+					<option value="399">Other OS</option>
+				</optgroup>
+				<optgroup label="Games">
+					<option value="401">PC</option>
+					<option value="402">Mac</option>
+					<option value="403">PSx</option>
+					<option value="404">XBOX360</option>
+					<option value="405">Wii</option>
+					<option value="406">Handheld</option>
+					<option value="407">IOS (iPad/iPhone)</option>
+					<option value="408">Android</option>
+					<option value="499">Other</option>
+				</optgroup>
+				<optgroup label="Other">
+					<option value="601">E-books</option>
+					<option value="602">Comics</option>
+					<option value="603">Pictures</option>
+					<option value="604">Covers</option>
+					<option value="605">Physibles</option>
+					<option value="699">Other</option>
+				</optgroup>
+			</select>
+
+			<input name="page" value="0" type="hidden">
+			<input name="orderby" value="99" type="hidden">
+		</form>
+	</div><!-- // div:header -->
+
+	<h2><span>Search results: breaking bad</span>&nbsp;Displaying hits from 1 to 30 (approx 1000 found)</h2>
+<div id="SearchResults"><div id="content">
+			<div id="sky-right">
+				 
+			</div>
+	<div id="main-content">
+
+		 
+	<table id="searchResult">
+	<thead id="tableHead">
+		<tr class="header">
+			<th><a href="https://thepiratebay.sx/search/breaking+bad/0/13/0" title="Order by Type">Type</a></th>
+			<th><div class="sortby"><a href="https://thepiratebay.sx/search/breaking+bad/0/1/0" title="Order by Name">Name</a> (Order by: <a href="https://thepiratebay.sx/search/breaking+bad/0/3/0" title="Order by Uploaded">Uploaded</a>, <a href="https://thepiratebay.sx/search/breaking+bad/0/5/0" title="Order by Size">Size</a>, <span style="white-space: nowrap;"><a href="https://thepiratebay.sx/search/breaking+bad/0/11/0" title="Order by ULed by">ULed by</a></span>, <a href="https://thepiratebay.sx/search/breaking+bad/0/8/0" title="Order by Seeders">SE</a>, <a href="https://thepiratebay.sx/search/breaking+bad/0/9/0" title="Order by Leechers">LE</a>)</div><div class="viewswitch"> View: <a href="https://thepiratebay.sx/switchview.php?view=s">Single</a> / Double&nbsp;</div></th>
+			<th><abbr title="Seeders"><a href="https://thepiratebay.sx/search/breaking+bad/0/8/0" title="Order by Seeders">SE</a></abbr></th>
+			<th><abbr title="Leechers"><a href="https://thepiratebay.sx/search/breaking+bad/0/9/0" title="Order by Leechers">LE</a></abbr></th>
+		</tr>
+	</thead>
+	<tbody><tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8872209/Breaking_Bad_S05E12_HDTV_x264-EVOLVE%5Bettv%5D" class="detLink" title="Details for Breaking Bad S05E12 HDTV x264-EVOLVE[ettv]">Breaking Bad S05E12 HDTV x264-EVOLVE[ettv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:6d11ed3b67302cc6256a1b77b50aaf27c7c0c290&amp;dn=Breaking+Bad+S05E12+HDTV+x264-EVOLVE%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 55 comments." title="This torrent has 55 comments."><a href="https://thepiratebay.sx/user/ettv"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-02&nbsp;04:06, Size 281.62&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/ettv/" title="Browse ettv">ettv</a></font>
+		</td>
+		<td align="right">22107</td>
+		<td align="right">850</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8849636/Breaking_Bad_S05E11_HDTV_x264-ASAP%5Bettv%5D" class="detLink" title="Details for Breaking Bad S05E11 HDTV x264-ASAP[ettv]">Breaking Bad S05E11 HDTV x264-ASAP[ettv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:0c85196a55d093b36fbc2b1d7f0c5bdb17f80e8b&amp;dn=Breaking+Bad+S05E11+HDTV+x264-ASAP%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 63 comments." title="This torrent has 63 comments."><a href="https://thepiratebay.sx/user/ettv"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-26&nbsp;04:05, Size 318.09&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/ettv/" title="Browse ettv">ettv</a></font>
+		</td>
+		<td align="right">14291</td>
+		<td align="right">492</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8827549/Breaking_Bad_S05E10_HDTV_x264-ASAP" class="detLink" title="Details for Breaking Bad S05E10 HDTV x264-ASAP">Breaking Bad S05E10 HDTV x264-ASAP</a>
+</div>
+<a href="magnet:?xt=urn:btih:1a30f4646c7236c3ed65c5af5b832e4a8603295d&amp;dn=Breaking+Bad+S05E10+HDTV+x264-ASAP&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 17 comments." title="This torrent has 17 comments."><a href="https://thepiratebay.sx/user/beta2008x"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-19&nbsp;04:15, Size 304.23&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/beta2008x/" title="Browse beta2008x">beta2008x</a></font>
+		</td>
+		<td align="right">13241</td>
+		<td align="right">393</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8804017/Breaking_Bad_S05E09_HDTV_x264-ASAP" class="detLink" title="Details for Breaking Bad S05E09 HDTV x264-ASAP">Breaking Bad S05E09 HDTV x264-ASAP</a>
+</div>
+<a href="magnet:?xt=urn:btih:4ea50819447010fc17f0f2496964766ae2df88a1&amp;dn=Breaking+Bad+S05E09+HDTV+x264-ASAP&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 74 comments." title="This torrent has 74 comments."><a href="https://thepiratebay.sx/user/beta2008x"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-12&nbsp;04:07, Size 327.93&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/beta2008x/" title="Browse beta2008x">beta2008x</a></font>
+		</td>
+		<td align="right">11397</td>
+		<td align="right">327</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8872211/Breaking_Bad_S05E12_HDTV_x264-EVOLVE" class="detLink" title="Details for Breaking Bad S05E12 HDTV x264-EVOLVE">Breaking Bad S05E12 HDTV x264-EVOLVE</a>
+</div>
+<a href="magnet:?xt=urn:btih:bce17722f991fc998dc86ac74a85b878dd07b24a&amp;dn=Breaking+Bad+S05E12+HDTV+x264-EVOLVE&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 9 comments." title="This torrent has 9 comments."><a href="https://thepiratebay.sx/user/beta2008x"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-02&nbsp;04:07, Size 281.62&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/beta2008x/" title="Browse beta2008x">beta2008x</a></font>
+		</td>
+		<td align="right">9368</td>
+		<td align="right">334</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8872342/Breaking_Bad_S05E12_720p_HDTV_x264-EVOLVE_%5Beztv%5D" class="detLink" title="Details for Breaking Bad S05E12 720p HDTV x264-EVOLVE [eztv]">Breaking Bad S05E12 720p HDTV x264-EVOLVE [eztv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:fc65f1719e939a170da4e1243aecafe1d71e862e&amp;dn=Breaking+Bad+S05E12+720p+HDTV+x264-EVOLVE+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 16 comments." title="This torrent has 16 comments."><a href="https://thepiratebay.sx/user/eztv"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-02&nbsp;04:32, Size 1.07&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/eztv/" title="Browse eztv">eztv</a></font>
+		</td>
+		<td align="right">8424</td>
+		<td align="right">565</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8849969/Breaking_Bad_S05E11_720p_HDTV_x264-IMMERSE_%5Beztv%5D" class="detLink" title="Details for Breaking Bad S05E11 720p HDTV x264-IMMERSE [eztv]">Breaking Bad S05E11 720p HDTV x264-IMMERSE [eztv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:ecfc6dfeb8d39eac6cae32337b11757fb9346af5&amp;dn=Breaking+Bad+S05E11+720p+HDTV+x264-IMMERSE+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 17 comments." title="This torrent has 17 comments."><a href="https://thepiratebay.sx/user/eztv"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-26&nbsp;06:11, Size 1.14&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/eztv/" title="Browse eztv">eztv</a></font>
+		</td>
+		<td align="right">6402</td>
+		<td align="right">300</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8827745/Breaking_Bad_S05E10_720p_HDTV_x264-IMMERSE_%5Beztv%5D" class="detLink" title="Details for Breaking Bad S05E10 720p HDTV x264-IMMERSE [eztv]">Breaking Bad S05E10 720p HDTV x264-IMMERSE [eztv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:45015dfe6963c0a3bc39e4bd07e68ba31f205180&amp;dn=Breaking+Bad+S05E10+720p+HDTV+x264-IMMERSE+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 43 comments." title="This torrent has 43 comments."><a href="https://thepiratebay.sx/user/eztv"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-19&nbsp;05:08, Size 1.07&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/eztv/" title="Browse eztv">eztv</a></font>
+		</td>
+		<td align="right">4279</td>
+		<td align="right">214</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8849638/Breaking_Bad_S05E11_HDTV_x264-ASAP" class="detLink" title="Details for Breaking Bad S05E11 HDTV x264-ASAP">Breaking Bad S05E11 HDTV x264-ASAP</a>
+</div>
+<a href="magnet:?xt=urn:btih:e77ccf348ef22cfbdce6977874e123c4516f9f06&amp;dn=Breaking+Bad+S05E11+HDTV+x264-ASAP&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 20 comments." title="This torrent has 20 comments."><a href="https://thepiratebay.sx/user/beta2008x"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-26&nbsp;04:06, Size 318.09&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/beta2008x/" title="Browse beta2008x">beta2008x</a></font>
+		</td>
+		<td align="right">3526</td>
+		<td align="right">150</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/7594642/Breaking_Bad_-_Season_5_%28Ep._1-8%29_%5BHDTV%5D___EXTRAS" class="detLink" title="Details for Breaking Bad - Season 5 (Ep. 1-8) [HDTV] + EXTRAS">Breaking Bad - Season 5 (Ep. 1-8) [HDTV] + EXTRAS</a>
+</div>
+<a href="magnet:?xt=urn:btih:5c5a504feec4fcc9927c535098957c9e89fc2b35&amp;dn=Breaking+Bad+-+Season+5+%28Ep.+1-8%29+%5BHDTV%5D+%2B+EXTRAS&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 38 comments." title="This torrent has 38 comments."><img src="0_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/FaMoUz"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-03&nbsp;2012, Size 2.69&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/FaMoUz/" title="Browse FaMoUz">FaMoUz</a></font>
+		</td>
+		<td align="right">3163</td>
+		<td align="right">811</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8804016/Breaking.Bad.S05E09.720p.HDTV.x264-IMMERSE%5Brartv%5D" class="detLink" title="Details for Breaking.Bad.S05E09.720p.HDTV.x264-IMMERSE[rartv]">Breaking.Bad.S05E09.720p.HDTV.x264-IMMERSE[rartv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:3a4ef26fd3155a4fdfedc5fcfae254f94df14766&amp;dn=Breaking.Bad.S05E09.720p.HDTV.x264-IMMERSE%5Brartv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 41 comments." title="This torrent has 41 comments."><a href="https://thepiratebay.sx/user/Drarbg"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-12&nbsp;04:07, Size 1.09&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/Drarbg/" title="Browse Drarbg">Drarbg</a></font>
+		</td>
+		<td align="right">2508</td>
+		<td align="right">233</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/6714949/Breaking_Bad_s01_Season_1_DVDRip" class="detLink" title="Details for Breaking Bad s01 Season 1 DVDRip">Breaking Bad s01 Season 1 DVDRip</a>
+</div>
+<a href="magnet:?xt=urn:btih:5ce19a52f7e1b78dfaa021b4a028206f82128901&amp;dn=Breaking+Bad+s01+Season+1+DVDRip&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 31 comments." title="This torrent has 31 comments."><img src="0_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><img src="0_fitxategiak/11x11p.png">
+			<font class="detDesc">Uploaded 10-01&nbsp;2011, Size 2.4&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/batdave0/" title="Browse batdave0">batdave0</a></font>
+		</td>
+		<td align="right">2388</td>
+		<td align="right">571</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8804501/Breaking_Bad_S05E09_720p_HDTV_x264-IMMERSE_%5Beztv%5D" class="detLink" title="Details for Breaking Bad S05E09 720p HDTV x264-IMMERSE [eztv]">Breaking Bad S05E09 720p HDTV x264-IMMERSE [eztv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:38980003845de2b5556955bba90086d934f42fd0&amp;dn=Breaking+Bad+S05E09+720p+HDTV+x264-IMMERSE+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 7 comments." title="This torrent has 7 comments."><a href="https://thepiratebay.sx/user/eztv"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-12&nbsp;07:33, Size 1.08&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/eztv/" title="Browse eztv">eztv</a></font>
+		</td>
+		<td align="right">2209</td>
+		<td align="right">138</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/6798092/Breaking_Bad_Season_1__2__3__4___Extras_DVDRip_HDTV_TSV" class="detLink" title="Details for Breaking Bad Season 1, 2, 3, 4 + Extras DVDRip HDTV TSV">Breaking Bad Season 1, 2, 3, 4 + Extras DVDRip HDTV TSV</a>
+</div>
+<a href="magnet:?xt=urn:btih:f5cb5169a88812e6803fc8f78c9d4aa728050472&amp;dn=Breaking+Bad+Season+1%2C+2%2C+3%2C+4+%2B+Extras+DVDRip+HDTV+TSV&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 124 comments." title="This torrent has 124 comments."><img src="0_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/Toilet_sniffer_V"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 11-05&nbsp;2011, Size 19.31&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/Toilet_sniffer_V/" title="Browse Toilet_sniffer_V">Toilet_sniffer_V</a></font>
+		</td>
+		<td align="right">2111</td>
+		<td align="right">3224</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8827547/Breaking_Bad_S05E10_HDTV_x264-ASAP%5Bettv%5D" class="detLink" title="Details for Breaking Bad S05E10 HDTV x264-ASAP[ettv]">Breaking Bad S05E10 HDTV x264-ASAP[ettv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:12ddd35691e9d53ca68987ef0b96f487c99f8265&amp;dn=Breaking+Bad+S05E10+HDTV+x264-ASAP%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 17 comments." title="This torrent has 17 comments."><a href="https://thepiratebay.sx/user/ettv"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-19&nbsp;04:14, Size 304.23&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/ettv/" title="Browse ettv">ettv</a></font>
+		</td>
+		<td align="right">1912</td>
+		<td align="right">68</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/4927661/Breaking_Bad_-_Season_2_%28HDTV%29" class="detLink" title="Details for Breaking Bad - Season 2 (HDTV)">Breaking Bad - Season 2 (HDTV)</a>
+</div>
+<a href="magnet:?xt=urn:btih:7f770c665ab0c11d00feb9d183174bae76ef3502&amp;dn=Breaking+Bad+-+Season+2+%28HDTV%29&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 37 comments." title="This torrent has 37 comments."><img src="0_fitxategiak/11x11p.png">
+			<font class="detDesc">Uploaded 06-02&nbsp;2009, Size 4.44&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/r00tz0r/" title="Browse r00tz0r">r00tz0r</a></font>
+		</td>
+		<td align="right">1861</td>
+		<td align="right">661</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8872208/Breaking.Bad.S05E12.720p.HDTV.x264-EVOLVE_%5BPublicHD%5D" class="detLink" title="Details for Breaking.Bad.S05E12.720p.HDTV.x264-EVOLVE [PublicHD]">Breaking.Bad.S05E12.720p.HDTV.x264-EVOLVE [PublicHD]</a>
+</div>
+<a href="magnet:?xt=urn:btih:a2b2dc6dc8c0a0035c877f4961788c4db88d884f&amp;dn=Breaking.Bad.S05E12.720p.HDTV.x264-EVOLVE+%5BPublicHD%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 11 comments." title="This torrent has 11 comments."><a href="https://thepiratebay.sx/user/DibyaTPB"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-02&nbsp;04:06, Size 1.07&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/DibyaTPB/" title="Browse DibyaTPB">DibyaTPB</a></font>
+		</td>
+		<td align="right">1819</td>
+		<td align="right">54</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/6734583/Breaking_Bad_-_Season_4_Complete_HDTV_%28XviD_MP3%29" class="detLink" title="Details for Breaking Bad - Season 4 Complete HDTV (XviD/MP3)">Breaking Bad - Season 4 Complete HDTV (XviD/MP3)</a>
+</div>
+<a href="magnet:?xt=urn:btih:a4164f3dc053e37b178eb8eb4dafa7789470bf39&amp;dn=Breaking+Bad+-+Season+4+Complete+HDTV+%28XviD%2FMP3%29&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 44 comments." title="This torrent has 44 comments."><img src="0_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/manOtor"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 10-10&nbsp;2011, Size 4.48&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/manOtor/" title="Browse manOtor">manOtor</a></font>
+		</td>
+		<td align="right">1759</td>
+		<td align="right">772</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8849629/Breaking.Bad.S05E11.720p.HDTV.x264-IMMERSE%5Brartv%5D" class="detLink" title="Details for Breaking.Bad.S05E11.720p.HDTV.x264-IMMERSE[rartv]">Breaking.Bad.S05E11.720p.HDTV.x264-IMMERSE[rartv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:81a54062dfbc326cbc5f5333787cd978983bc0a4&amp;dn=Breaking.Bad.S05E11.720p.HDTV.x264-IMMERSE%5Brartv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 10 comments." title="This torrent has 10 comments."><a href="https://thepiratebay.sx/user/Drarbg"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-26&nbsp;04:04, Size 1.16&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/Drarbg/" title="Browse Drarbg">Drarbg</a></font>
+		</td>
+		<td align="right">1555</td>
+		<td align="right">162</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8872267/Breaking.Bad.S05E12.720p.HDTV.x264-EVOLVE%5Brartv%5D" class="detLink" title="Details for Breaking.Bad.S05E12.720p.HDTV.x264-EVOLVE[rartv]">Breaking.Bad.S05E12.720p.HDTV.x264-EVOLVE[rartv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:cca328fadb206c792a8f4dde1700884f7dc18dfc&amp;dn=Breaking.Bad.S05E12.720p.HDTV.x264-EVOLVE%5Brartv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 6 comments." title="This torrent has 6 comments."><a href="https://thepiratebay.sx/user/Drarbg"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-02&nbsp;04:19, Size 1.1&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/Drarbg/" title="Browse Drarbg">Drarbg</a></font>
+		</td>
+		<td align="right">1323</td>
+		<td align="right">128</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/7447640/Breaking_Bad_S05E01_Live_Free_or_Die_HDTV_x264-FQM_%5Beztv%5D" class="detLink" title="Details for Breaking Bad S05E01 Live Free or Die HDTV x264-FQM [eztv]">Breaking Bad S05E01 Live Free or Die HDTV x264-FQM [eztv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:9db273afef9af2152607ba786cf1f92543bf0221&amp;dn=Breaking+Bad+S05E01+Live+Free+or+Die+HDTV+x264-FQM+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 48 comments." title="This torrent has 48 comments."><a href="https://thepiratebay.sx/user/eztv"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 07-16&nbsp;2012, Size 307.82&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/eztv/" title="Browse eztv">eztv</a></font>
+		</td>
+		<td align="right">1269</td>
+		<td align="right">74</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8872422/Breaking_Bad_S05E12_HDTV_XviD-AFG%5Bettv%5D" class="detLink" title="Details for Breaking Bad S05E12 HDTV XviD-AFG[ettv]">Breaking Bad S05E12 HDTV XviD-AFG[ettv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:8c457dabd28d3728e806a489f98b7157acd5b59d&amp;dn=Breaking+Bad+S05E12+HDTV+XviD-AFG%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 7 comments." title="This torrent has 7 comments."><a href="https://thepiratebay.sx/user/ettv"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-02&nbsp;04:49, Size 379.55&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/ettv/" title="Browse ettv">ettv</a></font>
+		</td>
+		<td align="right">1133</td>
+		<td align="right">58</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/7573154/Breaking_Bad_S05E07_HDTV_x264-COMPULSiON_%5Beztv%5D" class="detLink" title="Details for Breaking Bad S05E07 HDTV x264-COMPULSiON [eztv]">Breaking Bad S05E07 HDTV x264-COMPULSiON [eztv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:c970c05a50c7bae5b61ffd7f333746c189ce5e0a&amp;dn=Breaking+Bad+S05E07+HDTV+x264-COMPULSiON+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 57 comments." title="This torrent has 57 comments."><a href="https://thepiratebay.sx/user/eztv"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-27&nbsp;2012, Size 342.94&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/eztv/" title="Browse eztv">eztv</a></font>
+		</td>
+		<td align="right">1115</td>
+		<td align="right">75</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8872426/Breaking_Bad_S05E12_HDTV_XviD_AFG" class="detLink" title="Details for Breaking Bad S05E12 HDTV XviD AFG">Breaking Bad S05E12 HDTV XviD AFG</a>
+</div>
+<a href="magnet:?xt=urn:btih:d5d268ace0f4974f45c616cd5748ad4c3f2cd6b0&amp;dn=Breaking+Bad+S05E12+HDTV+XviD+AFG&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/11x11p.png"><img src="0_fitxategiak/11x11p.png">
+			<font class="detDesc">Uploaded 09-02&nbsp;04:54, Size 379.55&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/k3ly/" title="Browse k3ly">k3ly</a></font>
+		</td>
+		<td align="right">1097</td>
+		<td align="right">56</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/5626822/Breaking_Bad_Season_3_Complete" class="detLink" title="Details for Breaking Bad Season 3 Complete">Breaking Bad Season 3 Complete</a>
+</div>
+<a href="magnet:?xt=urn:btih:f46db5f79d959d2c736aaeb6657af0e01ab81434&amp;dn=Breaking+Bad+Season+3+Complete&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 56 comments." title="This torrent has 56 comments."><img src="0_fitxategiak/11x11p.png">
+			<font class="detDesc">Uploaded 06-14&nbsp;2010, Size 4.45&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/Grongebis/" title="Browse Grongebis">Grongebis</a></font>
+		</td>
+		<td align="right">1092</td>
+		<td align="right">361</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/7507830/Breaking_Bad_S05E04_Fifty-One_HDTV_x264-FQM_%5Beztv%5D" class="detLink" title="Details for Breaking Bad S05E04 Fifty-One HDTV x264-FQM [eztv]">Breaking Bad S05E04 Fifty-One HDTV x264-FQM [eztv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:776060eac4e22888eefb0b8a7082370fb87e0d95&amp;dn=Breaking+Bad+S05E04+Fifty-One+HDTV+x264-FQM+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 81 comments." title="This torrent has 81 comments."><a href="https://thepiratebay.sx/user/eztv"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-06&nbsp;2012, Size 294.12&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/eztv/" title="Browse eztv">eztv</a></font>
+		</td>
+		<td align="right">1088</td>
+		<td align="right">83</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/7466775/Breaking.Bad.S05E02.Madrigal.HDTV.x264-FQM.mp4" class="detLink" title="Details for Breaking.Bad.S05E02.Madrigal.HDTV.x264-FQM.mp4">Breaking.Bad.S05E02.Madrigal.HDTV.x264-FQM.mp4</a>
+</div>
+<a href="magnet:?xt=urn:btih:127d08d76bcf38ba4d69d785ac78238127e4ce61&amp;dn=Breaking.Bad.S05E02.Madrigal.HDTV.x264-FQM.mp4&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 52 comments." title="This torrent has 52 comments."><a href="https://thepiratebay.sx/user/tonyisaac"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 07-23&nbsp;2012, Size 277.3&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/tonyisaac/" title="Browse tonyisaac">tonyisaac</a></font>
+		</td>
+		<td align="right">983</td>
+		<td align="right">62</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/7594552/Breaking_Bad_S05E08_HDTV_x264-ASAP%5Bettv%5D" class="detLink" title="Details for Breaking Bad S05E08 HDTV x264-ASAP[ettv]">Breaking Bad S05E08 HDTV x264-ASAP[ettv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:b7cf1908d9755559053bb81aec7e151425f8a6b2&amp;dn=Breaking+Bad+S05E08+HDTV+x264-ASAP%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 89 comments." title="This torrent has 89 comments."><a href="https://thepiratebay.sx/user/ettv"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-03&nbsp;2012, Size 324.93&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/ettv/" title="Browse ettv">ettv</a></font>
+		</td>
+		<td align="right">959</td>
+		<td align="right">57</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8809706/MythBusters_S12_Breaking_Bad_Special_HDTV_x264-YesTV_%5Beztv%5D" class="detLink" title="Details for MythBusters S12 Breaking Bad Special HDTV x264-YesTV [eztv]">MythBusters S12 Breaking Bad Special HDTV x264-YesTV [eztv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:6d0456a5acb7e50d1e1c4445a5e03ff2aa96d6a0&amp;dn=MythBusters+S12+Breaking+Bad+Special+HDTV+x264-YesTV+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 10 comments." title="This torrent has 10 comments."><a href="https://thepiratebay.sx/user/eztv"><img src="0_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-13&nbsp;21:10, Size 353.34&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/eztv/" title="Browse eztv">eztv</a></font>
+		</td>
+		<td align="right">929</td>
+		<td align="right">20</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/7452667/Breaking.Bad.S01.Season.1.720p.BRRip.x264-Visionx" class="detLink" title="Details for Breaking.Bad.S01.Season.1.720p.BRRip.x264-Visionx">Breaking.Bad.S01.Season.1.720p.BRRip.x264-Visionx</a>
+</div>
+<a href="magnet:?xt=urn:btih:d4f83fabe9f20895f23e740d85f2cd2671ac3e18&amp;dn=Breaking.Bad.S01.Season.1.720p.BRRip.x264-Visionx&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="0_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="0_fitxategiak/icon_comment.gif" alt="This torrent has 21 comments." title="This torrent has 21 comments."><img src="0_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><img src="0_fitxategiak/11x11p.png">
+			<font class="detDesc">Uploaded 07-17&nbsp;2012, Size 3.51&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/mike953100/" title="Browse mike953100">mike953100</a></font>
+		</td>
+		<td align="right">878</td>
+		<td align="right">283</td>
+	</tr>
+
+</tbody></table>
+</div>
+<div align="center">1&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/1/7/0/">2</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/2/7/0/">3</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/3/7/0/">4</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/4/7/0/">5</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/5/7/0/">6</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/6/7/0/">7</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/7/7/0/">8</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/8/7/0/">9</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/9/7/0/">10</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/10/7/0/">11</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/11/7/0/">12</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/12/7/0/">13</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/13/7/0/">14</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/14/7/0/">15</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/15/7/0/">16</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/16/7/0/">17</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/17/7/0/">18</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/18/7/0/">19</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/19/7/0/">20</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/20/7/0/">21</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/21/7/0/">22</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/22/7/0/">23</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/23/7/0/">24</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/24/7/0/">25</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/25/7/0/">26</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/26/7/0/">27</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/27/7/0/">28</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/28/7/0/">29</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/29/7/0/">30</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/30/7/0/">31</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/31/7/0/">32</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/32/7/0/">33</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/33/7/0/">34</a>&nbsp;<a href="https://thepiratebay.sx/search/breaking%20bad/1/7/0/"><img src="0_fitxategiak/next.gif" alt="Next" border="0"></a>&nbsp;
+</div>
+			<div class="ads" id="sky-banner">
+				 
+			</div>
+	</div></div><!-- //div:content -->
+
+	<div id="foot" style="text-align:center;margin-top:1em;">
+
+			 
+				<p>
+			<a href="https://thepiratebay.sx/login" title="Login">Login</a> | 
+			<a href="https://thepiratebay.sx/register" title="Register">Register</a> | 
+			<a href="https://thepiratebay.sx/language" title="Select language">Language / Select language</a> |
+			<a href="https://thepiratebay.sx/about" title="About">About</a> |
+			<a href="https://thepiratebay.sx/legal" title="Legal threats">Legal threats</a> |
+			<a href="https://thepiratebay.sx/blog" title="Blog">Blog</a>
+			<br>
+			<a href="https://thepiratebay.sx/contact" title="Contact us">Contact us</a> |
+			<a href="https://thepiratebay.sx/policy" title="Usage policy">Usage policy</a> |
+			<a href="https://thepiratebay.sx/downloads" title="Downloads">Downloads</a> |
+			<a href="http://www.promobay.org/" title="Promo" target="_NEW">Promo</a> |
+			<a href="https://thepiratebay.sx/doodles" title="Doodles">Doodles</a> |
+			<a href="https://thepiratebay.sx/tags" title="Tag Cloud">Tag Cloud</a> |
+			<a href="http://suprbay.org/" title="Forum" target="_blank">Forum</a> |
+			<a href="http://piratebrowser.com/" title="PirateBrowser" target="_blank"><strong>PirateBrowser</strong></a>
+			<br>
+			<a href="http://bayfiles.net/" title="Bayfiles" target="_blank">Bayfiles</a> |
+			<a href="http://bayimg.com/" title="BayImg" target="_blank">BayImg</a> |
+			<a href="http://pastebay.net/" title="PasteBay" target="_blank">PasteBay</a> |
+			<a href="http://uberproxy.net/" title="Proxy" target="_blank">Proxy</a> |
+			<a href="https://twitter.com/tpbdotorg" title="Twitter" target="_blank">Follow TPB on Twitter</a> |
+			<a href="https://www.facebook.com/ThePirateBayWarMachine" title="Facebook" target="_blank">Follow TPB on Facebook</a>
+			<br>
+		</p>
+
+<p id="footer" style="color:#666; font-size:0.9em; ">
+        6.372.102 registered users. Last updated 21:20:05.<br>
+        46.793.929 peers (36.880.091 seeders + 9.913.838 leechers) in 5.414.904 torrents.<br>
+</p>
+<br><a href="http://bitcoin.org/" target="_NEW">BitCoin</a>: <b><a href="bitcoin:1KeBs4HBQzkdHC2ou3gpyGHqcL7aKzwTve">1KeBs4HBQzkdHC2ou3gpyGHqcL7aKzwTve</a></b><br><a href="http://litecoin.org/" target="_NEW">LiteCoin</a>: <a href="litecoin:LiYp3Dg11N5BgV8qKW42ubSZXFmjDByjoV">LiYp3Dg11N5BgV8qKW42ubSZXFmjDByjoV</a><br><br><br><img src="0_fitxategiak/btcltc.png"><br><br>		<br><img src="0_fitxategiak/icon-https.gif" style="border: medium none;" alt="SSL">You are using SSL
+
+		<div id="fbanners">
+			<a href="https://thepiratebay.sx/rss" class="rss" title="RSS"><img src="0_fitxategiak/rss_small.gif" alt="RSS"></a>
+		</div><!-- // div:fbanners -->
+	</div><!-- // div:foot -->
+<script type="text/javascript" src="0_fitxategiak/popw130826.js"></script><!-- abc: ES 0 -->
+
+</body></html>
