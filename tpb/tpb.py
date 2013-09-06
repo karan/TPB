@@ -29,18 +29,21 @@ from __future__ import unicode_literals
 import os
 import re
 import urllib
-from purl import URL
+from functools import wraps
 
+from purl import URL
 from bs4 import BeautifulSoup
 
 
-class Link(object):
-    def __init__(self, element):
-        self.title = element.text
-        self.link = element.get('href')
-
-    def __str__(self):
-        return self.title
+def self_if_not_none(func):
+    @wraps(func)
+    def wrapper(self, arg=None):
+        result = func(self, arg)
+        if arg is None:
+            return result
+        else:
+            return self
+    return wrapper
 
 
 class List(object):
@@ -50,7 +53,7 @@ class List(object):
     """
 
     _meta = re.compile('Uploaded (.*), Size (.*), ULed by (.*)')
-    base_path = '/'
+    base_path = ''
 
     def __init__(self, base_url):
         self.url = base_url.add_path_segment(self.base_path)
@@ -176,7 +179,7 @@ class Search(Paginated):
     """
     Paginated search including query, category and ordering management.
     """
-    base_path = '/search/query/page/ordering/category'
+    base_path = 'search/query/page/ordering/category'
 
     def __init__(self, base_url, query, page=0, ordering=7, category=0):
         super(Search, self).__init__(base_url)
@@ -185,41 +188,45 @@ class Search(Paginated):
     def path(self, query=None, page=None, ordering=None, category=None):
         return self._parse_path(query, page, ordering, category)
 
+    @self_if_not_none
     def query(self, query=None):
         """
         If query is given, modify query segment of url with it, return actual
         query segment otherwise.
         """
-        return self.path(query=query)[0] if query is None else self
+        return self.path(query=query)[0]
 
+    @self_if_not_none
     def page(self, number=None):
         """
         If path is given, modify path segment of url with it, return actual
         path segment otherwise. Disables multipage iteration.
         """
         super(Search, self).page(number)
-        return int(self.path(page=number)[1]) if number is None else self
+        return int(self.path(page=number)[1])
 
+    @self_if_not_none
     def order(self, ordering=None):
         """
         If ordering is given, modify order segment of url with it, return actual
         order segment otherwise.
         """
-        return int(self.path(ordering=ordering)[2]) if ordering is None else self
+        return int(self.path(ordering=ordering)[2])
 
+    @self_if_not_none
     def category(self, category=None):
         """
         If category is given, modify category segment of url with it, return 
         actual category segment otherwise.
         """
-        return int(self.path(category=category)[3]) if category is None else self
+        return int(self.path(category=category)[3])
 
 
 class Recent(Paginated):
     """
     Paginated most recent torrents.
     """
-    base_path = '/recent/page'
+    base_path = 'recent/page'
 
     def __init__(self, base_url, page=0):
         super(Recent, self).__init__(base_url)
@@ -228,34 +235,36 @@ class Recent(Paginated):
     def path(self, page=None):
         self._parse_path(page)
 
+    @self_if_not_none
     def page(self, number=None):
         """
         If path is given, modify path segment of url with it, return actual
         path segment otherwise. Disables multipage iteration.
         """
         super(Recent, self).page(number)
-        return int(self.path(page=number)[0]) if number is None else self
+        return int(self.path(page=number)[0])
 
 
 class Top(List):
     """
     Top torrents with category management.
     """
-    base_path = '/top/category'
+    base_path = 'top/category'
 
     def __init__(self, base_url, category=0):
-        super(Recent, self).__init__(base_url)
+        super(Top, self).__init__(base_url)
         self.path(category)
 
     def path(self, category=None):
         self._parse_path(category)
 
+    @self_if_not_none
     def category(self, category=None):
         """
         If category is given, modify category segment of url with it, return 
         actual category segment otherwise.
         """
-        return self.path(category=category)[0] if category is None else self
+        return self.path(category=category)[0]
 
 
 class TPB(object):
