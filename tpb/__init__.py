@@ -25,4 +25,4 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 """
 
 from tpb import TPB
-from constants import orders, categories
+from constants import ORDERS, CATEGORIES
