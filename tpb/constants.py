@@ -18,79 +18,79 @@ class Constants(type):
         return repr(cls)
 
 
-class orders:
+class ORDERS:
     __metaclass__ = Constants
 
-    class name:
-        asc = 1
-        des = 2
-    class uploaded:
-        asc = 3
-        des = 4
-    class size:
-        asc = 5
-        des = 6
-    class seeders:
-        asc = 7
-        des = 8
-    class leechers:
-        asc = 9
-        des = 10
-    class uploader:
-        asc = 11
-        des = 12
-    class type:
-        asc = 13
-        des = 14
+    class NAME:
+        ASC = 1
+        DES = 2
+    class UPLOADED:
+        ASC = 3
+        DES = 4
+    class SIZE:
+        ASC = 5
+        DES = 6
+    class SEEDERS:
+        ASC = 7
+        DES = 8
+    class LEECHERS:
+        ASC = 9
+        DES = 10
+    class UPLOADER:
+        ASC = 11
+        DES = 12
+    class TYPE:
+        ASC = 13
+        DES = 14
 
 
-class categories:
+class CATEGORIES:
     __metaclass__ = Constants
 
-    all = 0
-    class audio:
-        all = 100
-        music = 101
-        audio_books = 102
-        sound_clips = 103
-        flac = 104
-        other = 199
-    class video:
-        all = 200
-        movies = 201
-        movies_dvdr = 202
-        music_videos = 203
-        movie_clips = 204
-        tv_shows = 205
-        handheld = 206
-        hd_movies = 207
-        hd_tv_shows = 208
-        three_dimensions = 209
-        other = 299
-    class applications:
-        all = 300
-        windows = 301
-        mac = 302
-        unix = 303
-        handheld = 304
-        ios = 305
-        android = 306
-        other = 399
-    class games:
-        all = 400
-        pc = 401
-        mac = 402
-        psx = 403
-        xbox360 = 404
-        wii = 405
-        handheld = 406
-        ios = 407
-        android = 408
-        other = 499
-    class other:
-        ebooks = 601
-        comics = 602
-        pictures = 603
-        covers = 604
-        physibles = 605
-        other = 699
+    ALL = 0
+    class AUDIO:
+        ALL = 100
+        MUSIC = 101
+        AUDIO_BOOKS = 102
+        SOUND_CLIPS = 103
+        FLAC = 104
+        OTHER = 199
+    class VIDEO:
+        ALL = 200
+        MOVIES = 201
+        MOVIES_DVDR = 202
+        MUSIC_VIDEOS = 203
+        MOVIE_CLIPS = 204
+        TV_SHOWS = 205
+        HANDHELD = 206
+        HD_MOVIES = 207
+        HD_TV_SHOWS = 208
+        THREE_DIMENSIONS = 209
+        OTHER = 299
+    class APPLICATIONS:
+        ALL = 300
+        WINDOWS = 301
+        MAC = 302
+        UNIX = 303
+        HANDHELD = 304
+        IOS = 305
+        ANDROID = 306
+        OTHER = 399
+    class GAMES:
+        ALL = 400
+        PC = 401
+        MAC = 402
+        PSX = 403
+        XBOX360 = 404
+        WII = 405
+        HANDHELD = 406
+        IOS = 407
+        ANDROID = 408
+        OTHER = 499
+    class OTHER:
+        EBOOKS = 601
+        COMICS = 602
+        PICTURES = 603
+        COVERS = 604
+        PHYSIBLES = 605
+        OTHER = 699
