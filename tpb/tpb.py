@@ -62,7 +62,7 @@ class List(object):
     """
 
     _meta = re.compile('Uploaded (.*), Size (.*), ULed by (.*)')
-    base_path = '/'
+    base_path = ''
 
     def __init__(self, base_url):
         self.url = base_url.add_path_segment(self.base_path)
@@ -188,7 +188,7 @@ class Search(Paginated):
     """
     Paginated search including query, category and ordering management.
     """
-    base_path = '/search/query/page/ordering/category'
+    base_path = 'search/query/page/ordering/category'
 
     def __init__(self, base_url, query, page=0, ordering=7, category=0):
         super(Search, self).__init__(base_url)
@@ -235,7 +235,7 @@ class Recent(Paginated):
     """
     Paginated most recent torrents.
     """
-    base_path = '/recent/page'
+    base_path = 'recent/page'
 
     def __init__(self, base_url, page=0):
         super(Recent, self).__init__(base_url)
@@ -258,10 +258,10 @@ class Top(List):
     """
     Top torrents with category management.
     """
-    base_path = '/top/category'
+    base_path = 'top/category'
 
     def __init__(self, base_url, category=0):
-        super(Recent, self).__init__(base_url)
+        super(Top, self).__init__(base_url)
         self.path(category)
 
     def path(self, category=None):
