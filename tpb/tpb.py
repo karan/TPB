@@ -29,9 +29,21 @@ from __future__ import unicode_literals
 import os
 import re
 import urllib
-from purl import URL
+from functools import wraps
 
+from purl import URL
 from bs4 import BeautifulSoup
+
+
+def self_if_not_none(func):
+    @wraps(func)
+    def wrapper(self, arg=None):
+        result = func(self, arg)
+        if arg is None:
+            return result
+        else:
+            return self
+    return wrapper
 
 
 class Link(object):
@@ -185,34 +197,38 @@ class Search(Paginated):
     def path(self, query=None, page=None, ordering=None, category=None):
         return self._parse_path(query, page, ordering, category)
 
+    @self_if_not_none
     def query(self, query=None):
         """
         If query is given, modify query segment of url with it, return actual
         query segment otherwise.
         """
-        return self.path(query=query)[0] if query is None else self
+        return self.path(query=query)[0]
 
+    @self_if_not_none
     def page(self, number=None):
         """
         If path is given, modify path segment of url with it, return actual
         path segment otherwise. Disables multipage iteration.
         """
         super(Search, self).page(number)
-        return int(self.path(page=number)[1]) if number is None else self
+        return int(self.path(page=number)[1])
 
+    @self_if_not_none
     def order(self, ordering=None):
         """
         If ordering is given, modify order segment of url with it, return actual
         order segment otherwise.
         """
-        return int(self.path(ordering=ordering)[2]) if ordering is None else self
+        return int(self.path(ordering=ordering)[2])
 
+    @self_if_not_none
     def category(self, category=None):
         """
         If category is given, modify category segment of url with it, return 
         actual category segment otherwise.
         """
-        return int(self.path(category=category)[3]) if category is None else self
+        return int(self.path(category=category)[3])
 
 
 class Recent(Paginated):
@@ -228,13 +244,14 @@ class Recent(Paginated):
     def path(self, page=None):
         self._parse_path(page)
 
+    @self_if_not_none
     def page(self, number=None):
         """
         If path is given, modify path segment of url with it, return actual
         path segment otherwise. Disables multipage iteration.
         """
         super(Recent, self).page(number)
-        return int(self.path(page=number)[0]) if number is None else self
+        return int(self.path(page=number)[0])
 
 
 class Top(List):
@@ -250,12 +267,13 @@ class Top(List):
     def path(self, category=None):
         self._parse_path(category)
 
+    @self_if_not_none
     def category(self, category=None):
         """
         If category is given, modify category segment of url with it, return 
         actual category segment otherwise.
         """
-        return self.path(category=category)[0] if category is None else self
+        return self.path(category=category)[0]
 
 
 class TPB(object):
