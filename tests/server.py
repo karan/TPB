@@ -38,6 +38,10 @@ class TPBApp(Bottle):
         self.process.terminate()
         self.process = None
         
+    @property
+    def url(self):
+        return 'http://{}:{}'.format(self.host, self.port)
+
 
 if __name__ == '__main__':
     TPBApp('localhost', 8000).run()
