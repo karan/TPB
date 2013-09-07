@@ -109,7 +109,7 @@ class List(object):
         
         # this column with all important info
         links = cols[1].findAll('a') # get 4 a tags from this columns
-        title = unicode(links[0].string.encode('utf8')) # title of the torrent
+        title = unicode(links[0].string.encode('ascii', 'ignore')) # title of the torrent, strips unicode characters..
         url = self.url.add_path_segment(links[0].get('href'))
         magnet_link = links[1].get('href') # the magnet download link
         try:
