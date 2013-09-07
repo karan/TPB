@@ -4,7 +4,7 @@ from multiprocessing import Process
 from bottle import Bottle, run, template
 
 
-PRESETS_DIR = 'presets'
+PRESETS_DIR = path.join(path.dirname(__file__), 'presets')
 
 
 class TPBApp(Bottle):
