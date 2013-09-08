@@ -1,3 +1,4 @@
+from time import sleep
 from os import path
 from multiprocessing import Process
 
@@ -33,6 +34,7 @@ class TPBApp(Bottle):
     def start(self):
         self.process = Process(target=self.run)
         self.process.start()
+        sleep(1)
 
     def stop(self):
         self.process.terminate()
