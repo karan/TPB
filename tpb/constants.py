@@ -6,27 +6,30 @@ class Constants(type):
     Tree representation metaclass for class attributes. Metaclass is extended
     to all child classes too.
     """
+    def __new__(cls, clsname, bases, dct):
+        """
+        Extend metaclass to all class attributes too.
+        """
+        attrs = {}
+        for name, attr in dct.items():
+            if isinstance(attr, classobj):
+                # substitute attr with a new class with Constants as 
+                # metaclass making it possible to spread this same method
+                # to all child classes
+                attr = Constants(attr.__name__, attr.__bases__, attr.__dict__)
+            attrs[name] = attr
+        return super(Constants, cls).__new__(cls, clsname, bases, attrs)
+
     def __repr__(cls):
         """
-        Tree representation of class attributes. If some attribute is a class,
-        this class is also represented in a tree.
+        Tree representation of class attributes. Child classes are also 
+        represented.
         """
         # dump current class name
         tree = cls.__name__ + '\n'
-
         for name in dir(cls):
             if not name.startswith('_'):
                 attr = getattr(cls, name)
-                
-                # if attr is a class
-                if isinstance(attr, classobj):
-
-                    # substitute attr with a new class with Constants as 
-                    # metaclass making it possible to spread this same method
-                    # to all child classes
-                    attr = Constants(attr.__name__, attr.__bases__, attr.__dict__)
-                    setattr(cls, name, attr)
-
                 attr = '{}: {}'.format(name, repr(attr))
                 # indent all child attrs
                 tree += '\n'.join([ ' '*4 + line for line in attr.splitlines() ]) + '\n'
