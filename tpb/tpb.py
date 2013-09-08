@@ -56,6 +56,8 @@ class List(object):
     base_path = ''
 
     def __init__(self, base_url):
+        if isinstance(base_url, basestring):
+            base_url = URL(base_url)
         self.url = base_url.add_path_segment(self.base_path)
 
     def _parse_path(self, *defaults):
@@ -274,7 +276,9 @@ class TPB(object):
     """
     
     def __init__(self, base_url):
-        self.base_url = URL(base_url)
+        if isinstance(base_url, basestring):
+            base_url = URL(base_url)
+        self.base_url = base_url
 
     def search(self, query, page=0, order=7, category=0, multipage=False):
         """
