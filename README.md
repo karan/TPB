@@ -63,6 +63,17 @@ Torrent details available
 * **seeders** # number of seeders
 * **leechers** # number of leechers
         
+
+Tests
+=====
+
+To execute the tests simply run:
+
+    python tests/tests.py
+
+Every test is executed twice, once on a local test server with predownloaded original responses and, if it's possible, an other time on the original remote server.
+
+
 Contribute
 ========
 

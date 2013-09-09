@@ -1,0 +1,1798 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<title>The Pirate Bay - The galaxy's most resilient bittorrent site</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="search" type="application/opensearchdescription+xml" href="https://thepiratebay.sx/opensearch.xml" title="Search The Pirate Bay">
+	<link rel="stylesheet" type="text/css" href="all_fitxategiak/pirate6.css">
+	<style type="text/css">
+		.searchBox{
+			margin: 6px;
+			width: 300px;
+			vertical-align: middle;
+			padding: 2px;
+		        background-image:url('/static/img/icon-https.gif');
+        		background-repeat:no-repeat;
+		        background-position: right;
+		}
+
+		.detLink {
+			font-size: 1.2em;
+			font-weight: 400;
+		}
+		.detDesc {
+			color: #4e5456;
+		}
+		.detDesc a:hover {
+			color: #000099;
+			text-decoration: underline;
+		}
+		.sortby {
+			text-align: left;
+			float: left;
+		}
+		.detName {
+			padding-top: 3px;
+			padding-bottom: 2px;
+		}
+		.viewswitch {
+			font-style: normal;
+			float: right;
+			text-align: right;
+			font-weight: normal;
+		}
+	</style>
+	
+
+
+
+<script src="all_fitxategiak/tpb.js" type="text/javascript"></script>
+	<script language="javascript" type="text/javascript">if (top.location != self.location) {top.location.replace(self.location);}</script>
+<style>@media print, screen and (view-mode:minimized){#ghostery-purple-bubble{display:none}}</style></head>
+
+<body>
+
+
+	<div id="header">
+
+
+		<div class="ad">
+		 
+		</div>
+			<form method="get" id="q" action="/s/">
+			<a href="https://thepiratebay.sx/" class="img"><img src="all_fitxategiak/tpblogo_sm_ny.gif" id="TPBlogo" alt="The Pirate Bay"></a>
+			<b><a href="https://thepiratebay.sx/" title="Search Torrents">Search Torrents</a></b>&nbsp;&nbsp;|&nbsp;
+			<a href="https://thepiratebay.sx/browse" title="Browse Torrents">Browse Torrents</a>&nbsp;&nbsp;|&nbsp;
+			<a href="https://thepiratebay.sx/recent" title="Recent Torrent">Recent Torrents</a>&nbsp;&nbsp;|&nbsp;
+			<a href="https://thepiratebay.sx/tv" title="TV shows">TV shows</a>&nbsp;&nbsp;|&nbsp;
+			<a href="https://thepiratebay.sx/music" title="Music">Music</a>&nbsp;&nbsp;|&nbsp;
+			<a href="https://thepiratebay.sx/top" title="Top 100">Top 100</a>
+			<br><input title="Pirate Search" name="q" required="" placeholder="Search here..." style="background-color: rgb(255, 255, 224);" class="searchBox" type="search"><input value="Pirate Search" class="submitbutton" type="submit"><br>			<label for="audio" title="Audio"><input id="audio" name="audio" onclick="javascript:rmAll();" type="checkbox">Audio</label>
+			<label for="video" title="Video"><input id="video" name="video" onclick="javascript:rmAll();" type="checkbox">Video</label>
+			<label for="apps" title="Applications"><input id="apps" name="apps" onclick="javascript:rmAll();" type="checkbox">Applications</label>
+			<label for="games" title="Games"><input id="games" name="games" onclick="javascript:rmAll();" type="checkbox">Games</label>
+			<label for="other" title="Other"><input id="other" name="other" onclick="javascript:rmAll();" type="checkbox">Other</label>
+
+			<select id="category" name="category" onchange="javascript:setAll();">
+        	        	<option selected="selected" value="0">All</option>
+				<optgroup label="Audio">
+					<option value="101">Music</option>
+					<option value="102">Audio books</option>
+					<option value="103">Sound clips</option>
+					<option value="104">FLAC</option>
+					<option value="199">Other</option>
+				</optgroup>
+				<optgroup label="Video">
+					<option value="201">Movies</option>
+					<option value="202">Movies DVDR</option>
+					<option value="203">Music videos</option>
+					<option value="204">Movie clips</option>
+					<option value="205">TV shows</option>
+					<option value="206">Handheld</option>
+					<option value="207">HD - Movies</option>
+					<option value="208">HD - TV shows</option>
+					<option value="209">3D</option>
+					<option value="299">Other</option>
+				</optgroup>
+				<optgroup label="Applications">
+					<option value="301">Windows</option>
+					<option value="302">Mac</option>
+					<option value="303">UNIX</option>
+					<option value="304">Handheld</option>
+					<option value="305">IOS (iPad/iPhone)</option>
+					<option value="306">Android</option>
+					<option value="399">Other OS</option>
+				</optgroup>
+				<optgroup label="Games">
+					<option value="401">PC</option>
+					<option value="402">Mac</option>
+					<option value="403">PSx</option>
+					<option value="404">XBOX360</option>
+					<option value="405">Wii</option>
+					<option value="406">Handheld</option>
+					<option value="407">IOS (iPad/iPhone)</option>
+					<option value="408">Android</option>
+					<option value="499">Other</option>
+				</optgroup>
+				<optgroup label="Other">
+					<option value="601">E-books</option>
+					<option value="602">Comics</option>
+					<option value="603">Pictures</option>
+					<option value="604">Covers</option>
+					<option value="605">Physibles</option>
+					<option value="699">Other</option>
+				</optgroup>
+			</select>
+
+			<input name="page" value="0" type="hidden">
+			<input name="orderby" value="99" type="hidden">
+		</form>
+	</div><!-- // div:header -->
+
+	<h2><span>Top 100</span>&nbsp;</h2>
+<div id="content">
+			<div id="sky-right">
+				 
+			</div>
+	<div id="main-content">
+
+		 
+	<table id="searchResult">
+	<thead id="tableHead">
+		<tr class="header">
+			<th>Type</th>
+			<th><div class="sortby">Name</div><div class="viewswitch"> View: <a href="https://thepiratebay.sx/switchview.php?view=s">Single</a> / Double&nbsp;</div></th>
+			<th><abbr title="Seeders">SE</abbr></th>
+			<th><abbr title="Leechers">LE</abbr></th>
+		</tr>
+	</thead>
+	<tbody><tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8875431/World_War_Z_%282013%29_UNRATED_1080p_BrRip_x264_-_YIFY" class="detLink" title="Details for World War Z (2013) UNRATED 1080p BrRip x264 - YIFY">World War Z (2013) UNRATED 1080p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:319fc21f3db3254c5bc976a096801ab791458e95&amp;dn=World+War+Z+%282013%29+UNRATED+1080p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 49 comments." title="This torrent has 49 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-03&nbsp;04:55, Size 1.84&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">33568</td>
+		<td align="right">23621</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8874894/World_War_Z_%282013%29_UNRATED_720p_BrRip_x264_-_YIFY" class="detLink" title="Details for World War Z (2013) UNRATED 720p BrRip x264 - YIFY">World War Z (2013) UNRATED 720p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:6d70a1ff3f004f0bc8ad34836dd909294375eb80&amp;dn=World+War+Z+%282013%29+UNRATED+720p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 67 comments." title="This torrent has 67 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-03&nbsp;00:33, Size 867.86&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">25421</td>
+		<td align="right">11260</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8836801/Now_You_See_Me_%282013%29_EXTENDED_ReRip_720p_BrRip_x264_-_YIFY" class="detLink" title="Details for Now You See Me (2013) EXTENDED ReRip 720p BrRip x264 - YIFY">Now You See Me (2013) EXTENDED ReRip 720p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:00cf87d0ac9335343183f7101bb66244ff02348f&amp;dn=Now+You+See+Me+%282013%29+EXTENDED+ReRip+720p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 103 comments." title="This torrent has 103 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-22&nbsp;02:21, Size 873.89&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">24131</td>
+		<td align="right">4017</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8837417/We_re_The_Millers_2013_WEBRiP_XViD_UNiQUE" class="detLink" title="Details for We're The Millers 2013 WEBRiP XViD UNiQUE">We're The Millers 2013 WEBRiP XViD UNiQUE</a>
+</div>
+<a href="magnet:?xt=urn:btih:aef551d61057ae408a9583e1e77ad37e5ab389e4&amp;dn=We%27re+The+Millers+2013+WEBRiP+XViD+UNiQUE&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 191 comments." title="This torrent has 191 comments."><a href="https://thepiratebay.sx/user/srkfan"><img src="all_fitxategiak/trusted.png" alt="Trusted" title="Trusted" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-22&nbsp;07:51, Size 1.34&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/srkfan/" title="Browse srkfan">srkfan</a></font>
+		</td>
+		<td align="right">19843</td>
+		<td align="right">5967</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8882542/The.Bling.Ring.2013.BRRip.XviD-S4A" class="detLink" title="Details for The.Bling.Ring.2013.BRRip.XviD-S4A">The.Bling.Ring.2013.BRRip.XviD-S4A</a>
+</div>
+<a href="magnet:?xt=urn:btih:2005968bfa472e070bd67f71e864b6ee192c6278&amp;dn=The.Bling.Ring.2013.BRRip.XviD-S4A&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 25 comments." title="This torrent has 25 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/scene4all"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded Y-day&nbsp;08:00, Size 700.26&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/scene4all/" title="Browse scene4all">scene4all</a></font>
+		</td>
+		<td align="right">18618</td>
+		<td align="right">7052</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8878655/Suits_S03E08_HDTV_x264-EVOLVE_%5Beztv%5D" class="detLink" title="Details for Suits S03E08 HDTV x264-EVOLVE [eztv]">Suits S03E08 HDTV x264-EVOLVE [eztv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:4683efbb10000d5d595ce8aa5cac43ddba019425&amp;dn=Suits+S03E08+HDTV+x264-EVOLVE+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 15 comments." title="This torrent has 15 comments."><a href="https://thepiratebay.sx/user/eztv"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-04&nbsp;05:14, Size 265.88&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/eztv/" title="Browse eztv">eztv</a></font>
+		</td>
+		<td align="right">22576</td>
+		<td align="right">2167</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8886292/I.Spit.On.Your.Grave.2.2013.BRRip_XViD_juggs" class="detLink" title="Details for I.Spit.On.Your.Grave.2.2013.BRRip XViD juggs">I.Spit.On.Your.Grave.2.2013.BRRip XViD juggs</a>
+</div>
+<a href="magnet:?xt=urn:btih:07b0be7a79050b7193a706e422e2313f255ed48f&amp;dn=I.Spit.On.Your.Grave.2.2013.BRRip+XViD+juggs&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 2 comments." title="This torrent has 2 comments."><a href="https://thepiratebay.sx/user/juggs99"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded Today&nbsp;12:33, Size 706.83&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/juggs99/" title="Browse juggs99">juggs99</a></font>
+		</td>
+		<td align="right">6300</td>
+		<td align="right">16812</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8872209/Breaking_Bad_S05E12_HDTV_x264-EVOLVE%5Bettv%5D" class="detLink" title="Details for Breaking Bad S05E12 HDTV x264-EVOLVE[ettv]">Breaking Bad S05E12 HDTV x264-EVOLVE[ettv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:6d11ed3b67302cc6256a1b77b50aaf27c7c0c290&amp;dn=Breaking+Bad+S05E12+HDTV+x264-EVOLVE%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 55 comments." title="This torrent has 55 comments."><a href="https://thepiratebay.sx/user/ettv"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-02&nbsp;04:06, Size 281.62&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/ettv/" title="Browse ettv">ettv</a></font>
+		</td>
+		<td align="right">22224</td>
+		<td align="right">855</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8874207/World.War.Z.2013.Unrated.Cut.720p.BluRay.x264.DTS-WiKi_%5BPublicHD" class="detLink" title="Details for World.War.Z.2013.Unrated.Cut.720p.BluRay.x264.DTS-WiKi [PublicHD">World.War.Z.2013.Unrated.Cut.720p.BluRay.x264.DTS-WiKi [PublicHD</a>
+</div>
+<a href="magnet:?xt=urn:btih:d50e694bbf26738ce0f379ce5c01aea062ef1dc3&amp;dn=World.War.Z.2013.Unrated.Cut.720p.BluRay.x264.DTS-WiKi+%5BPublicHD&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 85 comments." title="This torrent has 85 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/BOZX"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-02&nbsp;19:06, Size 5.46&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/BOZX/" title="Browse BOZX">BOZX</a></font>
+		</td>
+		<td align="right">15258</td>
+		<td align="right">7557</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/400" title="More from this category">Games</a><br>
+				(<a href="https://thepiratebay.sx/browse/401" title="More from this category">PC</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8876534/Total.War.ROME.II-RELOADED" class="detLink" title="Details for Total.War.ROME.II-RELOADED">Total.War.ROME.II-RELOADED</a>
+</div>
+<a href="magnet:?xt=urn:btih:7b57028feaa4b9d23d0744e568c63005307d1b52&amp;dn=Total.War.ROME.II-RELOADED&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 245 comments." title="This torrent has 245 comments."><a href="https://thepiratebay.sx/user/Mr.Stifmeister"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-03&nbsp;14:58, Size 9.47&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/Mr.Stifmeister/" title="Browse Mr.Stifmeister">Mr.Stifmeister</a></font>
+		</td>
+		<td align="right">6000</td>
+		<td align="right">15728</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8886555/The_World_s_End_2013_READNFO_WEBRiP_XViD_UNiQUE" class="detLink" title="Details for The World's End 2013 READNFO WEBRiP XViD UNiQUE">The World's End 2013 READNFO WEBRiP XViD UNiQUE</a>
+</div>
+<a href="magnet:?xt=urn:btih:35ec491984dd3cccfe86be82708fdd66cb98ea76&amp;dn=The+World%27s+End+2013+READNFO+WEBRiP+XViD+UNiQUE&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 1 comments." title="This torrent has 1 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/xxxlavalxxx"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded Today&nbsp;14:13, Size 1.4&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/xxxlavalxxx/" title="Browse xxxlavalxxx">xxxlavalxxx</a></font>
+		</td>
+		<td align="right">2170</td>
+		<td align="right">18188</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8875138/World_War_Z%5B2013%5DUNRATED_CUT_BRRip_XviD-ETRG" class="detLink" title="Details for World War Z[2013]UNRATED CUT BRRip XviD-ETRG">World War Z[2013]UNRATED CUT BRRip XviD-ETRG</a>
+</div>
+<a href="magnet:?xt=urn:btih:700808d23311e4f1b2f87b6d6bb03dd1b64438db&amp;dn=World+War+Z%5B2013%5DUNRATED+CUT+BRRip+XviD-ETRG&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 47 comments." title="This torrent has 47 comments."><a href="https://thepiratebay.sx/user/SaM"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-03&nbsp;02:25, Size 707.75&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/SaM/" title="Browse SaM">SaM</a></font>
+		</td>
+		<td align="right">13547</td>
+		<td align="right">6027</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8862635/Kick-Ass.2.2013.R6.HDRip.XviD-S4A" class="detLink" title="Details for Kick-Ass.2.2013.R6.HDRip.XviD-S4A">Kick-Ass.2.2013.R6.HDRip.XviD-S4A</a>
+</div>
+<a href="magnet:?xt=urn:btih:31fe2672e754ddd7ac57543219329a95e61e0f77&amp;dn=Kick-Ass.2.2013.R6.HDRip.XviD-S4A&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 123 comments." title="This torrent has 123 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/scene4all"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-29&nbsp;22:38, Size 699.66&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/scene4all/" title="Browse scene4all">scene4all</a></font>
+		</td>
+		<td align="right">16167</td>
+		<td align="right">2406</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8851101/Star_Trek_Into_Darkness_%282013%29_1080p_BrRip_x264_-_YIFY" class="detLink" title="Details for Star Trek Into Darkness (2013) 1080p BrRip x264 - YIFY">Star Trek Into Darkness (2013) 1080p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:bf5529c12559db47fea3e57bc7ece827d188589b&amp;dn=Star+Trek+Into+Darkness+%282013%29+1080p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 57 comments." title="This torrent has 57 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-26&nbsp;14:12, Size 1.95&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">13352</td>
+		<td align="right">5211</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8802788/Pain_and_Gain_%282013%29_DVDRip_XviD-MAX" class="detLink" title="Details for Pain and Gain (2013) DVDRip XviD-MAX">Pain and Gain (2013) DVDRip XviD-MAX</a>
+</div>
+<a href="magnet:?xt=urn:btih:b6e4bb557b7f6b1961f397a2f30565591573e868&amp;dn=Pain+and+Gain+%282013%29+DVDRip+XviD-MAX&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 72 comments." title="This torrent has 72 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/extremezone"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-11&nbsp;19:48, Size 1.6&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/extremezone/" title="Browse extremezone">extremezone</a></font>
+		</td>
+		<td align="right">14245</td>
+		<td align="right">4274</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8886125/The_Kings_of_Summer_%282013%29_720p_BrRip_x264_-_YIFY" class="detLink" title="Details for The Kings of Summer (2013) 720p BrRip x264 - YIFY">The Kings of Summer (2013) 720p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:d71b76788760f12863c4c2fe16ce2b5731c3b6b3&amp;dn=The+Kings+of+Summer+%282013%29+720p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 3 comments." title="This torrent has 3 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded Today&nbsp;11:17, Size 748.34&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">7345</td>
+		<td align="right">11163</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8873456/Fast_and_Furious_6_%282013%29_1080p_EXTENDED_BrRip_x264_-_YIFY" class="detLink" title="Details for Fast and Furious 6 (2013) 1080p EXTENDED BrRip x264 - YIFY">Fast and Furious 6 (2013) 1080p EXTENDED BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:99d461c4746d590e8d91b43da17c53c7b435db2e&amp;dn=Fast+and+Furious+6+%282013%29+1080p+EXTENDED+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 15 comments." title="This torrent has 15 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-02&nbsp;14:16, Size 1.95&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">10744</td>
+		<td align="right">7592</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8831079/Iron_Man_3_%282013%29_1080p_BrRip_x264_-_YIFY" class="detLink" title="Details for Iron Man 3 (2013) 1080p BrRip x264 - YIFY">Iron Man 3 (2013) 1080p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:70b487b9e21e2869af831397851f45a00d3ea7ca&amp;dn=Iron+Man+3+%282013%29+1080p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 75 comments." title="This torrent has 75 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-20&nbsp;07:10, Size 1.95&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">12278</td>
+		<td align="right">4144</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8797774/The_Great_Gatsby_%282013%29_720p_BrRip_x264_-_YIFY" class="detLink" title="Details for The Great Gatsby (2013) 720p BrRip x264 - YIFY">The Great Gatsby (2013) 720p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:b8cfa46436986f142bc0db9605fcf955e33a9946&amp;dn=The+Great+Gatsby+%282013%29+720p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 49 comments." title="This torrent has 49 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-10&nbsp;06:24, Size 978.69&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">13526</td>
+		<td align="right">1927</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8883525/Yeh_Jawaani_Hai_Deewani_2013_Hindi_DvDRip_720p_%28MP4%29_x264...Hon3" class="detLink" title="Details for Yeh Jawaani Hai Deewani 2013 Hindi DvDRip 720p (MP4) x264...Hon3">Yeh Jawaani Hai Deewani 2013 Hindi DvDRip 720p (MP4) x264...Hon3</a>
+</div>
+<a href="magnet:?xt=urn:btih:fad62d91cd8d6f6652c949ee51428366736b3497&amp;dn=Yeh+Jawaani+Hai+Deewani+2013+Hindi+DvDRip+720p+%28MP4%29+x264...Hon3&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 3 comments." title="This torrent has 3 comments."><a href="https://thepiratebay.sx/user/honey8ee"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded Y-day&nbsp;15:00, Size 1.13&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/honey8ee/" title="Browse honey8ee">honey8ee</a></font>
+		</td>
+		<td align="right">2383</td>
+		<td align="right">12888</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8773816/The.Conjuring.2013.R6.WEBRiP.Xvid_Acesn8s_" class="detLink" title="Details for The.Conjuring.2013.R6.WEBRiP.Xvid Acesn8s ">The.Conjuring.2013.R6.WEBRiP.Xvid Acesn8s </a>
+</div>
+<a href="magnet:?xt=urn:btih:19733f06522b282e3b041c2868669572ef740559&amp;dn=The.Conjuring.2013.R6.WEBRiP.Xvid+Acesn8s+&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 186 comments." title="This torrent has 186 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/Acesn8s"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-03&nbsp;05:07, Size 705.05&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/Acesn8s/" title="Browse Acesn8s">Acesn8s</a></font>
+		</td>
+		<td align="right">13472</td>
+		<td align="right">1627</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8849636/Breaking_Bad_S05E11_HDTV_x264-ASAP%5Bettv%5D" class="detLink" title="Details for Breaking Bad S05E11 HDTV x264-ASAP[ettv]">Breaking Bad S05E11 HDTV x264-ASAP[ettv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:0c85196a55d093b36fbc2b1d7f0c5bdb17f80e8b&amp;dn=Breaking+Bad+S05E11+HDTV+x264-ASAP%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 63 comments." title="This torrent has 63 comments."><a href="https://thepiratebay.sx/user/ettv"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-26&nbsp;04:05, Size 318.09&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/ettv/" title="Browse ettv">ettv</a></font>
+		</td>
+		<td align="right">14291</td>
+		<td align="right">492</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8876060/The.East.2013.HDRip.XviD-S4A" class="detLink" title="Details for The.East.2013.HDRip.XviD-S4A">The.East.2013.HDRip.XviD-S4A</a>
+</div>
+<a href="magnet:?xt=urn:btih:5c0c51eeaf9f38f4c23ba67305845957de50257c&amp;dn=The.East.2013.HDRip.XviD-S4A&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 26 comments." title="This torrent has 26 comments."><a href="https://thepiratebay.sx/user/scene4all"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-03&nbsp;11:10, Size 699.99&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/scene4all/" title="Browse scene4all">scene4all</a></font>
+		</td>
+		<td align="right">11763</td>
+		<td align="right">2590</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8730123/Oblivion_%282013%29_1080p_BrRip_x264_-_YIFY" class="detLink" title="Details for Oblivion (2013) 1080p BrRip x264 - YIFY">Oblivion (2013) 1080p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:045e85f2ebc24a875a64fe2e9ac9b61f7aad0499&amp;dn=Oblivion+%282013%29+1080p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 160 comments." title="This torrent has 160 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 07-23&nbsp;12:14, Size 1.85&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">11773</td>
+		<td align="right">2060</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8827549/Breaking_Bad_S05E10_HDTV_x264-ASAP" class="detLink" title="Details for Breaking Bad S05E10 HDTV x264-ASAP">Breaking Bad S05E10 HDTV x264-ASAP</a>
+</div>
+<a href="magnet:?xt=urn:btih:1a30f4646c7236c3ed65c5af5b832e4a8603295d&amp;dn=Breaking+Bad+S05E10+HDTV+x264-ASAP&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 17 comments." title="This torrent has 17 comments."><a href="https://thepiratebay.sx/user/beta2008x"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-19&nbsp;04:15, Size 304.23&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/beta2008x/" title="Browse beta2008x">beta2008x</a></font>
+		</td>
+		<td align="right">13241</td>
+		<td align="right">393</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/400" title="More from this category">Games</a><br>
+				(<a href="https://thepiratebay.sx/browse/401" title="More from this category">PC</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8835063/Splinter.Cell.Blacklist-RELOADED" class="detLink" title="Details for Splinter.Cell.Blacklist-RELOADED">Splinter.Cell.Blacklist-RELOADED</a>
+</div>
+<a href="magnet:?xt=urn:btih:0eb69459a28b08400c5f05bad3e63235b9853021&amp;dn=Splinter.Cell.Blacklist-RELOADED&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 235 comments." title="This torrent has 235 comments."><a href="https://thepiratebay.sx/user/Mr.Stifmeister"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-21&nbsp;13:48, Size 20.8&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/Mr.Stifmeister/" title="Browse Mr.Stifmeister">Mr.Stifmeister</a></font>
+		</td>
+		<td align="right">2696</td>
+		<td align="right">10506</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8651941/Superman.Man.of.Steel.2013.720p.R6.LiNE.x264.AAC-DiGiTAL" class="detLink" title="Details for Superman.Man.of.Steel.2013.720p.R6.LiNE.x264.AAC-DiGiTAL">Superman.Man.of.Steel.2013.720p.R6.LiNE.x264.AAC-DiGiTAL</a>
+</div>
+<a href="magnet:?xt=urn:btih:9cf3900966073b22a8580c1152221c7edefe2186&amp;dn=Superman.Man.of.Steel.2013.720p.R6.LiNE.x264.AAC-DiGiTAL&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 182 comments." title="This torrent has 182 comments."><a href="https://thepiratebay.sx/user/Drarbg"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 07-06&nbsp;16:48, Size 2.56&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/Drarbg/" title="Browse Drarbg">Drarbg</a></font>
+		</td>
+		<td align="right">9235</td>
+		<td align="right">3410</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8841896/The_Frozen_Ground_2013_WEBRip_XViD_juggs" class="detLink" title="Details for The Frozen Ground 2013 WEBRip XViD juggs">The Frozen Ground 2013 WEBRip XViD juggs</a>
+</div>
+<a href="magnet:?xt=urn:btih:edc2f4c21955d5f11a2fb053ab08a5b921ac7d59&amp;dn=The+Frozen+Ground+2013+WEBRip+XViD+juggs&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 55 comments." title="This torrent has 55 comments."><a href="https://thepiratebay.sx/user/juggs99"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-23&nbsp;14:56, Size 705.38&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/juggs99/" title="Browse juggs99">juggs99</a></font>
+		</td>
+		<td align="right">9665</td>
+		<td align="right">2875</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8814437/Iron_Man_3_%282013%29_DVDRip_XviD-MAX" class="detLink" title="Details for Iron Man 3 (2013) DVDRip XviD-MAX">Iron Man 3 (2013) DVDRip XviD-MAX</a>
+</div>
+<a href="magnet:?xt=urn:btih:33fd261ae2f1648e5fc71d3f57f5fb66ace081c8&amp;dn=Iron+Man+3+%282013%29+DVDRip+XviD-MAX&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 106 comments." title="This torrent has 106 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/extremezone"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-15&nbsp;05:34, Size 1.37&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/extremezone/" title="Browse extremezone">extremezone</a></font>
+		</td>
+		<td align="right">9624</td>
+		<td align="right">2756</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8686400/Despicable_Me_2_2013_720p_TS_XviD_MP3_MiLLENiUM" class="detLink" title="Details for Despicable Me 2 2013 720p TS XviD MP3 MiLLENiUM">Despicable Me 2 2013 720p TS XviD MP3 MiLLENiUM</a>
+</div>
+<a href="magnet:?xt=urn:btih:160e5789d25ff53eacf9ad521d0220b5664e8cfc&amp;dn=Despicable+Me+2+2013+720p+TS+XviD+MP3+MiLLENiUM&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 111 comments." title="This torrent has 111 comments."><a href="https://thepiratebay.sx/user/xxxlavalxxx"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 07-14&nbsp;14:59, Size 1.82&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/xxxlavalxxx/" title="Browse xxxlavalxxx">xxxlavalxxx</a></font>
+		</td>
+		<td align="right">9593</td>
+		<td align="right">2767</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8831612/Star_Trek_Into_Darkness_%282013%29_DVDRip_XviD-MAX" class="detLink" title="Details for Star Trek Into Darkness (2013) DVDRip XviD-MAX">Star Trek Into Darkness (2013) DVDRip XviD-MAX</a>
+</div>
+<a href="magnet:?xt=urn:btih:ebc1dcac71846a8084ab485ee85d74fa284e850e&amp;dn=Star+Trek+Into+Darkness+%282013%29+DVDRip+XviD-MAX&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 134 comments." title="This torrent has 134 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/extremezone"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-20&nbsp;11:16, Size 1.36&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/extremezone/" title="Browse extremezone">extremezone</a></font>
+		</td>
+		<td align="right">9588</td>
+		<td align="right">2634</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8875101/Under_the_Dome_S01E11_HDTV_x264-LOL_%5Beztv%5D" class="detLink" title="Details for Under the Dome S01E11 HDTV x264-LOL [eztv]">Under the Dome S01E11 HDTV x264-LOL [eztv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:d032fc5290b6bde5a0711a2b505919a670775c6f&amp;dn=Under+the+Dome+S01E11+HDTV+x264-LOL+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 12 comments." title="This torrent has 12 comments."><a href="https://thepiratebay.sx/user/eztv"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-03&nbsp;02:06, Size 312.48&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/eztv/" title="Browse eztv">eztv</a></font>
+		</td>
+		<td align="right">11238</td>
+		<td align="right">955</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8870816/Elysium_2013__NEW_SOURCE_READNFO_CAM_XViD_UNiQUE" class="detLink" title="Details for Elysium 2013  NEW SOURCE READNFO CAM XViD UNiQUE">Elysium 2013  NEW SOURCE READNFO CAM XViD UNiQUE</a>
+</div>
+<a href="magnet:?xt=urn:btih:d2621e2fcf097b843e2c7947c277cdc61e0e9ace&amp;dn=Elysium+2013++NEW+SOURCE+READNFO+CAM+XViD+UNiQUE&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 60 comments." title="This torrent has 60 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/xxxlavalxxx"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-01&nbsp;17:55, Size 1.38&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/xxxlavalxxx/" title="Browse xxxlavalxxx">xxxlavalxxx</a></font>
+		</td>
+		<td align="right">7808</td>
+		<td align="right">4207</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8804017/Breaking_Bad_S05E09_HDTV_x264-ASAP" class="detLink" title="Details for Breaking Bad S05E09 HDTV x264-ASAP">Breaking Bad S05E09 HDTV x264-ASAP</a>
+</div>
+<a href="magnet:?xt=urn:btih:4ea50819447010fc17f0f2496964766ae2df88a1&amp;dn=Breaking+Bad+S05E09+HDTV+x264-ASAP&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 74 comments." title="This torrent has 74 comments."><a href="https://thepiratebay.sx/user/beta2008x"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-12&nbsp;04:07, Size 327.93&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/beta2008x/" title="Browse beta2008x">beta2008x</a></font>
+		</td>
+		<td align="right">11397</td>
+		<td align="right">327</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8874626/_World.War.Z.2013.Unrated.Cut.1080p.BluRay.x264.DTS-EVO_%5BPublicH" class="detLink" title="Details for  World.War.Z.2013.Unrated.Cut.1080p.BluRay.x264.DTS-EVO [PublicH"> World.War.Z.2013.Unrated.Cut.1080p.BluRay.x264.DTS-EVO [PublicH</a>
+</div>
+<a href="magnet:?xt=urn:btih:5e39abeb5ef2ea5be229896ff42e91a0cb8fbb95&amp;dn=+World.War.Z.2013.Unrated.Cut.1080p.BluRay.x264.DTS-EVO+%5BPublicH&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 28 comments." title="This torrent has 28 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/BOZX"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-02&nbsp;22:25, Size 8.91&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/BOZX/" title="Browse BOZX">BOZX</a></font>
+		</td>
+		<td align="right">4376</td>
+		<td align="right">7187</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8837149/Now_You_See_Me_%282013%29_1080p_EXTENDED_BrRip_x264_-_YIFY" class="detLink" title="Details for Now You See Me (2013) 1080p EXTENDED BrRip x264 - YIFY">Now You See Me (2013) 1080p EXTENDED BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:781ad3adbd9b81b64e4c530712ae9199b1dfbae5&amp;dn=Now+You+See+Me+%282013%29+1080p+EXTENDED+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 35 comments." title="This torrent has 35 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-22&nbsp;05:43, Size 1.86&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">9061</td>
+		<td align="right">2452</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8882069/The_East_%282013%29_720p_BrRip_x264_-_YIFY" class="detLink" title="Details for The East (2013) 720p BrRip x264 - YIFY">The East (2013) 720p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:86be020d4a6eae1d089ce38ba04f48e9338a38ce&amp;dn=The+East+%282013%29+720p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 5 comments." title="This torrent has 5 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded Y-day&nbsp;04:06, Size 863.96&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">6550</td>
+		<td align="right">4927</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/400" title="More from this category">Games</a><br>
+				(<a href="https://thepiratebay.sx/browse/401" title="More from this category">PC</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/7923223/Subway_Surfers_%282012%29__PC_" class="detLink" title="Details for Subway Surfers (2012) !PC!">Subway Surfers (2012) !PC!</a>
+</div>
+<a href="magnet:?xt=urn:btih:04b1d40d56533ceca5122e37a0424a2690bb7e72&amp;dn=Subway+Surfers+%282012%29+%21PC%21&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 363 comments." title="This torrent has 363 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/azaq318"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 12-14&nbsp;2012, Size 22.41&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/azaq318/" title="Browse azaq318">azaq318</a></font>
+		</td>
+		<td align="right">11321</td>
+		<td align="right">110</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8849613/Dexter_S08E09_HDTV_x264-ASAP%5Bettv%5D" class="detLink" title="Details for Dexter S08E09 HDTV x264-ASAP[ettv]">Dexter S08E09 HDTV x264-ASAP[ettv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:808347b419b0f8c990da05ef1253deb6239016a1&amp;dn=Dexter+S08E09+HDTV+x264-ASAP%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 18 comments." title="This torrent has 18 comments."><a href="https://thepiratebay.sx/user/ettv"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-26&nbsp;03:58, Size 350.47&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/ettv/" title="Browse ettv">ettv</a></font>
+		</td>
+		<td align="right">10659</td>
+		<td align="right">402</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8873026/Fast_and_Furious_6_%282013%29_EXTENDED_720p_BrRip_x264_-_YIFY" class="detLink" title="Details for Fast and Furious 6 (2013) EXTENDED 720p BrRip x264 - YIFY">Fast and Furious 6 (2013) EXTENDED 720p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:13d012afd8d6674ab836614a387abac89a47e129&amp;dn=Fast+and+Furious+6+%282013%29+EXTENDED+720p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 9 comments." title="This torrent has 9 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-02&nbsp;10:41, Size 922.27&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">7325</td>
+		<td align="right">3401</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8882541/Disconnect.2012.BRRip.XviD-S4A" class="detLink" title="Details for Disconnect.2012.BRRip.XviD-S4A">Disconnect.2012.BRRip.XviD-S4A</a>
+</div>
+<a href="magnet:?xt=urn:btih:33073482a4ee32b231fe6c4fea992306a279dc8c&amp;dn=Disconnect.2012.BRRip.XviD-S4A&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 6 comments." title="This torrent has 6 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/scene4all"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded Y-day&nbsp;07:59, Size 700.53&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/scene4all/" title="Browse scene4all">scene4all</a></font>
+		</td>
+		<td align="right">7584</td>
+		<td align="right">3113</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8642550/Fast_And_Furious_6%5B2013%5DWEBRip_XviD-ETRG" class="detLink" title="Details for Fast And Furious 6[2013]WEBRip XviD-ETRG">Fast And Furious 6[2013]WEBRip XviD-ETRG</a>
+</div>
+<a href="magnet:?xt=urn:btih:d37322d10af468c88597efb5e85d9fda35539ea4&amp;dn=Fast+And+Furious+6%5B2013%5DWEBRip+XviD-ETRG&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 131 comments." title="This torrent has 131 comments."><a href="https://thepiratebay.sx/user/SaM"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 07-04&nbsp;01:59, Size 706.01&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/SaM/" title="Browse SaM">SaM</a></font>
+		</td>
+		<td align="right">8873</td>
+		<td align="right">1486</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8734127/Grown_Ups_2_2013_READNFO_TS_XViD_AC3-FREE" class="detLink" title="Details for Grown Ups 2 2013 READNFO TS XViD AC3-FREE">Grown Ups 2 2013 READNFO TS XViD AC3-FREE</a>
+</div>
+<a href="magnet:?xt=urn:btih:faf2f5cf641fa2444f4ace899974ba2401c7992f&amp;dn=Grown+Ups+2+2013+READNFO+TS+XViD+AC3-FREE&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 142 comments." title="This torrent has 142 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/xxxlavalxxx"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 07-24&nbsp;07:56, Size 732.59&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/xxxlavalxxx/" title="Browse xxxlavalxxx">xxxlavalxxx</a></font>
+		</td>
+		<td align="right">9375</td>
+		<td align="right">694</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8856479/Suits_S03E07_HDTV_x264-EVOLVE_%5Beztv%5D" class="detLink" title="Details for Suits S03E07 HDTV x264-EVOLVE [eztv]">Suits S03E07 HDTV x264-EVOLVE [eztv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:931ed4dd4133ab9c31444cbd2854a93ca5f85f55&amp;dn=Suits+S03E07+HDTV+x264-EVOLVE+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 8 comments." title="This torrent has 8 comments."><a href="https://thepiratebay.sx/user/eztv"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-28&nbsp;05:24, Size 260.15&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/eztv/" title="Browse eztv">eztv</a></font>
+		</td>
+		<td align="right">9508</td>
+		<td align="right">446</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8872211/Breaking_Bad_S05E12_HDTV_x264-EVOLVE" class="detLink" title="Details for Breaking Bad S05E12 HDTV x264-EVOLVE">Breaking Bad S05E12 HDTV x264-EVOLVE</a>
+</div>
+<a href="magnet:?xt=urn:btih:bce17722f991fc998dc86ac74a85b878dd07b24a&amp;dn=Breaking+Bad+S05E12+HDTV+x264-EVOLVE&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 9 comments." title="This torrent has 9 comments."><a href="https://thepiratebay.sx/user/beta2008x"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-02&nbsp;04:07, Size 281.62&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/beta2008x/" title="Browse beta2008x">beta2008x</a></font>
+		</td>
+		<td align="right">9368</td>
+		<td align="right">334</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8882325/Futurama_S07E26_720p_HDTV_x264-EVOLVE_%5Beztv%5D" class="detLink" title="Details for Futurama S07E26 720p HDTV x264-EVOLVE [eztv]">Futurama S07E26 720p HDTV x264-EVOLVE [eztv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:f647750b368f950f86ded488ac3160e3f5e30101&amp;dn=Futurama+S07E26+720p+HDTV+x264-EVOLVE+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 16 comments." title="This torrent has 16 comments."><a href="https://thepiratebay.sx/user/eztv"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded Y-day&nbsp;06:25, Size 448.83&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/eztv/" title="Browse eztv">eztv</a></font>
+		</td>
+		<td align="right">8825</td>
+		<td align="right">727</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8827501/Dexter_S08E08_HDTV_x264-ASAP" class="detLink" title="Details for Dexter S08E08 HDTV x264-ASAP">Dexter S08E08 HDTV x264-ASAP</a>
+</div>
+<a href="magnet:?xt=urn:btih:e9f85ea69c0cf148188ab60d55d10bea340b7da8&amp;dn=Dexter+S08E08+HDTV+x264-ASAP&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 13 comments." title="This torrent has 13 comments."><a href="https://thepiratebay.sx/user/beta2008x"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-19&nbsp;03:58, Size 316.28&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/beta2008x/" title="Browse beta2008x">beta2008x</a></font>
+		</td>
+		<td align="right">8984</td>
+		<td align="right">288</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8550056/The_Hangover_Part_III_R6_2013_XViD_UNiQUE" class="detLink" title="Details for The Hangover Part III R6 2013 XViD UNiQUE">The Hangover Part III R6 2013 XViD UNiQUE</a>
+</div>
+<a href="magnet:?xt=urn:btih:6fd17fddb7b3d4c7f551f0b0f9ec8468d0ab21d3&amp;dn=The+Hangover+Part+III+R6+2013+XViD+UNiQUE&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 130 comments." title="This torrent has 130 comments."><a href="https://thepiratebay.sx/user/juggs99"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 06-07&nbsp;16:51, Size 1.38&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/juggs99/" title="Browse juggs99">juggs99</a></font>
+		</td>
+		<td align="right">7745</td>
+		<td align="right">1425</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8869232/Breakout.2013.DVDRip.XviD-3LT0N" class="detLink" title="Details for Breakout.2013.DVDRip.XviD-3LT0N">Breakout.2013.DVDRip.XviD-3LT0N</a>
+</div>
+<a href="magnet:?xt=urn:btih:3a7ebc387b0c7cc2f4b2780b21d41b9cf2303c64&amp;dn=Breakout.2013.DVDRip.XviD-3LT0N&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 16 comments." title="This torrent has 16 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/scene4all"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-01&nbsp;05:33, Size 699.18&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/scene4all/" title="Browse scene4all">scene4all</a></font>
+		</td>
+		<td align="right">7725</td>
+		<td align="right">1369</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8874457/The_Colony_%282013%29_720p_BrRip_x264_-_YIFY" class="detLink" title="Details for The Colony (2013) 720p BrRip x264 - YIFY">The Colony (2013) 720p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:9be4a73c07c9d88fcd36e2f099097f49d7773d58&amp;dn=The+Colony+%282013%29+720p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 6 comments." title="This torrent has 6 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-02&nbsp;21:19, Size 753.67&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">6615</td>
+		<td align="right">2382</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8872342/Breaking_Bad_S05E12_720p_HDTV_x264-EVOLVE_%5Beztv%5D" class="detLink" title="Details for Breaking Bad S05E12 720p HDTV x264-EVOLVE [eztv]">Breaking Bad S05E12 720p HDTV x264-EVOLVE [eztv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:fc65f1719e939a170da4e1243aecafe1d71e862e&amp;dn=Breaking+Bad+S05E12+720p+HDTV+x264-EVOLVE+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 16 comments." title="This torrent has 16 comments."><a href="https://thepiratebay.sx/user/eztv"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-02&nbsp;04:32, Size 1.07&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/eztv/" title="Browse eztv">eztv</a></font>
+		</td>
+		<td align="right">8424</td>
+		<td align="right">565</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8659823/The_Lone_Ranger_2013_TS_XViD_UNiQUE" class="detLink" title="Details for The Lone Ranger 2013 TS XViD UNiQUE">The Lone Ranger 2013 TS XViD UNiQUE</a>
+</div>
+<a href="magnet:?xt=urn:btih:ced0fb44ae89da97bd3b2122e0727a197ac9394a&amp;dn=The+Lone+Ranger+2013+TS+XViD+UNiQUE&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 160 comments." title="This torrent has 160 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/xxxlavalxxx"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 07-08&nbsp;15:50, Size 1.46&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/xxxlavalxxx/" title="Browse xxxlavalxxx">xxxlavalxxx</a></font>
+		</td>
+		<td align="right">6973</td>
+		<td align="right">1779</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8833880/Suits_S03E06_HDTV_x264-ASAP_%5Beztv%5D" class="detLink" title="Details for Suits S03E06 HDTV x264-ASAP [eztv]">Suits S03E06 HDTV x264-ASAP [eztv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:77396d72aa11c64d8b2146e440f059b217575bec&amp;dn=Suits+S03E06+HDTV+x264-ASAP+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 6 comments." title="This torrent has 6 comments."><a href="https://thepiratebay.sx/user/eztv"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-21&nbsp;05:22, Size 347.52&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/eztv/" title="Browse eztv">eztv</a></font>
+		</td>
+		<td align="right">8127</td>
+		<td align="right">465</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8871561/Homeland_S03E01_x264-HOMELAND_%5Beztv%5D" class="detLink" title="Details for Homeland S03E01 x264-HOMELAND [eztv]">Homeland S03E01 x264-HOMELAND [eztv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:e72826bcbe1544e1441ea07bb7248794156a86f4&amp;dn=Homeland+S03E01+x264-HOMELAND+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 26 comments." title="This torrent has 26 comments."><a href="https://thepiratebay.sx/user/eztv"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-01&nbsp;23:36, Size 326.46&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/eztv/" title="Browse eztv">eztv</a></font>
+		</td>
+		<td align="right">7885</td>
+		<td align="right">485</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8798572/The.Iceman.2012.BRRip_XViD_juggs" class="detLink" title="Details for The.Iceman.2012.BRRip XViD juggs">The.Iceman.2012.BRRip XViD juggs</a>
+</div>
+<a href="magnet:?xt=urn:btih:c9cd77928465e193fb20bc812b59ac1ab8c23bf1&amp;dn=The.Iceman.2012.BRRip+XViD+juggs&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 47 comments." title="This torrent has 47 comments."><a href="https://thepiratebay.sx/user/LegendET"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-10&nbsp;12:49, Size 707.21&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/LegendET/" title="Browse LegendET">LegendET</a></font>
+		</td>
+		<td align="right">7102</td>
+		<td align="right">1235</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8869752/Satyagraha_2013_Hindi_DVDSCR-Rip_Xvid-Team_IcTv" class="detLink" title="Details for Satyagraha 2013 Hindi DVDSCR-Rip Xvid-Team IcTv">Satyagraha 2013 Hindi DVDSCR-Rip Xvid-Team IcTv</a>
+</div>
+<a href="magnet:?xt=urn:btih:60ec297f379129ff35ceb7ef508a67a034ba9aa0&amp;dn=Satyagraha+2013+Hindi+DVDSCR-Rip+Xvid-Team+IcTv&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 7 comments." title="This torrent has 7 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/HeroMaster"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-01&nbsp;09:30, Size 698.59&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/HeroMaster/" title="Browse HeroMaster">HeroMaster</a></font>
+		</td>
+		<td align="right">4546</td>
+		<td align="right">3785</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8886410/Disconnect_%282012%29_1080p_BrRip_x264_-_YIFY" class="detLink" title="Details for Disconnect (2012) 1080p BrRip x264 - YIFY">Disconnect (2012) 1080p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:09d6276ef2ef4febfe7c45c544b74c19b732c430&amp;dn=Disconnect+%282012%29+1080p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a><img src="all_fitxategiak/11x11p.png">
+			<font class="detDesc">Uploaded Today&nbsp;13:00, Size 1.85&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">2631</td>
+		<td align="right">5633</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/400" title="More from this category">Games</a><br>
+				(<a href="https://thepiratebay.sx/browse/401" title="More from this category">PC</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8842584/Saints.Row.IV-RELOADED" class="detLink" title="Details for Saints.Row.IV-RELOADED">Saints.Row.IV-RELOADED</a>
+</div>
+<a href="magnet:?xt=urn:btih:e64aef8bf4d65548a85c27f129b4d62cfc1a02a3&amp;dn=Saints.Row.IV-RELOADED&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 221 comments." title="This torrent has 221 comments."><a href="https://thepiratebay.sx/user/Mr.Stifmeister"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-23&nbsp;19:13, Size 7.86&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/Mr.Stifmeister/" title="Browse Mr.Stifmeister">Mr.Stifmeister</a></font>
+		</td>
+		<td align="right">4561</td>
+		<td align="right">3592</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8831228/Star.Trek.Into.Darkness.2013.1080p.WEB-DL.H264-PublicHD" class="detLink" title="Details for Star.Trek.Into.Darkness.2013.1080p.WEB-DL.H264-PublicHD">Star.Trek.Into.Darkness.2013.1080p.WEB-DL.H264-PublicHD</a>
+</div>
+<a href="magnet:?xt=urn:btih:a859bb5fff8ed6320391fb334a9cf338bd1e90a2&amp;dn=Star.Trek.Into.Darkness.2013.1080p.WEB-DL.H264-PublicHD&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 134 comments." title="This torrent has 134 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/BOZX"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-20&nbsp;08:31, Size 4.74&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/BOZX/" title="Browse BOZX">BOZX</a></font>
+		</td>
+		<td align="right">7290</td>
+		<td align="right">843</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8874581/World.War.Z.2013_BRRip_XViD_AC3_juggs" class="detLink" title="Details for World.War.Z.2013 BRRip XViD AC3 juggs">World.War.Z.2013 BRRip XViD AC3 juggs</a>
+</div>
+<a href="magnet:?xt=urn:btih:f203c5c8bb2c53c92181bc787811564895eb6497&amp;dn=World.War.Z.2013+BRRip+XViD+AC3+juggs&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 11 comments." title="This torrent has 11 comments."><a href="https://thepiratebay.sx/user/SaM"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-02&nbsp;22:01, Size 1.37&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/SaM/" title="Browse SaM">SaM</a></font>
+		</td>
+		<td align="right">4229</td>
+		<td align="right">3756</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8698877/Monsters_University_2013_HDTS_XviD-Feel-Free" class="detLink" title="Details for Monsters University 2013 HDTS XviD-Feel-Free">Monsters University 2013 HDTS XviD-Feel-Free</a>
+</div>
+<a href="magnet:?xt=urn:btih:a41c36c7281b894ec058c9418903170fcb5b05c5&amp;dn=Monsters+University+2013+HDTS+XviD-Feel-Free&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 63 comments." title="This torrent has 63 comments."><a href="https://thepiratebay.sx/user/SaM"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 07-16&nbsp;23:20, Size 1.09&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/SaM/" title="Browse SaM">SaM</a></font>
+		</td>
+		<td align="right">6103</td>
+		<td align="right">1682</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8803376/Pain__amp__Gain_%282013%29_720p_BrRip_x264_-_YIFY" class="detLink" title="Details for Pain &amp; Gain (2013) 720p BrRip x264 - YIFY">Pain &amp; Gain (2013) 720p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:c0ea35fec88b1fa2e9e49d43970f48e481bf5242&amp;dn=Pain+%26amp%3B+Gain+%282013%29+720p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 43 comments." title="This torrent has 43 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-11&nbsp;23:35, Size 925.16&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">6916</td>
+		<td align="right">809</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8859022/R.I.P.D.2013.1080p.WEB-DL.H264-WEBiOS_%5BPublicHD%5D" class="detLink" title="Details for R.I.P.D.2013.1080p.WEB-DL.H264-WEBiOS [PublicHD]">R.I.P.D.2013.1080p.WEB-DL.H264-WEBiOS [PublicHD]</a>
+</div>
+<a href="magnet:?xt=urn:btih:2e925c0168b7f8bbf100d9648592afb2c96fda2d&amp;dn=R.I.P.D.2013.1080p.WEB-DL.H264-WEBiOS+%5BPublicHD%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 15 comments." title="This torrent has 15 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/aoloffline"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-28&nbsp;23:07, Size 3.16&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/aoloffline/" title="Browse aoloffline">aoloffline</a></font>
+		</td>
+		<td align="right">5439</td>
+		<td align="right">2227</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8886129/The_Kings_of_Summer_%282013%29_1080p_BrRip_x264_-_YIFY" class="detLink" title="Details for The Kings of Summer (2013) 1080p BrRip x264 - YIFY">The Kings of Summer (2013) 1080p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:3459de889b7334f0c56f183a12832a1e1f27f699&amp;dn=The+Kings+of+Summer+%282013%29+1080p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 2 comments." title="This torrent has 2 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded Today&nbsp;11:19, Size 1.43&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">2687</td>
+		<td align="right">4946</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8647825/G.I.Joe.Retaliation.2013.DVDRip.XviD-PTpOWeR" class="detLink" title="Details for G.I.Joe.Retaliation.2013.DVDRip.XviD-PTpOWeR">G.I.Joe.Retaliation.2013.DVDRip.XviD-PTpOWeR</a>
+</div>
+<a href="magnet:?xt=urn:btih:b6498c379713d304240d8039cefd303150655eb9&amp;dn=G.I.Joe.Retaliation.2013.DVDRip.XviD-PTpOWeR&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 154 comments." title="This torrent has 154 comments."><a href="https://thepiratebay.sx/user/juggs99"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 07-05&nbsp;14:40, Size 706.85&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/juggs99/" title="Browse juggs99">juggs99</a></font>
+		</td>
+		<td align="right">7176</td>
+		<td align="right">358</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8791956/Epic_%282013%29_720p_BrRip_x264_-_YIFY" class="detLink" title="Details for Epic (2013) 720p BrRip x264 - YIFY">Epic (2013) 720p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:462875c87ecf226bfc6e27917bd0d623c8a8db8f&amp;dn=Epic+%282013%29+720p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 28 comments." title="This torrent has 28 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-08&nbsp;14:26, Size 807.69&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">6593</td>
+		<td align="right">919</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8780372/White_House_Down_2013_R6_DVDScr_XviD_AC3-SmY" class="detLink" title="Details for White House Down 2013 R6 DVDScr XviD AC3-SmY">White House Down 2013 R6 DVDScr XviD AC3-SmY</a>
+</div>
+<a href="magnet:?xt=urn:btih:7f4a5a34380266b140e2d275a66d027be31d6d25&amp;dn=White+House+Down+2013+R6+DVDScr+XviD+AC3-SmY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 90 comments." title="This torrent has 90 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/srkfan"><img src="all_fitxategiak/trusted.png" alt="Trusted" title="Trusted" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-05&nbsp;09:57, Size 2.29&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/srkfan/" title="Browse srkfan">srkfan</a></font>
+		</td>
+		<td align="right">5731</td>
+		<td align="right">1665</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8834261/Empire_State_%282013%29_720p_BrRip_x264_-_YIFY" class="detLink" title="Details for Empire State (2013) 720p BrRip x264 - YIFY">Empire State (2013) 720p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:89acacccb819c0681a3cac385ad085f11aead994&amp;dn=Empire+State+%282013%29+720p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 17 comments." title="This torrent has 17 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-21&nbsp;07:49, Size 752.57&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">6327</td>
+		<td align="right">916</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8852479/Under_the_Dome_S01E10_HDTV_x264-LOL_%5Beztv%5D" class="detLink" title="Details for Under the Dome S01E10 HDTV x264-LOL [eztv]">Under the Dome S01E10 HDTV x264-LOL [eztv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:c162599c0874173dca238cdc80696a5d0af672b0&amp;dn=Under+the+Dome+S01E10+HDTV+x264-LOL+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 29 comments." title="This torrent has 29 comments."><a href="https://thepiratebay.sx/user/eztv"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-27&nbsp;02:08, Size 299.24&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/eztv/" title="Browse eztv">eztv</a></font>
+		</td>
+		<td align="right">6866</td>
+		<td align="right">373</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8801681/The_Heat_2013_SDTV_XViD_SAF" class="detLink" title="Details for The Heat 2013 SDTV XViD SAF">The Heat 2013 SDTV XViD SAF</a>
+</div>
+<a href="magnet:?xt=urn:btih:bee79345b5fea4b89218bc796eb1d97397eea2f0&amp;dn=The+Heat+2013+SDTV+XViD+SAF&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 36 comments." title="This torrent has 36 comments."><a href="https://thepiratebay.sx/user/srkfan"><img src="all_fitxategiak/trusted.png" alt="Trusted" title="Trusted" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-11&nbsp;10:54, Size 1.38&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/srkfan/" title="Browse srkfan">srkfan</a></font>
+		</td>
+		<td align="right">5617</td>
+		<td align="right">1605</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8884376/The_Worlds_End_2013_R6_WEBRip_x264-NoGRP" class="detLink" title="Details for The Worlds End 2013 R6 WEBRip x264-NoGRP">The Worlds End 2013 R6 WEBRip x264-NoGRP</a>
+</div>
+<a href="magnet:?xt=urn:btih:a2a433b3f0aa04298a4f14e26ec6b6e967ae42e4&amp;dn=The+Worlds+End+2013+R6+WEBRip+x264-NoGRP&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 10 comments." title="This torrent has 10 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/Horrorspoke"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded Y-day&nbsp;20:48, Size 848.36&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/Horrorspoke/" title="Browse Horrorspoke">Horrorspoke</a></font>
+		</td>
+		<td align="right">3911</td>
+		<td align="right">3205</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8850722/Star_Trek_Into_Darkness_%282013%29_720p_BrRip_x264_-_YIFY" class="detLink" title="Details for Star Trek Into Darkness (2013) 720p BrRip x264 - YIFY">Star Trek Into Darkness (2013) 720p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:a73cef306766938ea033dd373fd30337696a8e39&amp;dn=Star+Trek+Into+Darkness+%282013%29+720p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 27 comments." title="This torrent has 27 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-26&nbsp;11:08, Size 922.92&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">5308</td>
+		<td align="right">1738</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8774465/The_Wolverine_2013_CAM_NEW_SOURCE_V2_XViD-VAiN" class="detLink" title="Details for The Wolverine 2013 CAM NEW SOURCE V2 XViD-VAiN">The Wolverine 2013 CAM NEW SOURCE V2 XViD-VAiN</a>
+</div>
+<a href="magnet:?xt=urn:btih:9079fa1b560aa93c01a286fe62f22fbf6e2f7395&amp;dn=The+Wolverine+2013+CAM+NEW+SOURCE+V2+XViD-VAiN&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 128 comments." title="This torrent has 128 comments."><a href="https://thepiratebay.sx/user/srkfan"><img src="all_fitxategiak/trusted.png" alt="Trusted" title="Trusted" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-03&nbsp;08:22, Size 1.79&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/srkfan/" title="Browse srkfan">srkfan</a></font>
+		</td>
+		<td align="right">5274</td>
+		<td align="right">1691</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/400" title="More from this category">Games</a><br>
+				(<a href="https://thepiratebay.sx/browse/401" title="More from this category">PC</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8663232/Minecraft_1.6.2_Cracked_%5BFull_Installer%5D_%5BOnline%5D_%5BServer_List%5D_" class="detLink" title="Details for Minecraft 1.6.2 Cracked [Full Installer] [Online] [Server List] ">Minecraft 1.6.2 Cracked [Full Installer] [Online] [Server List] </a>
+</div>
+<a href="magnet:?xt=urn:btih:1da8b50910216ea83033c201d981930f00fdd0c6&amp;dn=Minecraft+1.6.2+Cracked+%5BFull+Installer%5D+%5BOnline%5D+%5BServer+List%5D+&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 139 comments." title="This torrent has 139 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/TeamExtreme"><img src="all_fitxategiak/trusted.png" alt="Trusted" title="Trusted" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 07-09&nbsp;07:02, Size 60.41&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/TeamExtreme/" title="Browse TeamExtreme">TeamExtreme</a></font>
+		</td>
+		<td align="right">6826</td>
+		<td align="right">109</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8885353/The_Bling_Ring_%282013%29_720p_BrRip_x264_-_YIFY" class="detLink" title="Details for The Bling Ring (2013) 720p BrRip x264 - YIFY">The Bling Ring (2013) 720p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:88e3072d47521ccee226fd20ae3aa69aaabafc99&amp;dn=The+Bling+Ring+%282013%29+720p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 1 comments." title="This torrent has 1 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded Today&nbsp;04:44, Size 702.06&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">2421</td>
+		<td align="right">4480</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8633645/World.War.Z.2013.CAM.XviD-THC" class="detLink" title="Details for World.War.Z.2013.CAM.XviD-THC">World.War.Z.2013.CAM.XviD-THC</a>
+</div>
+<a href="magnet:?xt=urn:btih:f0f2af953b28bb567e9d64185f48e99817a09f3e&amp;dn=World.War.Z.2013.CAM.XviD-THC&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 204 comments." title="This torrent has 204 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/scene4all"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 07-01&nbsp;17:02, Size 1.51&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/scene4all/" title="Browse scene4all">scene4all</a></font>
+		</td>
+		<td align="right">6167</td>
+		<td align="right">634</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8751133/This.Is.The.End.2013.TS.XViD-26k" class="detLink" title="Details for This.Is.The.End.2013.TS.XViD-26k">This.Is.The.End.2013.TS.XViD-26k</a>
+</div>
+<a href="magnet:?xt=urn:btih:09d7ce7a401ef3d9abf498b64fddd96e2236e581&amp;dn=This.Is.The.End.2013.TS.XViD-26k&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 65 comments." title="This torrent has 65 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/xxxlavalxxx"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 07-28&nbsp;17:57, Size 1.37&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/xxxlavalxxx/" title="Browse xxxlavalxxx">xxxlavalxxx</a></font>
+		</td>
+		<td align="right">5860</td>
+		<td align="right">849</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/208" title="More from this category">HD - TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8849969/Breaking_Bad_S05E11_720p_HDTV_x264-IMMERSE_%5Beztv%5D" class="detLink" title="Details for Breaking Bad S05E11 720p HDTV x264-IMMERSE [eztv]">Breaking Bad S05E11 720p HDTV x264-IMMERSE [eztv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:ecfc6dfeb8d39eac6cae32337b11757fb9346af5&amp;dn=Breaking+Bad+S05E11+720p+HDTV+x264-IMMERSE+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 17 comments." title="This torrent has 17 comments."><a href="https://thepiratebay.sx/user/eztv"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-26&nbsp;06:11, Size 1.14&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/eztv/" title="Browse eztv">eztv</a></font>
+		</td>
+		<td align="right">6402</td>
+		<td align="right">300</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8837913/Now.You.See.Me.2013_BRRip_XViD_juggs" class="detLink" title="Details for Now.You.See.Me.2013 BRRip XViD juggs">Now.You.See.Me.2013 BRRip XViD juggs</a>
+</div>
+<a href="magnet:?xt=urn:btih:5a63d0df301e3bbbcb6f1f0a25cd55440838ae97&amp;dn=Now.You.See.Me.2013+BRRip+XViD+juggs&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 25 comments." title="This torrent has 25 comments."><a href="https://thepiratebay.sx/user/juggs99"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-22&nbsp;11:59, Size 702.34&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/juggs99/" title="Browse juggs99">juggs99</a></font>
+		</td>
+		<td align="right">5174</td>
+		<td align="right">1435</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8886384/Disconnect_%282012%29_720p_BrRip_x264_-_YIFY" class="detLink" title="Details for Disconnect (2012) 720p BrRip x264 - YIFY">Disconnect (2012) 720p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:f6f84c80ae7f898d6d34bd9c3caaee2c77953dd6&amp;dn=Disconnect+%282012%29+720p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a><img src="all_fitxategiak/11x11p.png">
+			<font class="detDesc">Uploaded Today&nbsp;12:57, Size 867.03&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">1983</td>
+		<td align="right">4542</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8800128/Chennai_Express_2013_Hindi_HD_DvDScr_XViD_AC5.1_xRG" class="detLink" title="Details for Chennai Express 2013 Hindi HD DvDScr XViD AC5.1 xRG">Chennai Express 2013 Hindi HD DvDScr XViD AC5.1 xRG</a>
+</div>
+<a href="magnet:?xt=urn:btih:30e7c5e5dd0ab1f5dbcaf6cef15320e670ef982a&amp;dn=Chennai+Express+2013+Hindi+HD+DvDScr+XViD+AC5.1+xRG&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 24 comments." title="This torrent has 24 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/Team_xRG"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-10&nbsp;23:40, Size 905.76&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/Team_xRG/" title="Browse Team_xRG">Team_xRG</a></font>
+		</td>
+		<td align="right">4467</td>
+		<td align="right">2044</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/400" title="More from this category">Games</a><br>
+				(<a href="https://thepiratebay.sx/browse/401" title="More from this category">PC</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/5022393/The_Sims_3_-_Razor1911_Final_MAXSPEED" class="detLink" title="Details for The Sims 3 - Razor1911 Final MAXSPEED">The Sims 3 - Razor1911 Final MAXSPEED</a>
+</div>
+<a href="magnet:?xt=urn:btih:3c64a0ddf992e106abf2af938bceb76488d2583e&amp;dn=The+Sims+3+-+Razor1911+Final+MAXSPEED&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 2674 comments." title="This torrent has 2674 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/extremezone"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 07-25&nbsp;2009, Size 5.58&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/extremezone/" title="Browse extremezone">extremezone</a></font>
+		</td>
+		<td align="right">5802</td>
+		<td align="right">681</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8882634/The_East_%282013%29_1080p_BrRip_x264_-_YIFY" class="detLink" title="Details for The East (2013) 1080p BrRip x264 - YIFY">The East (2013) 1080p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:c2167fd02c911a1018c69601e1effe2d162af564&amp;dn=The+East+%282013%29+1080p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a><img src="all_fitxategiak/11x11p.png">
+			<font class="detDesc">Uploaded Y-day&nbsp;08:34, Size 1.84&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">3551</td>
+		<td align="right">2909</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8885247/Burn_Notice_S07E12_HDTV_x264-EVOLVE%5Bettv%5D" class="detLink" title="Details for Burn Notice S07E12 HDTV x264-EVOLVE[ettv]">Burn Notice S07E12 HDTV x264-EVOLVE[ettv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:06335aebfe1df895a6be2480f24ea08514cf59b4&amp;dn=Burn+Notice+S07E12+HDTV+x264-EVOLVE%5Bettv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 2 comments." title="This torrent has 2 comments."><a href="https://thepiratebay.sx/user/ettv"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded Today&nbsp;04:05, Size 352.04&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/ettv/" title="Browse ettv">ettv</a></font>
+		</td>
+		<td align="right">5209</td>
+		<td align="right">1207</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8618647/Olympus.Has.Fallen.2013.BRRip.XviD-S4A" class="detLink" title="Details for Olympus.Has.Fallen.2013.BRRip.XviD-S4A">Olympus.Has.Fallen.2013.BRRip.XviD-S4A</a>
+</div>
+<a href="magnet:?xt=urn:btih:f655055a0dc969f147a351d2566bd305bd7f3b15&amp;dn=Olympus.Has.Fallen.2013.BRRip.XviD-S4A&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 193 comments." title="This torrent has 193 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/scene4all"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 06-27&nbsp;06:31, Size 700.05&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/scene4all/" title="Browse scene4all">scene4all</a></font>
+		</td>
+		<td align="right">5714</td>
+		<td align="right">672</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/400" title="More from this category">Games</a><br>
+				(<a href="https://thepiratebay.sx/browse/401" title="More from this category">PC</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8855439/Castlevania_Lords_of_Shadow_Ultimate_Edition-FLT" class="detLink" title="Details for Castlevania_Lords_of_Shadow_Ultimate_Edition-FLT">Castlevania_Lords_of_Shadow_Ultimate_Edition-FLT</a>
+</div>
+<a href="magnet:?xt=urn:btih:de7622e4a6edc94a1a8aa0dbf95892e81267fc9b&amp;dn=Castlevania_Lords_of_Shadow_Ultimate_Edition-FLT&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 73 comments." title="This torrent has 73 comments."><a href="https://thepiratebay.sx/user/Mr.Stifmeister"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-27&nbsp;21:36, Size 14.96&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/Mr.Stifmeister/" title="Browse Mr.Stifmeister">Mr.Stifmeister</a></font>
+		</td>
+		<td align="right">1389</td>
+		<td align="right">4986</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8733399/Mud_%282012%29_720p_BrRip_x264_-_YIFY" class="detLink" title="Details for Mud (2012) 720p BrRip x264 - YIFY">Mud (2012) 720p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:bcc2101e61b1e300135cc0c0737052ca4592ddb5&amp;dn=Mud+%282012%29+720p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 38 comments." title="This torrent has 38 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 07-24&nbsp;05:10, Size 926.29&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">5756</td>
+		<td align="right">550</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8885355/The_Bling_Ring_%282013%29_1080p_BrRip_x264_-_YIFY" class="detLink" title="Details for The Bling Ring (2013) 1080p BrRip x264 - YIFY">The Bling Ring (2013) 1080p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:e4f710ac11b639d86ca1a8490c459f0ba45b8425&amp;dn=The+Bling+Ring+%282013%29+1080p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a><img src="all_fitxategiak/11x11p.png">
+			<font class="detDesc">Uploaded Today&nbsp;04:46, Size 1.24&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">2691</td>
+		<td align="right">3527</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/207" title="More from this category">HD - Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8876470/The_Colony_%282013%29_1080p_BrRip_x264_-_YIFY" class="detLink" title="Details for The Colony (2013) 1080p BrRip x264 - YIFY">The Colony (2013) 1080p BrRip x264 - YIFY</a>
+</div>
+<a href="magnet:?xt=urn:btih:57801dcdd3c51883f2077fc5f1856bdb5acbdbaf&amp;dn=The+Colony+%282013%29+1080p+BrRip+x264+-+YIFY&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 1 comments." title="This torrent has 1 comments."><a href="https://thepiratebay.sx/user/YIFY"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-03&nbsp;14:33, Size 1.44&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/YIFY/" title="Browse YIFY">YIFY</a></font>
+		</td>
+		<td align="right">3779</td>
+		<td align="right">2264</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8491407/Iron.Man.3.2013.R6.HDScr.LINE.NoSUBS.NoBLURS.XViD.AC3.HQ.Hive-CM" class="detLink" title="Details for Iron.Man.3.2013.R6.HDScr.LINE.NoSUBS.NoBLURS.XViD.AC3.HQ.Hive-CM">Iron.Man.3.2013.R6.HDScr.LINE.NoSUBS.NoBLURS.XViD.AC3.HQ.Hive-CM</a>
+</div>
+<a href="magnet:?xt=urn:btih:7e0e64a356e32bdab34f96d5a03e32521fe1fcdb&amp;dn=Iron.Man.3.2013.R6.HDScr.LINE.NoSUBS.NoBLURS.XViD.AC3.HQ.Hive-CM&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 177 comments." title="This torrent has 177 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/scene4all"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 05-20&nbsp;00:52, Size 1.81&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/scene4all/" title="Browse scene4all">scene4all</a></font>
+		</td>
+		<td align="right">5268</td>
+		<td align="right">745</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8534627/Game_of_Thrones_S03E09_HDTV_x264-EVOLVE_%5Beztv%5D" class="detLink" title="Details for Game of Thrones S03E09 HDTV x264-EVOLVE [eztv]">Game of Thrones S03E09 HDTV x264-EVOLVE [eztv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:e756b6ed7f1f647db2ea7e153e2fdc6226218a1f&amp;dn=Game+of+Thrones+S03E09+HDTV+x264-EVOLVE+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 136 comments." title="This torrent has 136 comments."><a href="https://thepiratebay.sx/user/eztv"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 06-03&nbsp;04:36, Size 329.84&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/eztv/" title="Browse eztv">eztv</a></font>
+		</td>
+		<td align="right">5939</td>
+		<td align="right">65</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/400" title="More from this category">Games</a><br>
+				(<a href="https://thepiratebay.sx/browse/401" title="More from this category">PC</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/7650260/Pro_Evolution_Soccer_2013_Proper-RELOADED" class="detLink" title="Details for Pro Evolution Soccer 2013 Proper-RELOADED">Pro Evolution Soccer 2013 Proper-RELOADED</a>
+</div>
+<a href="magnet:?xt=urn:btih:5e5ebecc3dd2149bb228d669d6e76639cfbf1291&amp;dn=Pro+Evolution+Soccer+2013+Proper-RELOADED&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 555 comments." title="This torrent has 555 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/extremezone"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 09-18&nbsp;2012, Size 5.78&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/extremezone/" title="Browse extremezone">extremezone</a></font>
+		</td>
+		<td align="right">5201</td>
+		<td align="right">795</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8849622/Dexter_S08E09_HDTV_x264-ASAP" class="detLink" title="Details for Dexter S08E09 HDTV x264-ASAP">Dexter S08E09 HDTV x264-ASAP</a>
+</div>
+<a href="magnet:?xt=urn:btih:96654bfcd310c78b06a3c4d9ae1950a3da492a53&amp;dn=Dexter+S08E09+HDTV+x264-ASAP&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 5 comments." title="This torrent has 5 comments."><a href="https://thepiratebay.sx/user/beta2008x"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-26&nbsp;04:01, Size 350.47&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/beta2008x/" title="Browse beta2008x">beta2008x</a></font>
+		</td>
+		<td align="right">5823</td>
+		<td align="right">170</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/100" title="More from this category">Audio</a><br>
+				(<a href="https://thepiratebay.sx/browse/101" title="More from this category">Music</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8643910/Jay-Z_-_Magna_Carta_Holy_Grail_%5B320kbps%5D-2013" class="detLink" title="Details for Jay-Z - Magna Carta Holy Grail [320kbps]-2013">Jay-Z - Magna Carta Holy Grail [320kbps]-2013</a>
+</div>
+<a href="magnet:?xt=urn:btih:5baa50233d6ad6a46d02b01d8b0e01626e6a9a17&amp;dn=Jay-Z+-+Magna+Carta+Holy+Grail+%5B320kbps%5D-2013&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 59 comments." title="This torrent has 59 comments."><a href="https://thepiratebay.sx/user/.SceNe."><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 07-04&nbsp;12:56, Size 136.8&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/.SceNe./" title="Browse .SceNe.">.SceNe.</a></font>
+		</td>
+		<td align="right">5571</td>
+		<td align="right">410</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8731539/After_Earth_2013_R6_x264_AAC-JYK" class="detLink" title="Details for After Earth 2013 R6 x264 AAC-JYK">After Earth 2013 R6 x264 AAC-JYK</a>
+</div>
+<a href="magnet:?xt=urn:btih:2d3dd74d3954a5934132cf6e373352a7364e2d65&amp;dn=After+Earth+2013+R6+x264+AAC-JYK&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 102 comments." title="This torrent has 102 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/condors369"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 07-23&nbsp;21:25, Size 1.39&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/condors369/" title="Browse condors369">condors369</a></font>
+		</td>
+		<td align="right">5028</td>
+		<td align="right">945</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8841042/R_I_P_D_2013_WEBRiP_XViD_UNiQUE" class="detLink" title="Details for R I P D 2013 WEBRiP XViD UNiQUE">R I P D 2013 WEBRiP XViD UNiQUE</a>
+</div>
+<a href="magnet:?xt=urn:btih:041ce02a985a4eddeaf3f0ffb0e5066b63f40e1d&amp;dn=R+I+P+D+2013+WEBRiP+XViD+UNiQUE&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 36 comments." title="This torrent has 36 comments."><a href="https://thepiratebay.sx/user/srkfan"><img src="all_fitxategiak/trusted.png" alt="Trusted" title="Trusted" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-23&nbsp;08:01, Size 1.34&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/srkfan/" title="Browse srkfan">srkfan</a></font>
+		</td>
+		<td align="right">4854</td>
+		<td align="right">1030</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8689919/Pacific_Rim_2013_CAM_XviD-THC" class="detLink" title="Details for Pacific Rim 2013 CAM XviD-THC">Pacific Rim 2013 CAM XviD-THC</a>
+</div>
+<a href="magnet:?xt=urn:btih:b21fe87bdbb3dc3ddccaf4a212b427fa0bf8b88d&amp;dn=Pacific+Rim+2013+CAM+XviD-THC&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 189 comments." title="This torrent has 189 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/.BONE."><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 07-15&nbsp;05:08, Size 1.25&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/.BONE./" title="Browse .BONE.">.BONE.</a></font>
+		</td>
+		<td align="right">4742</td>
+		<td align="right">1113</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/300" title="More from this category">Applications</a><br>
+				(<a href="https://thepiratebay.sx/browse/301" title="More from this category">Windows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/7225112/ADOBE_PHOTOSHOP_CS6_EXTENDED_EDITION_%5Bthethingy%5D_" class="detLink" title="Details for ADOBE PHOTOSHOP CS6 EXTENDED EDITION [thethingy] ">ADOBE PHOTOSHOP CS6 EXTENDED EDITION [thethingy] </a>
+</div>
+<a href="magnet:?xt=urn:btih:100021e3b4fc216916f571b6d25abe282c4fa41e&amp;dn=ADOBE+PHOTOSHOP+CS6+EXTENDED+EDITION+%5Bthethingy%5D+&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 1327 comments." title="This torrent has 1327 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/thethingy"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 04-28&nbsp;2012, Size 1.3&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/thethingy/" title="Browse thethingy">thethingy</a></font>
+		</td>
+		<td align="right">5548</td>
+		<td align="right">243</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/201" title="More from this category">Movies</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8648176/The_Croods_2013_HDRiP_XViD-UNiQUE" class="detLink" title="Details for The Croods 2013 HDRiP XViD-UNiQUE">The Croods 2013 HDRiP XViD-UNiQUE</a>
+</div>
+<a href="magnet:?xt=urn:btih:cd5d52a989aeaadb591ac21912f9b723958aa20a&amp;dn=The+Croods+2013+HDRiP+XViD-UNiQUE&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 42 comments." title="This torrent has 42 comments."><img src="all_fitxategiak/icon_image.gif" alt="This torrent has a cover image" title="This torrent has a cover image"><a href="https://thepiratebay.sx/user/extremezone"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 07-05&nbsp;16:04, Size 1.4&nbsp;GiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/extremezone/" title="Browse extremezone">extremezone</a></font>
+		</td>
+		<td align="right">4482</td>
+		<td align="right">1238</td>
+	</tr>
+	<tr>
+		<td class="vertTh">
+			<center>
+				<a href="https://thepiratebay.sx/browse/200" title="More from this category">Video</a><br>
+				(<a href="https://thepiratebay.sx/browse/205" title="More from this category">TV shows</a>)
+			</center>
+		</td>
+		<td>
+<div class="detName">			<a href="https://thepiratebay.sx/torrent/8827625/True_Blood_S06E10_HDTV_x264-KILLERS_%5Beztv%5D" class="detLink" title="Details for True Blood S06E10 HDTV x264-KILLERS [eztv]">True Blood S06E10 HDTV x264-KILLERS [eztv]</a>
+</div>
+<a href="magnet:?xt=urn:btih:d6f6a2daaf9e9d4898c88f3d4f50b51a3047165b&amp;dn=True+Blood+S06E10+HDTV+x264-KILLERS+%5Beztv%5D&amp;tr=udp%3A%2F%2Ftracker.openbittorrent.com%3A80&amp;tr=udp%3A%2F%2Ftracker.publicbt.com%3A80&amp;tr=udp%3A%2F%2Ftracker.istole.it%3A6969&amp;tr=udp%3A%2F%2Ftracker.ccc.de%3A80&amp;tr=udp%3A%2F%2Fopen.demonii.com%3A1337" title="Download this torrent using magnet"><img src="all_fitxategiak/icon-magnet.gif" alt="Magnet link"></a><img src="all_fitxategiak/icon_comment.gif" alt="This torrent has 13 comments." title="This torrent has 13 comments."><a href="https://thepiratebay.sx/user/eztv"><img src="all_fitxategiak/vip.gif" alt="VIP" title="VIP" style="width: 11px;" border="0"></a>
+			<font class="detDesc">Uploaded 08-19&nbsp;04:27, Size 506.98&nbsp;MiB, ULed by <a class="detDesc" href="https://thepiratebay.sx/user/eztv/" title="Browse eztv">eztv</a></font>
+		</td>
+		<td align="right">5543</td>
+		<td align="right">176</td>
+	</tr>
+
+</tbody></table>
+</div>
+
+			<div class="ads" id="sky-banner">
+				 
+			</div>
+	</div><!-- //div:content -->
+
+	<div id="foot" style="text-align:center;margin-top:1em;">
+
+			 
+				<p>
+			<a href="https://thepiratebay.sx/login" title="Login">Login</a> | 
+			<a href="https://thepiratebay.sx/register" title="Register">Register</a> | 
+			<a href="https://thepiratebay.sx/language" title="Select language">Language / Select language</a> |
+			<a href="https://thepiratebay.sx/about" title="About">About</a> |
+			<a href="https://thepiratebay.sx/legal" title="Legal threats">Legal threats</a> |
+			<a href="https://thepiratebay.sx/blog" title="Blog">Blog</a>
+			<br>
+			<a href="https://thepiratebay.sx/contact" title="Contact us">Contact us</a> |
+			<a href="https://thepiratebay.sx/policy" title="Usage policy">Usage policy</a> |
+			<a href="https://thepiratebay.sx/downloads" title="Downloads">Downloads</a> |
+			<a href="http://www.promobay.org/" title="Promo" target="_NEW">Promo</a> |
+			<a href="https://thepiratebay.sx/doodles" title="Doodles">Doodles</a> |
+			<a href="https://thepiratebay.sx/tags" title="Tag Cloud">Tag Cloud</a> |
+			<a href="http://suprbay.org/" title="Forum" target="_blank">Forum</a> |
+			<a href="http://piratebrowser.com/" title="PirateBrowser" target="_blank"><strong>PirateBrowser</strong></a>
+			<br>
+			<a href="http://bayfiles.net/" title="Bayfiles" target="_blank">Bayfiles</a> |
+			<a href="http://bayimg.com/" title="BayImg" target="_blank">BayImg</a> |
+			<a href="http://pastebay.net/" title="PasteBay" target="_blank">PasteBay</a> |
+			<a href="http://uberproxy.net/" title="Proxy" target="_blank">Proxy</a> |
+			<a href="https://twitter.com/tpbdotorg" title="Twitter" target="_blank">Follow TPB on Twitter</a> |
+			<a href="https://www.facebook.com/ThePirateBayWarMachine" title="Facebook" target="_blank">Follow TPB on Facebook</a>
+			<br>
+		</p>
+
+<p id="footer" style="color:#666; font-size:0.9em; ">
+        6.372.102 registered users. Last updated 21:20:05.<br>
+        46.793.929 peers (36.880.091 seeders + 9.913.838 leechers) in 5.414.904 torrents.<br>
+</p>
+<br><a href="http://bitcoin.org/" target="_NEW">BitCoin</a>: <b><a href="bitcoin:1KeBs4HBQzkdHC2ou3gpyGHqcL7aKzwTve">1KeBs4HBQzkdHC2ou3gpyGHqcL7aKzwTve</a></b><br><a href="http://litecoin.org/" target="_NEW">LiteCoin</a>: <a href="litecoin:LiYp3Dg11N5BgV8qKW42ubSZXFmjDByjoV">LiYp3Dg11N5BgV8qKW42ubSZXFmjDByjoV</a><br><br><br><img src="all_fitxategiak/btcltc.png"><br><br>		<br><img src="all_fitxategiak/icon-https.gif" style="border: medium none;" alt="SSL">You are using SSL
+
+		<div id="fbanners">
+			<a href="https://thepiratebay.sx/rss" class="rss" title="RSS"><img src="all_fitxategiak/rss_small.gif" alt="RSS"></a>
+		</div><!-- // div:fbanners -->
+	</div><!-- // div:foot -->
+<script type="text/javascript" src="all_fitxategiak/popw130826.js"></script><!-- abc: ES 0 -->
+
+<div style="display: block; opacity: 0.9; position: fixed; z-index: 2147483647; bottom: 15px; right: 20px; left: auto; background: none repeat scroll 0% 0% rgb(51, 0, 51); padding: 7px 10px; color: rgb(255, 255, 255); border: 2px solid rgb(255, 255, 255); text-decoration: none ! important; text-align: left; font: 13px Arial,Helvetica; border-radius: 5px 5px 5px 5px; box-shadow: 0px 0px 20px rgb(0, 0, 0); text-transform: none; cursor: pointer; width: auto; height: auto;" id="ghostery-purple-bubble"><span style="font-size: 0px;">Ghostery has found the following on this page:</span><span style="background-color: rgb(51, 0, 51); display: inline; color: rgb(119, 119, 119); text-decoration: line-through;">Unknown Advertisers</span><br style="display: block ! important;"></div></body></html>
