@@ -1,3 +1,8 @@
+### v1.0.0
+
+* Add: Development tests
+* Fix: `NoneType` on Recent torrents
+
 ### v0.0.5
 
 * Add: Ordering/sorting
