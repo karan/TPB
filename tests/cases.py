@@ -1,9 +1,14 @@
 import unittest
 from functools import wraps
-from urllib2 import urlopen, URLError
+import sys
 
-from server import TPBApp
-
+if sys.version_info >= (3, 0):
+    from urllib.request import urlopen
+    from urllib.error import URLError
+    from tests.server import TPBApp
+else:
+    from urllib2 import urlopen, URLError
+    from server import TPBApp
 
 def remote_func(func):
     """
@@ -67,3 +72,16 @@ class RemoteTestCase(unittest.TestCase):
             return False
         else:
             return True
+
+    def _assertCountEqual(self, first, second):
+        """
+        Compatibility function to test if the first sequence contains the
+        same elements as the second one.
+
+        This was done in order to have backwards compatibility between python
+        2.x and 3.x
+        """
+        if sys.version_info >= (3, 0):
+            self.assertCountEqual(first, second)
+        else:
+            self.assertItemsEqual(first, second)

@@ -11,7 +11,7 @@ setup(
     install_requires=['BeautifulSoup4', 'purl'],
     author='Karan Goel',
     author_email='karan@goel.im',
-    packages=['tpb',],
+    packages=['tpb','tests'],
     url='https://github.com/thekarangoel/TPB/',
     license='GNU General Public License',
     description='Unofficial Python API for ThePirateBay.',

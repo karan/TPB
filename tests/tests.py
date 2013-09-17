@@ -1,11 +1,15 @@
 import unittest
-import urllib
+import sys
 
 from bs4 import BeautifulSoup
-
-from cases import RemoteTestCase
 from tpb.tpb import List, Search
 
+if sys.version_info >= (3, 0):
+    from urllib.request import urlopen
+    from tests.cases import RemoteTestCase
+else:
+    from urllib2 import urlopen
+    from cases import RemoteTestCase
 
 class ConstantsTestCase(RemoteTestCase):
     pass
@@ -27,18 +31,18 @@ class PathSegmentsTestCase(RemoteTestCase):
         result = list(self.torrents.url.path_segments())
         changes = [None]*len(result)
         self.torrents._parse_path(*changes)
-        self.assertItemsEqual(self.torrents.url.path_segments(), result)
+        self._assertCountEqual(self.torrents.url.path_segments(), result)
         for change in range(len(changes)):
             changes[change] = 'changed'
             result[change] = 'changed'
             self.torrents._parse_path(*changes)
-            self.assertItemsEqual(self.torrents.url.path_segments(), result)
+            self._assertCountEqual(self.torrents.url.path_segments(), result)
 
 
 class ParsingTestCase(RemoteTestCase):
     def test_torrent_rows(self):
         torrents = Search(self.url, 'breaking bad')
-        request = urllib.urlopen(torrents.url.as_string())
+        request = urlopen(torrents.url.as_string())
         content = request.read()
         page = BeautifulSoup(content)
         rows = torrents._get_torrent_rows(page)
