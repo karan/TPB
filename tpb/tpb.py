@@ -152,9 +152,11 @@ class Paginated(List):
         are automatically chained.
         """
         if self._multipage:
-            while True: #TODO: raise StopIteration on last page
+            while True:
                 for item in super(Paginated, self).items():
                     yield item
+                else:
+                    raise StopIteration()
                 self.next()
         else:
             for item in super(Paginated, self).items():
