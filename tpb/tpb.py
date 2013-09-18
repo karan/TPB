@@ -29,6 +29,7 @@ from __future__ import unicode_literals
 import os
 import re
 import urllib
+from itertools import chain
 from functools import wraps
 
 from purl import URL
@@ -153,10 +154,13 @@ class Paginated(List):
         """
         if self._multipage:
             while True:
-                for item in super(Paginated, self).items():
-                    yield item
-                else:
+                items = super(Paginated, self).items()
+                first = next(items, None)
+                if first is None:
                     raise StopIteration()
+                else:
+                    for item in chain((first,), items):
+                        yield item
                 self.next()
         else:
             for item in super(Paginated, self).items():
