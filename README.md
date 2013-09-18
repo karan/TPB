@@ -67,6 +67,10 @@ Torrent details available
 Tests
 =====
 
+You need `bottle` installed to run the tests.
+    
+    pip install bottle
+
 To execute the tests simply run:
 
     python tests/tests.py
