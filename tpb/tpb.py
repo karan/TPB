@@ -96,7 +96,7 @@ class List(object):
         a single torrent.
         """
         table = page.find('table') # the table with all torrent listing
-        return table.findAll('tr')[1:-1] # get all rows but header, pagination
+        return table.findAll('tr')[1:31] # get all rows but header, pagination
     
     def _build_torrent(self, row):
         """
