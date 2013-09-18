@@ -29,7 +29,6 @@ from __future__ import unicode_literals
 import os
 import re
 import urllib
-from itertools import chain
 from functools import wraps
 
 from purl import URL
@@ -159,7 +158,8 @@ class Paginated(List):
                 if first is None:
                     raise StopIteration()
                 else:
-                    for item in chain((first,), items):
+                    yield first
+                    for item in items:
                         yield item
                 self.next()
         else:
@@ -181,6 +181,14 @@ class Paginated(List):
         Request the next page.
         """
         self.page(self.page() + 1)
+        return self
+
+    def previous(self):
+        """
+        Request previous page.
+        """
+        self.page(self.page() - 1)
+        return self
 
 
 class Search(Paginated):
