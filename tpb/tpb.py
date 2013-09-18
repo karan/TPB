@@ -260,7 +260,7 @@ class Top(List):
         self.path(category)
 
     def path(self, category=None):
-        self._parse_path(category)
+        return self._parse_path(category)
 
     @self_if_not_none
     def category(self, category=None):
@@ -268,7 +268,7 @@ class Top(List):
         If category is given, modify category segment of url with it, return 
         actual category segment otherwise.
         """
-        return self.path(category=category)[0]
+        return int(self.path(category=category)[0])
 
 
 class TPB(object):
