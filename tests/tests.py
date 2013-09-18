@@ -1,6 +1,7 @@
 import sys
 import unittest
 import urllib
+import itertools
 
 from bs4 import BeautifulSoup
 
@@ -37,6 +38,10 @@ class PathSegmentsTestCase(RemoteTestCase):
 
 
 class ParsingTestCase(RemoteTestCase):
+    def test_items(self):
+        torrents = Search(self.url, 'breaking bad')
+        self.assertEqual(len(list(torrents.items())), 30)
+
     def test_torrent_rows(self):
         torrents = Search(self.url, 'breaking bad')
         request = urllib.urlopen(torrents.url.as_string())
@@ -50,7 +55,16 @@ class ParsingTestCase(RemoteTestCase):
 
 
 class PaginationTestCase(RemoteTestCase):
-    pass
+    def test_page_items(self):
+        torrents = Search(self.url, 'breaking bad')
+        self.assertEqual(len(list(torrents.items())), 30)
+
+    def test_multipage_items(self):
+        torrents = Search(self.url, 'breaking bad').multipage()
+        items = itertools.islice(torrents.items(), 100)
+        self.assertEqual(len(list(items)), 100)
+        self.assertEqual(torrents.page(), 3)
+
 
 
 class SearchTestCase(RemoteTestCase):
