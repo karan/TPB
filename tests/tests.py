@@ -1,3 +1,4 @@
+import sys
 import unittest
 import urllib
 
@@ -65,4 +66,7 @@ class TopTestCase(RemoteTestCase):
 
 
 if __name__ == '__main__':
+    if '--local' in sys.argv:
+        sys.argv.remove('--local')
+        RemoteTestCase._is_remote_available = False
     unittest.main()
