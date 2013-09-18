@@ -29,7 +29,7 @@ class TPBApp(Bottle):
                 self.route(url)(lambda **kwargs: template(content))
 
     def run(self):
-        run(self, host=self.host, port=self.port)
+        run(self, host=self.host, port=self.port, debug=False, quiet=True)
 
     def start(self):
         self.process = Process(target=self.run)
