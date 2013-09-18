@@ -6,7 +6,7 @@ import itertools
 from bs4 import BeautifulSoup
 
 from cases import RemoteTestCase
-from tpb.tpb import List, Search
+from tpb.tpb import List, Search, Recent, Top
 
 
 class ConstantsTestCase(RemoteTestCase):
@@ -70,15 +70,45 @@ class PaginationTestCase(RemoteTestCase):
 
 
 class SearchTestCase(RemoteTestCase):
-    pass
+    def setUp(self):
+        self.torrents = Search(self.url, 'breaking bad')
+
+    def test_url(self):
+        self.assertEqual(self.torrents.url.as_string(),
+                self.url + '/search/breaking%20bad/0/7/0')
+        self.torrents.query('something').page(1).next().previous()
+        self.torrents.order(9).category(100)
+        self.assertEqual(self.torrents.query(), 'something')
+        self.assertEqual(self.torrents.page(), 1)
+        self.assertEqual(self.torrents.order(), 9)
+        self.assertEqual(self.torrents.category(), 100)
+        self.assertEqual(self.torrents.url.as_string(),
+                self.url + '/search/something/1/9/100')
 
 
 class RecentTestCase(RemoteTestCase):
-    pass
+    def setUp(self):
+        self.torrents = Recent(self.url)
+
+    def test_url(self):
+        self.assertEqual(self.torrents.url.as_string(),
+                self.url + '/recent/0')
+        self.torrents.page(1).next().previous()
+        self.assertEqual(self.torrents.url.as_string(),
+                self.url + '/recent/1')
 
 
 class TopTestCase(RemoteTestCase):
-    pass
+    def setUp(self):
+        self.torrents = Top(self.url)
+
+    def test_url(self):
+        self.assertEqual(self.torrents.url.as_string(),
+                self.url + '/top/0')
+        self.torrents.category(100)
+        self.assertEqual(self.torrents.url.as_string(),
+                self.url + '/top/100')
+
 
 
 if __name__ == '__main__':
