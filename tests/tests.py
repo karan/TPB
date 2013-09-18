@@ -38,16 +38,17 @@ class PathSegmentsTestCase(RemoteTestCase):
 
 
 class ParsingTestCase(RemoteTestCase):
+    def setUp(self):
+        self.torrents = Search(self.url, 'breaking bad')
+
     def test_items(self):
-        torrents = Search(self.url, 'breaking bad')
-        self.assertEqual(len(list(torrents.items())), 30)
+        self.assertEqual(len(list(self.torrents.items())), 30)
 
     def test_torrent_rows(self):
-        torrents = Search(self.url, 'breaking bad')
-        request = urllib.urlopen(torrents.url.as_string())
+        request = urllib.urlopen(self.torrents.url.as_string())
         content = request.read()
         page = BeautifulSoup(content)
-        rows = torrents._get_torrent_rows(page)
+        rows = self.torrents._get_torrent_rows(page)
         self.assertEqual(len(rows), 30)
 
     def test_torrent_build(self):
@@ -55,16 +56,17 @@ class ParsingTestCase(RemoteTestCase):
 
 
 class PaginationTestCase(RemoteTestCase):
+    def setUp(self):
+        self.torrents = Search(self.url, 'breaking bad')
+
     def test_page_items(self):
-        torrents = Search(self.url, 'breaking bad')
-        self.assertEqual(len(list(torrents.items())), 30)
+        self.assertEqual(len(list(self.torrents.items())), 30)
 
     def test_multipage_items(self):
-        torrents = Search(self.url, 'breaking bad').multipage()
-        items = itertools.islice(torrents.items(), 100)
+        self.torrents.multipage()
+        items = itertools.islice(self.torrents.items(), 100)
         self.assertEqual(len(list(items)), 100)
-        self.assertEqual(torrents.page(), 3)
-
+        self.assertEqual(self.torrents.page(), 3)
 
 
 class SearchTestCase(RemoteTestCase):
