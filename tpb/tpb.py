@@ -153,10 +153,14 @@ class Paginated(List):
         """
         if self._multipage:
             while True:
-                for item in super(Paginated, self).items():
-                    yield item
-                else:
+                items = super(Paginated, self).items()
+                first = next(items, None)
+                if first is None:
                     raise StopIteration()
+                else:
+                    yield first
+                    for item in items:
+                        yield item
                 self.next()
         else:
             for item in super(Paginated, self).items():
@@ -177,6 +181,14 @@ class Paginated(List):
         Request the next page.
         """
         self.page(self.page() + 1)
+        return self
+
+    def previous(self):
+        """
+        Request previous page.
+        """
+        self.page(self.page() - 1)
+        return self
 
 
 class Search(Paginated):
@@ -260,7 +272,7 @@ class Top(List):
         self.path(category)
 
     def path(self, category=None):
-        self._parse_path(category)
+        return self._parse_path(category)
 
     @self_if_not_none
     def category(self, category=None):
@@ -268,7 +280,7 @@ class Top(List):
         If category is given, modify category segment of url with it, return 
         actual category segment otherwise.
         """
-        return self.path(category=category)[0]
+        return int(self.path(category=category)[0])
 
 
 class TPB(object):
