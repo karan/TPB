@@ -11,7 +11,7 @@ if sys.version_info >= (3, 0):
     from tests.cases import RemoteTestCase
 else:
     from urllib2 import urlopen
-    from .cases import RemoteTestCase
+    from cases import RemoteTestCase
 
 
 
