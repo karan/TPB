@@ -29,6 +29,7 @@ from __future__ import unicode_literals
 import os
 import re
 import urllib
+import dateutil.parser
 from functools import wraps
 
 from purl import URL
@@ -123,7 +124,7 @@ class List(object):
 
         meta_col = cols[1].find('font').text # don't need user
         match = self._meta.match(meta_col)
-        created = match.groups()[0].replace(u'\xa0',u' ')
+        created = dateutil.parser.parse(match.groups()[0].replace(u'\xa0',u' '))
         size = match.groups()[1].replace(u'\xa0',u' ')
         user = unicode(match.groups()[2].encode('utf8')) # uploaded by user
         
