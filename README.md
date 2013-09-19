@@ -77,6 +77,10 @@ To execute the tests simply run:
 
 Every test is executed twice, once on a local test server with predownloaded original responses and, if it's possible, an other time on the original remote server.
 
+If, even having an Internet connection, you don't want to run the tests remotely, you can skip them with:
+
+    python tests/tests.py --local
+
 
 Contribute
 ========
