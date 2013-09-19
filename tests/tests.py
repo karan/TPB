@@ -1,12 +1,18 @@
 import sys
 import unittest
-import urllib
 import itertools
 
 from bs4 import BeautifulSoup
 
-from cases import RemoteTestCase
 from tpb.tpb import List, Search, Recent, Top
+
+if sys.version_info >= (3, 0):
+    from urllib.request import urlopen
+    from tests.cases import RemoteTestCase
+else:
+    from urllib2 import urlopen
+    from .cases import RemoteTestCase
+
 
 
 class ConstantsTestCase(RemoteTestCase):
@@ -29,12 +35,12 @@ class PathSegmentsTestCase(RemoteTestCase):
         result = list(self.torrents.url.path_segments())
         changes = [None]*len(result)
         self.torrents._parse_path(*changes)
-        self.assertItemsEqual(self.torrents.url.path_segments(), result)
+        self._assertCountEqual(self.torrents.url.path_segments(), result)
         for change in range(len(changes)):
             changes[change] = 'changed'
             result[change] = 'changed'
             self.torrents._parse_path(*changes)
-            self.assertItemsEqual(self.torrents.url.path_segments(), result)
+            self._assertCountEqual(self.torrents.url.path_segments(), result)
 
 
 class ParsingTestCase(RemoteTestCase):
@@ -45,7 +51,7 @@ class ParsingTestCase(RemoteTestCase):
         self.assertEqual(len(list(self.torrents.items())), 30)
 
     def test_torrent_rows(self):
-        request = urllib.urlopen(self.torrents.url.as_string())
+        request = urlopen(self.torrents.url.as_string())
         content = request.read()
         page = BeautifulSoup(content)
         rows = self.torrents._get_torrent_rows(page)
