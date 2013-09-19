@@ -1,5 +1,3 @@
-from new import classobj
-
 
 class Constants(type):
     """
@@ -12,7 +10,7 @@ class Constants(type):
         """
         attrs = {}
         for name, attr in dct.items():
-            if isinstance(attr, classobj):
+            if isinstance(attr, type):
                 # substitute attr with a new class with Constants as 
                 # metaclass making it possible to spread this same method
                 # to all child classes
