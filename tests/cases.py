@@ -7,15 +7,13 @@ from server import TPBApp
 
 def remote_func(func):
     """
-    Executes func on remote url if the remote url is available.
+    Skip func if remote url is not available.
     """
     @wraps(func)
     def wrapper(self, *args, **kwargs):
-        if not self._is_remote_available:
-            return unittest.skip('Remote URL {} is not available'.format(
-                self.url))
-        self.url = self.remote
-        return func(self, *args, **kwargs)
+        f = unittest.skipUnless(self._is_remote_available,
+                'Remote URL {} is not available'.format(self.url))(func)
+        return f(self, *args, **kwargs)
     return wrapper
 
 
@@ -37,6 +35,16 @@ class RemoteTestMetaclass(type):
 class RemoteTestCase(unittest.TestCase):
     __metaclass__ = RemoteTestMetaclass
 
+    def run(self, *args, **kwargs):
+        """
+        Set url to local or remote depending of function name.
+        """
+        if self._testMethodName.endswith('_local'):
+            self.url = self.local
+        elif self._testMethodName.endswith('_remote'):
+            self.url = self.remote
+        super(RemoteTestCase, self).run(*args, **kwargs)
+
     @classmethod
     def setUpClass(cls):
         """
@@ -47,7 +55,6 @@ class RemoteTestCase(unittest.TestCase):
         cls.server.start()
         cls.remote = 'http://thepiratebay.sx'
         cls.local = cls.server.url
-        cls.url = cls.local
 
     @classmethod
     def tearDownClass(cls):
