@@ -6,7 +6,8 @@ import itertools
 from bs4 import BeautifulSoup
 
 from cases import RemoteTestCase
-from tpb.tpb import List, Search, Recent, Top
+from tpb.tpb import Search, Recent, Top
+from tpb.utils import URL
 
 
 class ConstantsTestCase(RemoteTestCase):
@@ -15,26 +16,27 @@ class ConstantsTestCase(RemoteTestCase):
 
 class PathSegmentsTestCase(RemoteTestCase):
     def setUp(self):
-        segments = 'one/two/three/four/five'.split('/')
-        self.torrents = List(self.url)
-        self.torrents.url = self.torrents.url.path_segments(segments)
+        self.segments = ['alpha', 'beta', 'gamma']
+        self.defaults = ['0', '1', '2']
+        self.url = URL('', '/', self.segments, self.defaults)
 
-    def test_get_segments(self):
-        result = []
-        for segment in self.torrents.url.path_segments()[::-1]:
-            result.insert(0, segment)
-            self.assertEqual(self.torrents._parse_path(*[None]*len(result)), result)
+    def test_attributes(self):
+        other_segments = ['one', 'two', 'three']
+        other_url = URL('', '/', other_segments, self.defaults)
+        for segment, other_segment in zip(self.segments, other_segments):
+            self.assertTrue(hasattr(self.url, segment))
+            self.assertFalse(hasattr(other_url, segment))
+            self.assertTrue(hasattr(other_url, other_segment))
+            self.assertFalse(hasattr(self.url, other_segment))
 
-    def test_set_segments(self):
-        result = list(self.torrents.url.path_segments())
-        changes = [None]*len(result)
-        self.torrents._parse_path(*changes)
-        self.assertItemsEqual(self.torrents.url.path_segments(), result)
-        for change in range(len(changes)):
-            changes[change] = 'changed'
-            result[change] = 'changed'
-            self.torrents._parse_path(*changes)
-            self.assertItemsEqual(self.torrents.url.path_segments(), result)
+    def test_propierties(self):
+        self.assertEqual(str(self.url), '/0/1/2')
+        self.assertEqual(self.url.alpha, '0')
+        self.url.alpha = '9'
+        self.url.beta = '8'
+        self.url.gamma = '7'
+        self.assertEqual(str(self.url), '/9/8/7')
+    
 
 
 class ParsingTestCase(RemoteTestCase):
@@ -45,7 +47,7 @@ class ParsingTestCase(RemoteTestCase):
         self.assertEqual(len(list(self.torrents.items())), 30)
 
     def test_torrent_rows(self):
-        request = urllib.urlopen(self.torrents.url.as_string())
+        request = urllib.urlopen(str(self.torrents.url))
         content = request.read()
         page = BeautifulSoup(content)
         rows = self.torrents._get_torrent_rows(page)
@@ -74,7 +76,7 @@ class SearchTestCase(RemoteTestCase):
         self.torrents = Search(self.url, 'breaking bad')
 
     def test_url(self):
-        self.assertEqual(self.torrents.url.as_string(),
+        self.assertEqual(str(self.torrents.url),
                 self.url + '/search/breaking%20bad/0/7/0')
         self.torrents.query('something').page(1).next().previous()
         self.torrents.order(9).category(100)
@@ -82,7 +84,7 @@ class SearchTestCase(RemoteTestCase):
         self.assertEqual(self.torrents.page(), 1)
         self.assertEqual(self.torrents.order(), 9)
         self.assertEqual(self.torrents.category(), 100)
-        self.assertEqual(self.torrents.url.as_string(),
+        self.assertEqual(str(self.torrents.url),
                 self.url + '/search/something/1/9/100')
 
 
@@ -91,10 +93,10 @@ class RecentTestCase(RemoteTestCase):
         self.torrents = Recent(self.url)
 
     def test_url(self):
-        self.assertEqual(self.torrents.url.as_string(),
+        self.assertEqual(str(self.torrents.url),
                 self.url + '/recent/0')
         self.torrents.page(1).next().previous()
-        self.assertEqual(self.torrents.url.as_string(),
+        self.assertEqual(str(self.torrents.url),
                 self.url + '/recent/1')
 
 
@@ -103,10 +105,10 @@ class TopTestCase(RemoteTestCase):
         self.torrents = Top(self.url)
 
     def test_url(self):
-        self.assertEqual(self.torrents.url.as_string(),
+        self.assertEqual(str(self.torrents.url),
                 self.url + '/top/0')
         self.torrents.category(100)
-        self.assertEqual(self.torrents.url.as_string(),
+        self.assertEqual(str(self.torrents.url),
                 self.url + '/top/100')
 
 
