@@ -1,13 +1,19 @@
 import sys
 import unittest
-import urllib
 import itertools
 
 from bs4 import BeautifulSoup
 
-from cases import RemoteTestCase
 from tpb.tpb import Search, Recent, Top
 from tpb.utils import URL
+
+if sys.version_info >= (3, 0):
+    from urllib.request import urlopen
+    from tests.cases import RemoteTestCase
+else:
+    from urllib2 import urlopen
+    from cases import RemoteTestCase
+
 
 
 class ConstantsTestCase(RemoteTestCase):
@@ -31,13 +37,11 @@ class PathSegmentsTestCase(RemoteTestCase):
 
     def test_propierties(self):
         self.assertEqual(str(self.url), '/0/1/2')
-        self.assertEqual(self.url.alpha, '0')
         self.url.alpha = '9'
         self.url.beta = '8'
         self.url.gamma = '7'
         self.assertEqual(str(self.url), '/9/8/7')
     
-
 
 class ParsingTestCase(RemoteTestCase):
     def setUp(self):
@@ -47,7 +51,7 @@ class ParsingTestCase(RemoteTestCase):
         self.assertEqual(len(list(self.torrents.items())), 30)
 
     def test_torrent_rows(self):
-        request = urllib.urlopen(str(self.torrents.url))
+        request = urlopen(str(self.torrents.url))
         content = request.read()
         page = BeautifulSoup(content)
         rows = self.torrents._get_torrent_rows(page)

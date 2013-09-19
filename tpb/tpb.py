@@ -28,7 +28,7 @@ from __future__ import unicode_literals
 
 import os
 import re
-import urllib
+import sys
 import dateutil.parser
 from datetime import datetime
 from functools import wraps
@@ -36,6 +36,11 @@ from functools import wraps
 from bs4 import BeautifulSoup
 
 from .utils import URL
+
+if sys.version_info >= (3, 0):
+    from urllib.request import urlopen
+else:
+    from urllib2 import urlopen
 
 
 def self_if_not_none(func):
@@ -63,7 +68,7 @@ class List(object):
         Request self.url and parse response. Yield a Torrent object for every
         torrent on page.
         """
-        request = urllib.urlopen(str(self.url))
+        request = urlopen(str(self.url))
         content = request.read()
         page = BeautifulSoup(content)
         for row in self._get_torrent_rows(page):
@@ -93,7 +98,7 @@ class List(object):
         
         # this column with all important info
         links = cols[1].findAll('a') # get 4 a tags from this columns
-        title = unicode(links[0].string.encode('ascii', 'ignore')) # title of the torrent, strips unicode characters..
+        title = links[0].string.encode('utf-8', 'ignore')
         url = self.url.build().add_path_segment(links[0].get('href'))
         magnet_link = links[1].get('href') # the magnet download link
         try:
@@ -106,12 +111,11 @@ class List(object):
         meta_col = cols[1].find('font').text # don't need user
         match = self._meta.match(meta_col)
         try:
-            created = dateutil.parser.parse(match.groups()[0].replace(
-                u'\xa0', u' '))
+            created = dateutil.parser.parse(match.groups()[0].replace('\xa0', ' '))
         except ValueError:
             created = datetime.now()
-        size = match.groups()[1].replace(u'\xa0', u' ')
-        user = unicode(match.groups()[2].encode('utf8')) # uploaded by user
+        size = match.groups()[1].replace('\xa0', ' ')
+        user = match.groups()[2].encode('utf8') # uploaded by user
         
         # last 2 columns for seeders and leechers
         seeders = int(cols[2].string)
@@ -268,7 +272,7 @@ class TPB(object):
     """
     
     def __init__(self, base_url):
-        if isinstance(base_url, basestring):
+        if isinstance(base_url, str):
             base_url = URL(base_url)
         self.base_url = base_url
 
@@ -314,20 +318,21 @@ class Torrent():
         self.leechers = leechers # number of leechers
     
     def print_torrent(self):
+        import sys
         """
         Print the details of a torrent
         """
-        print 'Title: %s' % self.title
-        print 'URL: %s' % self.url
-        print 'Category: %s' % self.category
-        print 'Sub-Category: %s' % self.sub_category
-        print 'Magnet Link: %s' % self.magnet_link
-        print 'Torrent Link: %s' % self.torrent_link
-        print 'Uploaded: %s' % self.created
-        print 'Size: %s' % self.size
-        print 'User: %s' % self.user
-        print 'Seeders: %d' % self.seeders
-        print 'Leechers: %d' % self.leechers
+        sys.stdout.write('Title: %s' % self.title)
+        sys.stdout.write('URL: %s' % self.url)
+        sys.stdout.write('Category: %s' % self.category)
+        sys.stdout.write('Sub-Category: %s' % self.sub_category)
+        sys.stdout.write('Magnet Link: %s' % self.magnet_link)
+        sys.stdout.write('Torrent Link: %s' % self.torrent_link)
+        sys.stdout.write('Uploaded: %s' % self.created)
+        sys.stdout.write('Size: %s' % self.size)
+        sys.stdout.write('User: %s' % self.user)
+        sys.stdout.write('Seeders: %d' % self.seeders)
+        sys.stdout.write('Leechers: %d' % self.leechers)
     
     def __repr__(self):
         return '{0} by {1}'.format(self.title, self.user)
