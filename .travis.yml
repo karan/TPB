@@ -3,6 +3,8 @@ python:
     - "2.7"
     - "3.2"
     - "3.3"
-install: "pip install -r tests/requirements.txt --use-mirrors"
+install: 
+    - "python setup.py install"
+    - "pip install -r tests/requirements.txt --use-mirrors"
 script: "python -m unittest discover"
 #after_success: "git checkout master && git merge --ff-only development && git push"
