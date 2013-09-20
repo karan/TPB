@@ -8,10 +8,10 @@ except ImportError:
 setup(
     name='ThePirateBay',
     version='1.0.0',
-    install_requires=['BeautifulSoup4', 'purl'],
+    install_requires=['BeautifulSoup4', 'purl', 'dateutils'],
     author='Karan Goel',
     author_email='karan@goel.im',
-    packages=['tpb',],
+    packages=['tpb','tests'],
     url='https://github.com/thekarangoel/TPB/',
     license='GNU General Public License',
     description='Unofficial Python API for ThePirateBay.',
