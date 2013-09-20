@@ -67,9 +67,9 @@ Torrent details available
 Tests
 =====
 
-You need `bottle` installed to run the tests.
+You need `bottle` and `testscenarios` installed to run the tests.
     
-    $ pip install bottle
+    $ pip install bottle testscenarios
 
 To execute the tests simply run:
 
