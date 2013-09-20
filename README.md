@@ -69,17 +69,18 @@ Tests
 
 You need `bottle` installed to run the tests.
     
-    pip install bottle
+    $ pip install bottle
 
 To execute the tests simply run:
 
-    python -m unittest discover
+    $ python -m unittest discover
 
 Every test is executed twice, once on a local test server with predownloaded original responses and, if it's possible, an other time on the original remote server.
 
-If, even having an Internet connection, you don't want to run the tests remotely, you can skip them with:
+To deactivate the execution or local or remote tests:
 
-    python tests/tests.py --local
+    $ REMOTE=false python -m unittest discover
+    $ LOCAL=false python -m unittest discover
 
 
 Contribute

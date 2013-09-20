@@ -1,4 +1,5 @@
 import sys
+import os
 import unittest
 import itertools
 
@@ -116,9 +117,13 @@ class TopTestCase(RemoteTestCase):
                 self.url + '/top/100')
 
 
+def load_tests(loader, tests, discovery):
+    local = False if os.environ.get('LOCAL', '').lower() == 'false' else True
+    remote = False if os.environ.get('REMOTE', '').lower() == 'false' else True
+    RemoteTestCase._do_local = local
+    RemoteTestCase._do_remote = remote
+    return unittest.TestSuite(tests)
+
 
 if __name__ == '__main__':
-    if '--local' in sys.argv:
-        sys.argv.remove('--local')
-        RemoteTestCase._is_remote_available = False
     unittest.main()
