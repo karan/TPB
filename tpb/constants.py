@@ -14,7 +14,7 @@ class ConstantType(type):
                 # substitute attr with a new class with Constants as 
                 # metaclass making it possible to spread this same method
                 # to all child classes
-                attr = ConstantsType(attr.__name__, attr.__bases__, attr.__dict__)
+                attr = ConstantType(attr.__name__, attr.__bases__, attr.__dict__)
             attrs[name] = attr
         return super(ConstantType, cls).__new__(cls, clsname, bases, attrs)
 
