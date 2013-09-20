@@ -69,7 +69,7 @@ Tests
 
 You need `bottle` and `testscenarios` installed to run the tests.
     
-    $ pip install bottle testscenarios
+    $ pip install -r tests/requirements.txt
 
 To execute the tests simply run:
 
