@@ -6,5 +6,7 @@ python:
 install: 
     - "python setup.py install"
     - "pip install -r tests/requirements.txt --use-mirrors"
-script: "python -m unittest discover"
+    - "pip install coveralls --use-mirrors"
+script: "coverage run --source=tpb setup.py test"
+after_success: "coveralls"
 #after_success: "git checkout master && git merge --ff-only development && git push"
