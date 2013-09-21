@@ -6,7 +6,7 @@ import itertools
 from bs4 import BeautifulSoup
 
 from tpb.tpb import TPB, Search, Recent, Top
-from tpb.constants import Constants, ORDERS, CATEGORIES
+from tpb.constants import ConstantType, Constants, ORDERS, CATEGORIES
 from tpb.utils import URL
 
 if sys.version_info >= (3, 0):
@@ -25,7 +25,7 @@ class ConstantsTestCase(RemoteTestCase):
             current = checks.pop()
             for name, attr in current.__dict__.items():
                 if isinstance(attr, type):
-                    self.assertTrue(issubclass(attr, Constants))
+                    self.assertTrue(attr.__class__, ConstantType)
                     checks.append(attr)
 
     def test_repr(self):
