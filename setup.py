@@ -12,6 +12,7 @@ setup(
     author='Karan Goel',
     author_email='karan@goel.im',
     packages=['tpb','tests'],
+    test_suite='tests',
     url='https://github.com/thekarangoel/TPB/',
     license='GNU General Public License',
     description='Unofficial Python API for ThePirateBay.',
