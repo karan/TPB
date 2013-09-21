@@ -5,7 +5,8 @@ import itertools
 
 from bs4 import BeautifulSoup
 
-from tpb.tpb import Search, Recent, Top
+from tpb.tpb import TPB, Search, Recent, Top
+from tpb.constants import Constants, ORDERS, CATEGORIES
 from tpb.utils import URL
 
 if sys.version_info >= (3, 0):
@@ -18,7 +19,17 @@ else:
 
 
 class ConstantsTestCase(RemoteTestCase):
-    pass
+    def test_extension(self):
+        checks = [ORDERS, CATEGORIES]
+        while checks:
+            current = checks.pop()
+            for name, attr in current.__dict__.items():
+                if isinstance(attr, type):
+                    self.assertTrue(issubclass(attr, Constants))
+                    checks.append(attr)
+
+    def test_repr(self):
+        pass
 
 
 class PathSegmentsTestCase(RemoteTestCase):
@@ -50,6 +61,7 @@ class ParsingTestCase(RemoteTestCase):
 
     def test_items(self):
         self.assertEqual(len(list(self.torrents.items())), 30)
+        self.assertEqual(len(list(iter(self.torrents))), 30)
 
     def test_torrent_rows(self):
         request = urlopen(str(self.torrents.url))
@@ -74,6 +86,9 @@ class PaginationTestCase(RemoteTestCase):
         items = itertools.islice(self.torrents.items(), 100)
         self.assertEqual(len(list(items)), 100)
         self.assertEqual(self.torrents.page(), 3)
+
+    def test_last_page(self):
+        pass
 
 
 class SearchTestCase(RemoteTestCase):
@@ -115,6 +130,36 @@ class TopTestCase(RemoteTestCase):
         self.torrents.category(100)
         self.assertEqual(str(self.torrents.url),
                 self.url + '/top/100')
+
+
+class TPBTestCase(RemoteTestCase):
+    def setUp(self):
+        self.tpb = TPB(self.url)
+
+    def test_search(self):
+        kwargs = {'query': 'breaking bad', 'page': 5, 'order': 9, 'category': 100}
+        a_search = self.tpb.search(**kwargs)
+        b_search = Search(self.url, **kwargs)
+        self.assertTrue(isinstance(a_search, Search))
+        self.assertTrue(isinstance(b_search, Search))
+        self.assertEqual(str(a_search.url), str(b_search.url))
+
+    def test_recent(self):
+        kwargs = {'page': 5}
+        a_recent = self.tpb.recent(**kwargs)
+        b_recent = Recent(self.url, **kwargs)
+        self.assertTrue(isinstance(a_recent, Recent))
+        self.assertTrue(isinstance(b_recent, Recent))
+        self.assertEqual(str(a_recent.url), str(b_recent.url))
+
+    def test_top(self):
+        kwargs = {'category': 100}
+        a_top = self.tpb.top(**kwargs)
+        b_top = Top(self.url, **kwargs)
+        self.assertTrue(isinstance(a_top, Top))
+        self.assertTrue(isinstance(b_top, Top))
+        self.assertEqual(str(a_top.url), str(b_top.url))
+
 
 
 def load_tests(loader, tests, discovery):
