@@ -186,15 +186,15 @@ class Paginated(List):
 
 class Search(Paginated):
     """
-    Paginated search including query, category and ordering management.
+    Paginated search including query, category and order management.
     """
     base_path = '/search'
 
-    def __init__(self, base_url, query, page='0', ordering='7', category='0'):
+    def __init__(self, base_url, query, page='0', order='7', category='0'):
         super(Search, self).__init__()
         self.url = URL(base_url, self.base_path,
                         segments=['query', 'page', 'order', 'category'],
-                        defaults=[query, page, ordering, category],
+                        defaults=[query, str(page), str(order), str(category)],
                         )
 
     @self_if_not_none
@@ -208,14 +208,14 @@ class Search(Paginated):
         self.url.query = query
 
     @self_if_not_none
-    def order(self, ordering=None):
+    def order(self, order=None):
         """
-        If ordering is given, modify order segment of url with it, return actual
+        If order is given, modify order segment of url with it, return actual
         order segment otherwise.
         """
-        if ordering is None:
+        if order is None:
             return int(self.url.order)
-        self.url.order = str(ordering)
+        self.url.order = str(order)
 
     @self_if_not_none
     def category(self, category=None):
@@ -238,7 +238,7 @@ class Recent(Paginated):
         super(Recent, self).__init__()
         self.url = URL(base_url, self.base_path,
                         segments=['page'],
-                        defaults=[page],
+                        defaults=[str(page)],
                         )
 
 
@@ -251,7 +251,7 @@ class Top(List):
     def __init__(self, base_url, category='0'):
         self.url = URL(base_url, self.base_path,
                         segments=['category'],
-                        defaults=[category],
+                        defaults=[str(category)],
                         )
 
     @self_if_not_none
@@ -272,8 +272,6 @@ class TPB(object):
     """
     
     def __init__(self, base_url):
-        if isinstance(base_url, str):
-            base_url = URL(base_url)
         self.base_url = base_url
 
     def search(self, query, page=0, order=7, category=0, multipage=False):

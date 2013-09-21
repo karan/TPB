@@ -1,5 +1,5 @@
 
-class Constants(type):
+class ConstantType(type):
     """
     Tree representation metaclass for class attributes. Metaclass is extended
     to all child classes too.
@@ -14,9 +14,9 @@ class Constants(type):
                 # substitute attr with a new class with Constants as 
                 # metaclass making it possible to spread this same method
                 # to all child classes
-                attr = Constants(attr.__name__, attr.__bases__, attr.__dict__)
+                attr = ConstantType(attr.__name__, attr.__bases__, attr.__dict__)
             attrs[name] = attr
-        return super(Constants, cls).__new__(cls, clsname, bases, attrs)
+        return super(ConstantType, cls).__new__(cls, clsname, bases, attrs)
 
     def __repr__(cls):
         """
@@ -37,9 +37,10 @@ class Constants(type):
         return repr(cls)
 
 
-class ORDERS:
-    __metaclass__ = Constants
+Constants = ConstantType('Constants', (object,), {})
 
+
+class ORDERS(Constants):
     class NAME:
         ASC = 1
         DES = 2
@@ -63,9 +64,7 @@ class ORDERS:
         DES = 14
 
 
-class CATEGORIES:
-    __metaclass__ = Constants
-
+class CATEGORIES(Constants):
     ALL = 0
     class AUDIO:
         ALL = 100
