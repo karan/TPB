@@ -5,7 +5,7 @@ import itertools
 
 from bs4 import BeautifulSoup
 
-from tpb.tpb import TPB, Search, Recent, Top
+from tpb.tpb import TPB, Search, Recent, Top, List, Paginated
 from tpb.constants import ConstantType, Constants, ORDERS, CATEGORIES
 from tpb.utils import URL
 
@@ -88,7 +88,19 @@ class PaginationTestCase(RemoteTestCase):
         self.assertEqual(self.torrents.page(), 3)
 
     def test_last_page(self):
-        pass
+        class DummyList(List):
+            pages_left = 5
+            def items(self):
+                if self.pages_left == 0:
+                    raise StopIteration()
+                for i in range(10):
+                    yield i
+                self.pages_left -= 1
+        class DummySearch(Search, Paginated, DummyList):
+            pass
+        self.torrents = DummySearch(self.url, 'breaking bad').multipage()
+        self.assertEqual(len(list(iter(self.torrents))), 50)
+
 
 
 class SearchTestCase(RemoteTestCase):
