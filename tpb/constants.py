@@ -1,3 +1,12 @@
+import sys
+
+if sys.version_info >= (3, 0):
+    class_type = type
+else:
+    from new import classobj
+    class_type = classobj
+
+
 
 class ConstantType(type):
     """
@@ -10,7 +19,7 @@ class ConstantType(type):
         """
         attrs = {}
         for name, attr in dct.items():
-            if isinstance(attr, type):
+            if isinstance(attr, class_type):
                 # substitute attr with a new class with Constants as 
                 # metaclass making it possible to spread this same method
                 # to all child classes
@@ -24,13 +33,15 @@ class ConstantType(type):
         represented.
         """
         # dump current class name
-        tree = cls.__name__ + '\n'
+        tree = cls.__name__ + ':\n'
         for name in dir(cls):
             if not name.startswith('_'):
                 attr = getattr(cls, name)
-                attr = '{}: {}'.format(name, repr(attr))
+                output = repr(attr)
+                if not isinstance(attr, ConstantType):
+                    output = '{}: {}'.format(name, output)
                 # indent all child attrs
-                tree += '\n'.join([ ' '*4 + line for line in attr.splitlines() ]) + '\n'
+                tree += '\n'.join([ ' '*4 + line for line in output.splitlines() ]) + '\n'
         return tree
 
     def __str__(cls):
