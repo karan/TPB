@@ -2,9 +2,7 @@
 
 Unofficial Python API for [ThePirateBay](http://thepiratebay.sx/).
 
-[![Build Status](https://travis-ci.org/[thekarangoel]/[TPB].png)](https://travis-ci.org/[thekarangoel]/[TPB])
-
-[![Version](https://pypip.in/v/ThePirateBay/badge.png)](https://crate.io/packages/ThePirateBay/)   [![Downloads](https://pypip.in/d/ThePirateBay/badge.png)](https://crate.io/packages/ThePirateBay/)
+[![Build Status](https://travis-ci.org/thekarangoel/TPB.png)](https://travis-ci.org/thekarangoel/TPB)    [![Version](https://pypip.in/v/ThePirateBay/badge.png)](https://crate.io/packages/ThePirateBay/)   [![Downloads](https://pypip.in/d/ThePirateBay/badge.png)](https://crate.io/packages/ThePirateBay/)
 
 Installation
 =============
