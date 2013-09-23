@@ -29,7 +29,30 @@ class ConstantsTestCase(RemoteTestCase):
                     checks.append(attr)
 
     def test_repr(self):
-        pass
+        class Alphanum(Constants):
+            greek = True
+            class Alpha:
+                alpha = 'a'
+                beta = 'b'
+                gamma = 'c'
+            class Num:
+                alpha = 1
+                beta = 2
+                gamma = 3
+        output = """\
+Alphanum:
+    Alpha:
+        alpha: 'a'
+        beta: 'b'
+        gamma: 'c'
+    Num:
+        alpha: 1
+        beta: 2
+        gamma: 3
+    greek: True
+"""
+        self.assertEqual(repr(Alphanum), output)
+        self.assertEqual(str(Alphanum), output)
 
 
 class PathSegmentsTestCase(RemoteTestCase):
