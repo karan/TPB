@@ -70,7 +70,7 @@ class List(object):
         """
         request = urlopen(str(self.url))
         content = request.read()
-        page = BeautifulSoup(content)
+        page = BeautifulSoup(content, "lxml")
         for row in self._get_torrent_rows(page):
             yield self._build_torrent(row)
 
