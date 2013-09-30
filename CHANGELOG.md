@@ -1,3 +1,7 @@
+### v1.1.1
+
+* Fix: Make BeautifulSoup use lxml to avoid bad html parsing errors
+
 ### v1.1.0
 
 * Add: coveralls (coverage reporting service) support
