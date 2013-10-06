@@ -1,3 +1,7 @@
+### v1.1.2
+
+* Move to MIT License
+
 ### v1.1.1
 
 * Fix: Make BeautifulSoup use lxml to avoid bad html parsing errors

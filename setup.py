@@ -14,7 +14,7 @@ setup(
     packages=['tpb','tests'],
     test_suite='tests',
     url='https://github.com/thekarangoel/TPB/',
-    license='GNU General Public License',
+    license='MIT License',
     description='Unofficial Python API for ThePirateBay.',
     long_description='Unofficial Python API for ThePirateBay. Usage: https://github.com/thekarangoel/TPB.',
 )
