@@ -142,6 +142,12 @@ class SearchTestCase(RemoteTestCase):
         self.assertEqual(str(self.torrents.url),
                 self.url + '/search/something/1/9/100')
 
+    def test_torrents(self):
+        for item in self.torrents:
+            self.assertTrue(hasattr(item, 'url'))
+            # ensure the URL points to the /torrent/ html page
+            self.assertTrue(item.url.path().startswith('/torrent/'))
+
 
 class RecentTestCase(RemoteTestCase):
     def setUp(self):

@@ -83,7 +83,7 @@ class List(object):
         # this column with all important info
         links = cols[1].findAll('a') # get 4 a tags from this columns
         title = links[0].string.encode('utf-8', 'ignore')
-        url = self.url.build().add_path_segment(links[0].get('href'))
+        url = self.url.build().path(links[0].get('href'))
         magnet_link = links[1].get('href') # the magnet download link
         try:
             torrent_link = links[2].get('href') # the torrent download link
