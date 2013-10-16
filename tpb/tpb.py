@@ -23,6 +23,7 @@ from .utils import URL
 
 if sys.version_info >= (3, 0):
     from urllib.request import urlopen
+    unicode = str
 else:
     from urllib2 import urlopen
 
@@ -82,7 +83,7 @@ class List(object):
         
         # this column with all important info
         links = cols[1].findAll('a') # get 4 a tags from this columns
-        title = links[0].string.encode('utf-8', 'ignore')
+        title = unicode(links[0].string)
         url = self.url.build().path(links[0].get('href'))
         magnet_link = links[1].get('href') # the magnet download link
         try:
@@ -99,7 +100,7 @@ class List(object):
         except ValueError:
             created = datetime.now()
         size = match.groups()[1].replace('\xa0', ' ')
-        user = match.groups()[2].encode('utf8') # uploaded by user
+        user = match.groups()[2]  # uploaded by user
         
         # last 2 columns for seeders and leechers
         seeders = int(cols[2].string)
