@@ -12,6 +12,7 @@ from tpb.utils import URL
 if sys.version_info >= (3, 0):
     from urllib.request import urlopen
     from tests.cases import RemoteTestCase
+    unicode = str
 else:
     from urllib2 import urlopen
     from cases import RemoteTestCase
