@@ -67,9 +67,12 @@ class List(object):
         Returns all 'tr' tag rows as a list of tuples. Each tuple is for
         a single torrent.
         """
-        table = page.find('table') # the table with all torrent listing
-        return table.findAll('tr')[1:31] # get all rows but header, pagination
-    
+        table = page.find('table')  # the table with all torrent listing
+        if table is None:  # no table means no results:
+            return []
+        else:
+            return table.findAll('tr')[1:31]  # get all rows but header, pagination
+
     def _build_torrent(self, row):
         """
         Builds and returns a Torrent object for the given parsed row.
