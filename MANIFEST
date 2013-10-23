@@ -2,5 +2,11 @@
 LICENSE
 README.md
 setup.py
-tpb\__init__.py
-tpb\tpb.py
+tests/__init__.py
+tests/cases.py
+tests/server.py
+tests/tests.py
+tpb/__init__.py
+tpb/constants.py
+tpb/tpb.py
+tpb/utils.py

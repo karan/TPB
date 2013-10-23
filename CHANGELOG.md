@@ -1,3 +1,9 @@
+### v1.1.3
+
+* Add: Support for searches that do not result any results
+* Add: Py 3 support
+* Remove: UTF-8 string encoding
+
 ### v1.1.2
 
 * Move to MIT License
