@@ -77,7 +77,7 @@ To execute the tests simply run:
 
 Every test is executed twice, once on a local test server with predownloaded original responses and, if it's possible, an other time on the original remote server.
 
-To deactivate the execution or local or remote tests:
+To deactivate the execution of local or remote tests:
 
     $ REMOTE=false python -m unittest discover
     $ LOCAL=false python -m unittest discover
