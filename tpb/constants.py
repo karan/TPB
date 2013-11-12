@@ -20,7 +20,7 @@ class ConstantType(type):
         attrs = {}
         for name, attr in dct.items():
             if isinstance(attr, class_type):
-                # substitute attr with a new class with Constants as 
+                # substitute attr with a new class with Constants as
                 # metaclass making it possible to spread this same method
                 # to all child classes
                 attr = ConstantType(attr.__name__, attr.__bases__, attr.__dict__)
@@ -29,7 +29,7 @@ class ConstantType(type):
 
     def __repr__(cls):
         """
-        Tree representation of class attributes. Child classes are also 
+        Tree representation of class attributes. Child classes are also
         represented.
         """
         # dump current class name
@@ -53,26 +53,26 @@ Constants = ConstantType('Constants', (object,), {})
 
 class ORDERS(Constants):
     class NAME:
-        ASC = 1
-        DES = 2
+        DES = 1
+        ASC = 2
     class UPLOADED:
-        ASC = 3
-        DES = 4
+        DES = 3
+        ASC = 4
     class SIZE:
-        ASC = 5
-        DES = 6
+        DES = 5
+        ASC = 6
     class SEEDERS:
-        ASC = 7
-        DES = 8
+        DES = 7
+        ASC = 8
     class LEECHERS:
-        ASC = 9
-        DES = 10
+        DES = 9
+        ASC = 10
     class UPLOADER:
-        ASC = 11
-        DES = 12
+        DES = 11
+        ASC = 12
     class TYPE:
-        ASC = 13
-        DES = 14
+        DES = 13
+        ASC = 14
 
 
 class CATEGORIES(Constants):
