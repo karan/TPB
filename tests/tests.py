@@ -1,7 +1,8 @@
+from datetime import datetime, timedelta
+import itertools
 import sys
 import os
 import unittest
-import itertools
 
 from bs4 import BeautifulSoup
 
@@ -16,7 +17,6 @@ if sys.version_info >= (3, 0):
 else:
     from urllib2 import urlopen
     from cases import RemoteTestCase
-
 
 
 class ConstantsTestCase(RemoteTestCase):
@@ -77,7 +77,7 @@ class PathSegmentsTestCase(RemoteTestCase):
         self.url.beta = '8'
         self.url.gamma = '7'
         self.assertEqual(str(self.url), '/9/8/7')
-    
+
 
 class ParsingTestCase(RemoteTestCase):
     def setUp(self):
@@ -96,6 +96,28 @@ class ParsingTestCase(RemoteTestCase):
 
     def test_torrent_build(self):
         pass
+
+
+class TorrentTestCase(RemoteTestCase):
+    def setUp(self):
+        self.torrents = Search(self.url, 'breaking bad')
+
+    def assertEqualDatetimes(self, *datetimes):
+        datetimes = [ d.replace(microsecond=0) for d in datetimes ]
+        return self.assertEqual(*datetimes)
+
+    def test_created_timestamp_parse(self):
+        for torrent in self.torrents.items():
+            torrent.created
+        torrent._created = '1 sec ago'
+        self.assertEqualDatetimes(torrent.created, datetime.now() - timedelta(seconds=1))
+        torrent._created = '1 min ago'
+        self.assertEqualDatetimes(torrent.created, datetime.now() - timedelta(minutes=1))
+        torrent._created = '1 hour ago'
+        self.assertEqualDatetimes(torrent.created, datetime.now() - timedelta(hours=1))
+        torrent._created = 'Today'
+        self.assertEqual(torrent.created.date(), datetime.now().date())
+
 
 
 class PaginationTestCase(RemoteTestCase):
@@ -124,7 +146,6 @@ class PaginationTestCase(RemoteTestCase):
             pass
         self.torrents = DummySearch(self.url, 'breaking bad').multipage()
         self.assertEqual(len(list(iter(self.torrents))), 50)
-
 
 
 class SearchTestCase(RemoteTestCase):
@@ -203,7 +224,6 @@ class TPBTestCase(RemoteTestCase):
         self.assertTrue(isinstance(a_top, Top))
         self.assertTrue(isinstance(b_top, Top))
         self.assertEqual(str(a_top.url), str(b_top.url))
-
 
 
 def load_tests(loader, tests, discovery):

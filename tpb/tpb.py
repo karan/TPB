@@ -10,12 +10,13 @@ Currently supports searching, recent torrents and top 100 torrents.
 
 from __future__ import unicode_literals
 
+import datetime
+import dateutil.parser
+from functools import wraps
 import os
 import re
 import sys
-import dateutil.parser
-from datetime import datetime
-from functools import wraps
+import time
 
 from bs4 import BeautifulSoup
 
@@ -41,7 +42,7 @@ def self_if_not_none(func):
 
 class List(object):
     """
-    Abstract class for parsing a torrent list at some url and generate torrent 
+    Abstract class for parsing a torrent list at some url and generate torrent
     objects to iterate over. Includes a resource path parser.
     """
 
@@ -79,11 +80,11 @@ class List(object):
         """
         # Scrape, strip and build!!!
         cols = row.findAll('td') # split the row into it's columns
-        
+
         # this column contains the categories
         cat_col = cols[0].findAll('a')
         [category, sub_category] = [c.string for c in cat_col]
-        
+
         # this column with all important info
         links = cols[1].findAll('a') # get 4 a tags from this columns
         title = unicode(links[0].string)
@@ -98,17 +99,14 @@ class List(object):
 
         meta_col = cols[1].find('font').text # don't need user
         match = self._meta.match(meta_col)
-        try:
-            created = dateutil.parser.parse(match.groups()[0].replace('\xa0', ' '))
-        except ValueError:
-            created = datetime.now()
+        created = match.groups()[0].replace('\xa0', ' ')
         size = match.groups()[1].replace('\xa0', ' ')
         user = match.groups()[2]  # uploaded by user
-        
+
         # last 2 columns for seeders and leechers
         seeders = int(cols[2].string)
         leechers = int(cols[3].string)
-        
+
         t = Torrent(title, url, category, sub_category, magnet_link,
                     torrent_link, created, size, user, seeders, leechers)
         return t
@@ -116,8 +114,8 @@ class List(object):
 
 class Paginated(List):
     """
-    Abstract class on top of List for parsing a torrent list with pagination 
-    capabilities. 
+    Abstract class on top of List for parsing a torrent list with pagination
+    capabilities.
     """
     def __init__(self, *args, **kwargs):
         super(Paginated, self).__init__(*args, **kwargs)
@@ -126,7 +124,7 @@ class Paginated(List):
     def items(self):
         """
         Request self.url and parse response. Yield a Torrent object for every
-        torrent on page. If self._multipage is True, Torrents from next pages 
+        torrent on page. If self._multipage is True, Torrents from next pages
         are automatically chained.
         """
         if self._multipage:
@@ -208,7 +206,7 @@ class Search(Paginated):
     @self_if_not_none
     def category(self, category=None):
         """
-        If category is given, modify category segment of url with it, return 
+        If category is given, modify category segment of url with it, return
         actual category segment otherwise.
         """
         if category is None:
@@ -245,7 +243,7 @@ class Top(List):
     @self_if_not_none
     def category(self, category=None):
         """
-        If category is given, modify category segment of url with it, return 
+        If category is given, modify category segment of url with it, return
         actual category segment otherwise.
         """
         if category is None:
@@ -258,7 +256,7 @@ class TPB(object):
     TPB API with searching, most recent torrents and top torrents support.
     Passes on base_url to the instantiated Search, Recent and Top classes.
     """
-    
+
     def __init__(self, base_url):
         self.base_url = base_url
 
@@ -282,13 +280,13 @@ class TPB(object):
         Top Torrents on TPB.
         """
         return Top(self.base_url, category)
-    
+
 
 class Torrent():
     """
     Represents one single torrent on TPB.
     """
-    
+
     def __init__(self, title, url, category, sub_category, magnet_link,
                  torrent_link, created, size, user, seeders, leechers):
         self.title = title # the title of the torrent
@@ -297,28 +295,47 @@ class Torrent():
         self.sub_category = sub_category # the sub category
         self.magnet_link = magnet_link # magnet download link
         self.torrent_link = torrent_link # .torrent download link
-        self.created = created # uploaded date time
+        self._created = created # uploaded date time
         self.size = size # size of torrent
         self.user = user # username of uploader
         self.seeders = seeders # number of seeders
         self.leechers = leechers # number of leechers
-    
+
+    @property
+    def created(self):
+        timestamp = self._created
+        if timestamp.endswith('ago'):
+            quantity, kind, ago = timestamp.split()
+            quantity = int(quantity)
+            current = time.time()
+            if 'sec' in kind:
+                current -= quantity
+            elif 'min' in kind:
+                current -= quantity * 60
+            elif 'hour' in kind:
+                current -= quantity * 60 * 60
+            return datetime.datetime.fromtimestamp(current)
+        timestamp = timestamp.replace('Today', datetime.date.today().isoformat())
+        try:
+            return dateutil.parser.parse(timestamp)
+        except:
+            return datetime.datetime.now()
+
     def print_torrent(self):
-        import sys
         """
         Print the details of a torrent
         """
-        sys.stdout.write('Title: %s' % self.title)
-        sys.stdout.write('URL: %s' % self.url)
-        sys.stdout.write('Category: %s' % self.category)
-        sys.stdout.write('Sub-Category: %s' % self.sub_category)
-        sys.stdout.write('Magnet Link: %s' % self.magnet_link)
-        sys.stdout.write('Torrent Link: %s' % self.torrent_link)
-        sys.stdout.write('Uploaded: %s' % self.created)
-        sys.stdout.write('Size: %s' % self.size)
-        sys.stdout.write('User: %s' % self.user)
-        sys.stdout.write('Seeders: %d' % self.seeders)
-        sys.stdout.write('Leechers: %d' % self.leechers)
-    
+        print('Title: %s' % self.title)
+        print('URL: %s' % self.url)
+        print('Category: %s' % self.category)
+        print('Sub-Category: %s' % self.sub_category)
+        print('Magnet Link: %s' % self.magnet_link)
+        print('Torrent Link: %s' % self.torrent_link)
+        print('Uploaded: %s' % self.created)
+        print('Size: %s' % self.size)
+        print('User: %s' % self.user)
+        print('Seeders: %d' % self.seeders)
+        print('Leechers: %d' % self.leechers)
+
     def __repr__(self):
         return '{0} by {1}'.format(self.title, self.user)
