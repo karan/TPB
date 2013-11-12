@@ -9,4 +9,6 @@ install:
     - "pip install coveralls --use-mirrors"
 script: "coverage run --source=tpb setup.py test"
 after_success: "coveralls"
+notifications:
+  email: false
 #after_success: "git checkout master && git merge --ff-only development && git push"
