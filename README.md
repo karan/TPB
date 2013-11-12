@@ -9,6 +9,7 @@ Installation
 
     $ pip install ThePirateBay
 
+Note that ``ThePirateBay`` depends on ``lxml``. If you run into problems in the compilation of ``lxml`` through ``pip``, install the ``libxml2-dev`` and ``libxslt-dev`` packages on your system.
 
 [Donate](https://www.gittip.com/Karan%20Goel/)
 =============
