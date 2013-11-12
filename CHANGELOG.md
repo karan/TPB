@@ -1,8 +1,14 @@
+### master
+
+* Fix: bug in torrent creation timestamp parsing
+* Fix: ascending and descending ordering confusion
+* Add: docs about possible problems with ``lxml``s dependency compilations
+
 ### v1.1.3
 
-* Add: Support for searches that do not result any results
+* Add: Support for searches that do not return any results
 * Add: Py 3 support
-* Remove: UTF-8 string encoding
+* Fix: Correct UTF-8 handling
 
 ### v1.1.2
 
