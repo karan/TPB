@@ -2,7 +2,6 @@
 
 """
 Unofficial Python API for ThePirateBay.
-Currently supports searching, recent torrents and top 100 torrents.
 
 @author Karan Goel
 @email karan@goel.im
