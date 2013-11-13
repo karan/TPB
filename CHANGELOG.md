@@ -2,6 +2,7 @@
 
 * Fix: bug in torrent creation timestamp parsing
 * Fix: ascending and descending ordering confusion
+* Fix: default to only local testing
 * Add: docs about possible problems with ``lxml``s dependency compilations
 
 ### v1.1.3

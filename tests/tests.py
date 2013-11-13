@@ -227,10 +227,10 @@ class TPBTestCase(RemoteTestCase):
 
 
 def load_tests(loader, tests, discovery):
-    local = False if os.environ.get('LOCAL', '').lower() == 'false' else True
-    remote = False if os.environ.get('REMOTE', '').lower() == 'false' else True
-    RemoteTestCase._do_local = local
-    RemoteTestCase._do_remote = remote
+    for attr, envvar in [('_do_local', 'LOCAL'), ('_do_remote', 'REMOTE')]:
+        envvar = os.environ.get(envvar)
+        if envvar is not None:
+            setattr(RemoteTestCase, attr, envvar.lower() in ['true', '1'])
     return unittest.TestSuite(tests)
 
 

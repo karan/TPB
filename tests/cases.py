@@ -15,7 +15,7 @@ else:
 
 class RemoteTestCase(TestWithScenarios):
     _do_local = True
-    _do_remote = True
+    _do_remote = False
 
     @classmethod
     def setUpClass(cls):
