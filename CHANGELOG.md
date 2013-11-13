@@ -1,4 +1,6 @@
-### master
+### Master
+
+### v1.1.4
 
 * Fix: bug in torrent creation timestamp parsing
 * Fix: ascending and descending ordering confusion
