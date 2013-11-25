@@ -90,3 +90,7 @@ Contribute
 ========
 
 If you want to add any new features, or improve existing ones, feel free to send a pull request!
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/karan/tpb/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
