@@ -1,5 +1,7 @@
 ### Master
 
+* Fix: better documentation
+
 ### v1.1.4
 
 * Fix: bug in torrent creation timestamp parsing
