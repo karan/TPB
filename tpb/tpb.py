@@ -28,14 +28,18 @@ else:
     from urllib2 import urlopen
 
 
-def self_if_not_none(func):
+def self_if_parameters(func):
+    """
+    If any parameter is given, the method's binded object is returned after
+    executing the function. Else the function's result is returned.
+    """
     @wraps(func)
-    def wrapper(self, arg=None):
-        result = func(self, arg)
-        if arg is None:
-            return result
-        else:
+    def wrapper(self, *args, **kwargs):
+        result = func(self, *args, **kwargs)
+        if args or kwargs:
             return self
+        else:
+            return result
     return wrapper
 
 
@@ -50,8 +54,8 @@ class List(object):
 
     def items(self):
         """
-        Request self.url and parse response. Yield a Torrent object for every
-        torrent on page.
+        Request URL and parse response. Yield a ``Torrent`` for every torrent
+        on page.
         """
         request = urlopen(str(self.url))
         content = request.read()
@@ -113,8 +117,8 @@ class List(object):
 
 class Paginated(List):
     """
-    Abstract class on top of List for parsing a torrent list with pagination
-    capabilities.
+    Abstract class on top of ``List`` for parsing a torrent list with
+    pagination capabilities.
     """
     def __init__(self, *args, **kwargs):
         super(Paginated, self).__init__(*args, **kwargs)
@@ -122,20 +126,24 @@ class Paginated(List):
 
     def items(self):
         """
-        Request self.url and parse response. Yield a Torrent object for every
-        torrent on page. If self._multipage is True, Torrents from next pages
-        are automatically chained.
+        Request URL and parse response. Yield a ``Torrent`` for every torrent
+        on page. If in multipage mode, Torrents from next pages are
+        automatically chained.
         """
         if self._multipage:
             while True:
+                # Pool for more torrents
                 items = super(Paginated, self).items()
+                # Stop if no more torrents
                 first = next(items, None)
                 if first is None:
                     raise StopIteration()
+                # Yield them if not
                 else:
                     yield first
                     for item in items:
                         yield item
+                # Go to the next page
                 self.next()
         else:
             for item in super(Paginated, self).items():
@@ -148,22 +156,26 @@ class Paginated(List):
         self._multipage = True
         return self
 
-    @self_if_not_none
+    @self_if_parameters
     def page(self, number=None):
+        """
+        If page is given, modify the URL correspondingly, return the current
+        page otherwise.
+        """
         if number is None:
             return int(self.url.page)
         self.url.page = str(number)
 
     def next(self):
         """
-        Request the next page.
+        Jump to the next page.
         """
         self.page(self.page() + 1)
         return self
 
     def previous(self):
         """
-        Request previous page.
+        Jump to the previous page.
         """
         self.page(self.page() - 1)
         return self
@@ -171,7 +183,7 @@ class Paginated(List):
 
 class Search(Paginated):
     """
-    Paginated search including query, category and order management.
+    Paginated search featuring query, category and order management.
     """
     base_path = '/search'
 
@@ -182,31 +194,31 @@ class Search(Paginated):
                         defaults=[query, str(page), str(order), str(category)],
                         )
 
-    @self_if_not_none
+    @self_if_parameters
     def query(self, query=None):
         """
-        If query is given, modify query segment of url with it, return actual
-        query segment otherwise.
+        If query is given, modify the URL correspondingly, return the current
+        query otherwise.
         """
         if query is None:
             return self.url.query
         self.url.query = query
 
-    @self_if_not_none
+    @self_if_parameters
     def order(self, order=None):
         """
-        If order is given, modify order segment of url with it, return actual
-        order segment otherwise.
+        If order is given, modify the URL correspondingly, return the current
+        order otherwise.
         """
         if order is None:
             return int(self.url.order)
         self.url.order = str(order)
 
-    @self_if_not_none
+    @self_if_parameters
     def category(self, category=None):
         """
-        If category is given, modify category segment of url with it, return
-        actual category segment otherwise.
+        If category is given, modify the URL correspondingly, return the
+        current category otherwise.
         """
         if category is None:
             return int(self.url.category)
@@ -229,7 +241,7 @@ class Recent(Paginated):
 
 class Top(List):
     """
-    Top torrents with category management.
+    Top torrents featuring category management.
     """
     base_path = '/top'
 
@@ -239,11 +251,11 @@ class Top(List):
                         defaults=[str(category)],
                         )
 
-    @self_if_not_none
+    @self_if_parameters
     def category(self, category=None):
         """
-        If category is given, modify category segment of url with it, return
-        actual category segment otherwise.
+        If category is given, modify the URL correspondingly, return the
+        current category otherwise.
         """
         if category is None:
             return int(self.url.category)
@@ -261,7 +273,8 @@ class TPB(object):
 
     def search(self, query, page=0, order=7, category=0, multipage=False):
         """
-        Searches TPB for query and return a list of Torrents.
+        Searches TPB for query and returns a list of paginated Torrents capable
+        of changing query, categories and orders.
         """
         search = Search(self.base_url, query, page, order, category)
         if multipage:
@@ -270,20 +283,20 @@ class TPB(object):
 
     def recent(self, page=0):
         """
-        Most recent Torrents added to TPB.
+        Lists most recent Torrents added to TPB.
         """
         return Recent(self.base_url, page)
 
     def top(self, category=0):
         """
-        Top Torrents on TPB.
+        Lists top Torrents on TPB optionally filtering by category.
         """
         return Top(self.base_url, category)
 
 
 class Torrent():
     """
-    Represents one single torrent on TPB.
+    Holder of a single TPB torrent.
     """
 
     def __init__(self, title, url, category, sub_category, magnet_link,
@@ -302,6 +315,9 @@ class Torrent():
 
     @property
     def created(self):
+        """
+        Attempt to parse the human readable torrent creation datetime.
+        """
         timestamp = self._created
         if timestamp.endswith('ago'):
             quantity, kind, ago = timestamp.split()

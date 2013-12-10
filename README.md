@@ -65,25 +65,23 @@ Torrent details available
 * **user** # username of uploader
 * **seeders** # number of seeders
 * **leechers** # number of leechers
-        
+
 
 Tests
 =====
 
 You need `bottle` and `testscenarios` installed to run the tests.
-    
+
     $ pip install -r tests/requirements.txt
 
 To execute the tests simply run:
 
     $ python -m unittest discover
 
-Every test is executed twice, once on a local test server with predownloaded original responses and, if it's possible, an other time on the original remote server.
+By default the tests are ran on a local test server with predownloaded original
+responses. You can activate the remote running option by:
 
-To deactivate the execution of local or remote tests:
-
-    $ REMOTE=false python -m unittest discover
-    $ LOCAL=false python -m unittest discover
+    $ REMOTE=true python -m unittest discover
 
 
 Contribute
