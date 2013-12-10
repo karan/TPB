@@ -18,7 +18,7 @@ setup(
     description='Unofficial Python API for ThePirateBay.',
     long_description='Unofficial Python API for ThePirateBay. Usage: https://github.com/thekarangoel/TPB.',
     classifiers=[
-        'Development Status :: 3 - Beta',
+        'Development Status :: 4 - Beta',
         'License :: OSI Approved :: MIT License',
         'Operating System :: POSIX',
         'Programming Language :: Python',
