@@ -1,6 +1,6 @@
 ![TPB](http://www.goel.im/images/tpb.jpg)
 
-Unofficial Python API for [ThePirateBay](http://thepiratebay.sx/).
+Unofficial Python API for [ThePirateBay](http://thepiratebay.ac/).
 
 | Build Status | Test Coverage | Version | Download |
 | ------------ | ------------- | ------- | -------- |
@@ -25,7 +25,7 @@ Usage
     from tpb import TPB
     from tpb import CATEGORIES, ORDERS
 
-    t = TPB('https://thepiratebay.sx') # create a TPB object with default domain
+    t = TPB('https://thepiratebay.ac') # create a TPB object with default domain
 
     # search for 'public domain' in 'movies' category
     search = t.search('public domain', category=CATEGORIES.VIDEO.MOVIES)

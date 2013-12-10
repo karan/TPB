@@ -1,6 +1,9 @@
 ### Master
 
+### v1.1.5
+
 * Fix: better documentation
+* Fix: TPB moved to a `.ac` domain
 
 ### v1.1.4
 
