@@ -1,5 +1,9 @@
 ### Master
 
+### v1.1.6
+
+* Fix: TPB moved to a `.pe` domain
+
 ### v1.1.5
 
 * Fix: better documentation
