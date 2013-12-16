@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 import itertools
 import sys
 import os
+import time
 import unittest
 
 from bs4 import BeautifulSoup
@@ -87,6 +88,18 @@ class ParsingTestCase(RemoteTestCase):
         self.assertEqual(len(list(self.torrents.items())), 30)
         self.assertEqual(len(list(iter(self.torrents))), 30)
 
+    def test_creation_dates(self):
+        """
+        Make sure torrents aren't lazily created.
+        """
+        alpha = time.time()
+        # Create torrents
+        torrents = self.torrents.items()
+        time.sleep(1)
+        # If they were lazily evaluated, they would be created now
+        diff = next(torrents)._created[1] - alpha
+        self.assertTrue(diff > 1)
+
     def test_torrent_rows(self):
         request = urlopen(str(self.torrents.url))
         content = request.read()
@@ -109,14 +122,17 @@ class TorrentTestCase(RemoteTestCase):
     def test_created_timestamp_parse(self):
         for torrent in self.torrents.items():
             torrent.created
-        torrent._created = '1 sec ago'
+        torrent._created = ('1 sec ago', time.time())
         self.assertEqualDatetimes(torrent.created, datetime.now() - timedelta(seconds=1))
-        torrent._created = '1 min ago'
+        torrent._created = ('1 min ago', time.time())
         self.assertEqualDatetimes(torrent.created, datetime.now() - timedelta(minutes=1))
-        torrent._created = '1 hour ago'
+        torrent._created = ('1 hour ago', time.time())
         self.assertEqualDatetimes(torrent.created, datetime.now() - timedelta(hours=1))
-        torrent._created = 'Today'
+        torrent._created = ('Today', time.time())
         self.assertEqual(torrent.created.date(), datetime.now().date())
+        torrent._created = ('1 sec ago', time.time() - 60*60*24)
+        self.assertEqualDatetimes(torrent.created, datetime.now() -
+                timedelta(days=1, seconds=1))
 
 
 
