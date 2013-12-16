@@ -60,8 +60,10 @@ class List(object):
         request = urlopen(str(self.url))
         content = request.read()
         page = BeautifulSoup(content, "lxml")
-        for row in self._get_torrent_rows(page):
-            yield self._build_torrent(row)
+        items = [self._build_torrent(row) for row in
+                self._get_torrent_rows(page)]
+        for item in items:
+            yield item
 
     def __iter__(self):
         return self.items()
@@ -307,7 +309,7 @@ class Torrent():
         self.sub_category = sub_category # the sub category
         self.magnet_link = magnet_link # magnet download link
         self.torrent_link = torrent_link # .torrent download link
-        self._created = created # uploaded date time
+        self._created = (created, time.time()) # uploaded date, current time
         self.size = size # size of torrent
         self.user = user # username of uploader
         self.seeders = seeders # number of seeders
@@ -318,11 +320,10 @@ class Torrent():
         """
         Attempt to parse the human readable torrent creation datetime.
         """
-        timestamp = self._created
+        timestamp, current = self._created
         if timestamp.endswith('ago'):
             quantity, kind, ago = timestamp.split()
             quantity = int(quantity)
-            current = time.time()
             if 'sec' in kind:
                 current -= quantity
             elif 'min' in kind:
@@ -330,11 +331,12 @@ class Torrent():
             elif 'hour' in kind:
                 current -= quantity * 60 * 60
             return datetime.datetime.fromtimestamp(current)
-        timestamp = timestamp.replace('Today', datetime.date.today().isoformat())
+        current = datetime.datetime.fromtimestamp(current)
+        timestamp = timestamp.replace('Today', current.date().isoformat())
         try:
             return dateutil.parser.parse(timestamp)
         except:
-            return datetime.datetime.now()
+            return current
 
     def print_torrent(self):
         """
