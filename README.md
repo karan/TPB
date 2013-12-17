@@ -13,16 +13,6 @@ Installation
 
 Note that ``ThePirateBay`` depends on ``lxml``. If you run into problems in the compilation of ``lxml`` through ``pip``, install the ``libxml2-dev`` and ``libxslt-dev`` packages on your system.
 
-![](https://blockchain.info/Resources/buttons/donate_64.png)
-=============
-
-If Hacker News API has helped you in any way, and you'd like to help the developer, please consider donating.
-
-**- BTC: [19dLDL4ax7xRmMiGDAbkizh6WA6Yei2zP5](http://i.imgur.com/bAQgKLN.png)** *Link to QR code*
-
-**- Flattr: [https://flattr.com/profile/thekarangoel](https://flattr.com/profile/thekarangoel)**
-
-
 Usage
 ==========
 
@@ -54,6 +44,17 @@ Usage
 
     # get top torrents in Movies category
     t.top().category(CATEGORIES.VIDEO.MOVIES)
+
+
+![](https://blockchain.info/Resources/buttons/donate_64.png)
+=============
+
+If Hacker News API has helped you in any way, and you'd like to help the developer, please consider donating.
+
+**- BTC: [19dLDL4ax7xRmMiGDAbkizh6WA6Yei2zP5](http://i.imgur.com/bAQgKLN.png)** *Link to QR code*
+
+**- Flattr: [https://flattr.com/profile/thekarangoel](https://flattr.com/profile/thekarangoel)**
+
 
 Torrent details available
 ==================
