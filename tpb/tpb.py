@@ -12,12 +12,11 @@ from __future__ import unicode_literals
 import datetime
 import dateutil.parser
 from functools import wraps
+from lxml import html
 import os
 import re
 import sys
 import time
-
-from bs4 import BeautifulSoup
 
 from .utils import URL
 
@@ -58,10 +57,10 @@ class List(object):
         on page.
         """
         request = urlopen(str(self.url))
-        content = request.read()
-        page = BeautifulSoup(content, "lxml")
+        document = html.parse(request)
+        root = document.getroot()
         items = [self._build_torrent(row) for row in
-                self._get_torrent_rows(page)]
+                self._get_torrent_rows(root)]
         for item in items:
             yield item
 
@@ -73,26 +72,25 @@ class List(object):
         Returns all 'tr' tag rows as a list of tuples. Each tuple is for
         a single torrent.
         """
-        table = page.find('table')  # the table with all torrent listing
+        table = page.find('.//table')  # the table with all torrent listing
         if table is None:  # no table means no results:
             return []
         else:
-            return table.findAll('tr')[1:31]  # get all rows but header, pagination
+            return table.findall('.//tr')[1:31]  # get all rows but header, pagination
 
     def _build_torrent(self, row):
         """
         Builds and returns a Torrent object for the given parsed row.
         """
         # Scrape, strip and build!!!
-        cols = row.findAll('td') # split the row into it's columns
+        cols = row.findall('.//td') # split the row into it's columns
 
         # this column contains the categories
-        cat_col = cols[0].findAll('a')
-        [category, sub_category] = [c.string for c in cat_col]
+        [category, sub_category] = [c.text for c in cols[0].findall('.//a')]
 
         # this column with all important info
-        links = cols[1].findAll('a') # get 4 a tags from this columns
-        title = unicode(links[0].string)
+        links = cols[1].findall('.//a') # get 4 a tags from this columns
+        title = unicode(links[0].text)
         url = self.url.build().path(links[0].get('href'))
         magnet_link = links[1].get('href') # the magnet download link
         try:
@@ -102,15 +100,15 @@ class List(object):
         except IndexError:
             torrent_link = None
 
-        meta_col = cols[1].find('font').text # don't need user
+        meta_col = cols[1].find('.//font').text_content() # don't need user
         match = self._meta.match(meta_col)
         created = match.groups()[0].replace('\xa0', ' ')
         size = match.groups()[1].replace('\xa0', ' ')
         user = match.groups()[2]  # uploaded by user
 
         # last 2 columns for seeders and leechers
-        seeders = int(cols[2].string)
-        leechers = int(cols[3].string)
+        seeders = int(cols[2].text)
+        leechers = int(cols[3].text)
 
         t = Torrent(title, url, category, sub_category, magnet_link,
                     torrent_link, created, size, user, seeders, leechers)

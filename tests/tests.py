@@ -5,7 +5,7 @@ import os
 import time
 import unittest
 
-from bs4 import BeautifulSoup
+from lxml import html
 
 from tpb.tpb import TPB, Search, Recent, Top, List, Paginated
 from tpb.constants import ConstantType, Constants, ORDERS, CATEGORIES
@@ -102,9 +102,8 @@ class ParsingTestCase(RemoteTestCase):
 
     def test_torrent_rows(self):
         request = urlopen(str(self.torrents.url))
-        content = request.read()
-        page = BeautifulSoup(content)
-        rows = self.torrents._get_torrent_rows(page)
+        document = html.parse(request)
+        rows = self.torrents._get_torrent_rows(document.getroot())
         self.assertEqual(len(rows), 30)
 
     def test_torrent_build(self):
