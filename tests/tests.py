@@ -82,7 +82,7 @@ class PathSegmentsTestCase(RemoteTestCase):
 
 class ParsingTestCase(RemoteTestCase):
     def setUp(self):
-        self.torrents = Search(self.url, 'breaking bad')
+        self.torrents = Search(self.url, 'tpb afk')
 
     def test_items(self):
         self.assertEqual(len(list(self.torrents.items())), 30)
@@ -112,7 +112,7 @@ class ParsingTestCase(RemoteTestCase):
 
 class TorrentTestCase(RemoteTestCase):
     def setUp(self):
-        self.torrents = Search(self.url, 'breaking bad')
+        self.torrents = Search(self.url, 'tpb afk')
 
     def assertEqualDatetimes(self, *datetimes):
         datetimes = [ d.replace(microsecond=0) for d in datetimes ]
@@ -137,16 +137,16 @@ class TorrentTestCase(RemoteTestCase):
 
 class PaginationTestCase(RemoteTestCase):
     def setUp(self):
-        self.torrents = Search(self.url, 'breaking bad')
+        self.torrents = Search(self.url, 'tpb afk')
 
     def test_page_items(self):
         self.assertEqual(len(list(self.torrents.items())), 30)
 
     def test_multipage_items(self):
         self.torrents.multipage()
-        items = itertools.islice(self.torrents.items(), 100)
-        self.assertEqual(len(list(items)), 100)
-        self.assertEqual(self.torrents.page(), 3)
+        items = list(itertools.islice(self.torrents.items(), 50))
+        self.assertEqual(len(items), 50)
+        self.assertEqual(self.torrents.page(), 1)
 
     def test_last_page(self):
         class DummyList(List):
@@ -159,17 +159,17 @@ class PaginationTestCase(RemoteTestCase):
                 self.pages_left -= 1
         class DummySearch(Search, Paginated, DummyList):
             pass
-        self.torrents = DummySearch(self.url, 'breaking bad').multipage()
+        self.torrents = DummySearch(self.url, 'tpb afk').multipage()
         self.assertEqual(len(list(iter(self.torrents))), 50)
 
 
 class SearchTestCase(RemoteTestCase):
     def setUp(self):
-        self.torrents = Search(self.url, 'breaking bad')
+        self.torrents = Search(self.url, 'tpb afk')
 
     def test_url(self):
         self.assertEqual(str(self.torrents.url),
-                self.url + '/search/breaking%20bad/0/7/0')
+                self.url + '/search/tpb%20afk/0/7/0')
         self.torrents.query('something').page(1).next().previous()
         self.torrents.order(9).category(100)
         self.assertEqual(self.torrents.query(), 'something')
@@ -217,7 +217,7 @@ class TPBTestCase(RemoteTestCase):
         self.tpb = TPB(self.url)
 
     def test_search(self):
-        kwargs = {'query': 'breaking bad', 'page': 5, 'order': 9, 'category': 100}
+        kwargs = {'query': 'tpb afk', 'page': 5, 'order': 9, 'category': 100}
         a_search = self.tpb.search(**kwargs)
         b_search = Search(self.url, **kwargs)
         self.assertTrue(isinstance(a_search, Search))
