@@ -59,6 +59,9 @@ If TPB API has helped you in any way, and you'd like to help the developer, plea
 Torrent details available
 ==================
 
+Attributes
+----------
+
 * **title** # the title of the torrent
 * **url** # TPB url for the torrent
 * **category** # the main category
@@ -71,6 +74,11 @@ Torrent details available
 * **seeders** # number of seeders
 * **leechers** # number of leechers
 
+Properties
+----------
+
+* **created** # creation date -- parsed when accessed
+* **info** # detailed torrent description -- *needs separate request*
 
 Tests
 =====

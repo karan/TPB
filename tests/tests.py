@@ -133,6 +133,9 @@ class TorrentTestCase(RemoteTestCase):
         self.assertEqualDatetimes(torrent.created, datetime.now() -
                 timedelta(days=1, seconds=1))
 
+    def test_info(self):
+        for torrent in self.torrents.items():
+            self.assertNotEqual('', torrent.info.strip())
 
 
 class PaginationTestCase(RemoteTestCase):
