@@ -62,5 +62,10 @@ def top(**kwargs):
 def torrent(**kwargs):
     return 'torrent.html'
 
+@tpb.route('/ajax_details_filelist.php')
+@template_response
+def files(**kwargs):
+    return 'files.html'
+
 if __name__ == '__main__':
     tpb.run()

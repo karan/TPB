@@ -79,6 +79,7 @@ Properties
 
 * **created** # creation date -- parsed when accessed
 * **info** # detailed torrent description -- *needs separate request*
+* **files** # dictionary of files and their size -- *needs separate request*
 
 Tests
 =====

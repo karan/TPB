@@ -294,7 +294,7 @@ class TPB(object):
         return Top(self.base_url, category)
 
 
-class Torrent():
+class Torrent(object):
     """
     Holder of a single TPB torrent.
     """
@@ -303,6 +303,7 @@ class Torrent():
                  torrent_link, created, size, user, seeders, leechers):
         self.title = title # the title of the torrent
         self.url = url # TPB url for the torrent
+        self.id = self.url.path_segments()[1]
         self.category = category # the main category
         self.sub_category = sub_category # the sub category
         self.magnet_link = magnet_link # magnet download link
@@ -313,6 +314,7 @@ class Torrent():
         self.seeders = seeders # number of seeders
         self.leechers = leechers # number of leechers
         self._info = None
+        self._files = {}
 
     @property
     def info(self):
@@ -323,6 +325,21 @@ class Torrent():
             info = root.cssselect('#details > .nfo > pre')[0].text_content()
             self._info = info
         return self._info
+
+    @property
+    def files(self):
+        if not self._files:
+            path = '/ajax_details_filelist.php?id={id}'.format(id=self.id)
+            url = self.url.path(path)
+            request = urlopen(str(url))
+            document = html.parse(request)
+            root = document.getroot()
+            rows = root.findall('.//tr')
+            for row in rows:
+                name, size = [unicode(v.text_content())
+                              for v in row.findall('.//td')]
+                self._files[name] = size.replace('\xa0', ' ')
+        return self._files
 
     @property
     def created(self):

@@ -1,5 +1,8 @@
 ### Master
 
+* Add: Torrent info (detailed description)
+* Add: Torrent files (and their sizes)
+
 ### v1.2.0
 
 * Fix: Switch entirely to `lxml`
