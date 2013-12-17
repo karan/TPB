@@ -10,7 +10,7 @@ if sys.version_info >= (3, 0):
     from tests.server import TPBApp
 else:
     from urllib2 import urlopen, URLError
-    from server import TPBApp
+    from server import tpb
 
 
 class RemoteTestCase(TestWithScenarios):
@@ -23,7 +23,7 @@ class RemoteTestCase(TestWithScenarios):
         Start local server and setup local and remote urls defaulting to local
         one.
         """
-        cls.server = TPBApp('localhost', 8000)
+        cls.server = tpb
         cls.server.start()
         cls.remote = 'http://thepiratebay.pe'
         cls.local = cls.server.url
