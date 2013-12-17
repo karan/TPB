@@ -13,6 +13,7 @@ class TPBApp(Bottle):
             '/search/<query>/<page>/<ordering>/<category>': 'search.html',
             '/recent/<page>': 'recent.html',
             '/top/<category>': 'top.html',
+            '/torrent/<id>/<name>/': 'torrent.html',
             }
 
     def __init__(self, host='localhost', port=8000):
@@ -26,7 +27,7 @@ class TPBApp(Bottle):
         for url, preset in self.presets.items():
             with open(path.join(PRESETS_DIR, preset)) as preset:
                 content = preset.read()
-                self.route(url)(lambda **kwargs: template(content))
+            self.route(url)(lambda **kwargs: template(content))
 
     def run(self):
         run(self, host=self.host, port=self.port, debug=False, quiet=True)
@@ -39,7 +40,7 @@ class TPBApp(Bottle):
     def stop(self):
         self.process.terminate()
         self.process = None
-        
+
     @property
     def url(self):
         return 'http://{}:{}'.format(self.host, self.port)
