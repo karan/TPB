@@ -312,6 +312,17 @@ class Torrent():
         self.user = user # username of uploader
         self.seeders = seeders # number of seeders
         self.leechers = leechers # number of leechers
+        self._info = None
+
+    @property
+    def info(self):
+        if self._info is None:
+            request = urlopen(str(self.url))
+            document = html.parse(request)
+            root = document.getroot()
+            info = root.cssselect('#details > .nfo > pre')[0].text_content()
+            self._info = info
+        return self._info
 
     @property
     def created(self):
