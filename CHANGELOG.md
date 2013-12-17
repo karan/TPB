@@ -2,6 +2,7 @@
 
 ### v1.1.6
 
+* Fix: Switch entirely to lxml
 * Fix: TPB moved to a `.pe` domain
 
 ### v1.1.5
