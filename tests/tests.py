@@ -137,6 +137,10 @@ class TorrentTestCase(RemoteTestCase):
         for torrent in self.torrents.items():
             self.assertNotEqual('', torrent.info.strip())
 
+    def test_files(self):
+        for torrent in self.torrents.items():
+            self.assertTrue(len(torrent.files) > 0)
+
 
 class PaginationTestCase(RemoteTestCase):
     def setUp(self):
