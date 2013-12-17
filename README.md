@@ -13,10 +13,14 @@ Installation
 
 Note that ``ThePirateBay`` depends on ``lxml``. If you run into problems in the compilation of ``lxml`` through ``pip``, install the ``libxml2-dev`` and ``libxslt-dev`` packages on your system.
 
-[Donate](https://www.gittip.com/Karan%20Goel/)
+![](https://blockchain.info/Resources/buttons/donate_64.png)
 =============
 
-If you love and use *TPB*, please consider [donating via gittip](https://www.gittip.com/Karan%20Goel/). Any support is appreciated!
+If Hacker News API has helped you in any way, and you'd like to help the developer, please consider donating.
+
+**- BTC: [19dLDL4ax7xRmMiGDAbkizh6WA6Yei2zP5](http://i.imgur.com/bAQgKLN.png)** *Link to QR code*
+
+**- Flattr: [https://flattr.com/profile/thekarangoel](https://flattr.com/profile/thekarangoel)**
 
 
 Usage
