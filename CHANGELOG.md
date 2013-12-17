@@ -1,8 +1,8 @@
 ### Master
 
-### v1.1.6
+### v1.2.0
 
-* Fix: Switch entirely to lxml
+* Fix: Switch entirely to `lxml`
 * Fix: TPB moved to a `.pe` domain
 
 ### v1.1.5
