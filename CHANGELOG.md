@@ -1,5 +1,7 @@
 ### Master
 
+### v1.3.0
+
 * Fix: TPB moved to a `.gy` domain
 * Add: Torrent info (detailed description)
 * Add: Torrent files (and their sizes)
