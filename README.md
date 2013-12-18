@@ -45,6 +45,13 @@ Usage
     # get top torrents in Movies category
     t.top().category(CATEGORIES.VIDEO.MOVIES)
 
+    # print all torrent descriptions
+    for torrent in torrent.search('public domain'):
+        print(torrent.info)
+
+    # print all torrent files and their sizes
+    for torrent in torrent.search('public domain'):
+        print(torrent.files)
 
 ![](https://blockchain.info/Resources/buttons/donate_64.png)
 =============
