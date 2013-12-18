@@ -25,7 +25,7 @@ class RemoteTestCase(TestWithScenarios):
         """
         cls.server = tpb
         cls.server.start()
-        cls.remote = 'http://thepiratebay.pe'
+        cls.remote = 'http://thepiratebay.gy'
         cls.local = cls.server.url
         cls.scenarios = []
         if cls._do_local:
