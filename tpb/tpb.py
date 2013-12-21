@@ -358,6 +358,7 @@ class Torrent(object):
                 current -= quantity * 60 * 60
             return datetime.datetime.fromtimestamp(current)
         current = datetime.datetime.fromtimestamp(current)
+        timestamp = timestamp.replace('Y-day', str(current.date() - datetime.timedelta(days=1)))
         timestamp = timestamp.replace('Today', current.date().isoformat())
         try:
             return dateutil.parser.parse(timestamp)
