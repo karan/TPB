@@ -18,7 +18,12 @@ import re
 import sys
 import time
 
-from .utils import URL
+from bs4 import BeautifulSoup
+
+from utils import URL
+#from constants import CATEGORIES
+#from constants import ORDERS
+from constants import *
 
 if sys.version_info >= (3, 0):
     from urllib.request import urlopen
@@ -358,6 +363,7 @@ class Torrent(object):
                 current -= quantity * 60 * 60
             return datetime.datetime.fromtimestamp(current)
         current = datetime.datetime.fromtimestamp(current)
+        timestamp = timestamp.replace('Y-day', str(current.date() - datetime.timedelta(days=1)))
         timestamp = timestamp.replace('Today', current.date().isoformat())
         try:
             return dateutil.parser.parse(timestamp)
