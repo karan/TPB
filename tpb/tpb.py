@@ -18,12 +18,7 @@ import re
 import sys
 import time
 
-from bs4 import BeautifulSoup
-
-from utils import URL
-#from constants import CATEGORIES
-#from constants import ORDERS
-from constants import *
+from .utils import URL
 
 if sys.version_info >= (3, 0):
     from urllib.request import urlopen
