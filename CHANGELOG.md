@@ -1,5 +1,9 @@
 ### Master
 
+### v1.3.2
+
+* Fix: use thepiratebay.org redireted domain
+
 ### v1.3.1
 
 * Add: yesterday creation date handling

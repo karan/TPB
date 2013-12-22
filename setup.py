@@ -7,7 +7,7 @@ except ImportError:
 
 setup(
     name='ThePirateBay',
-    version='1.3.0',
+    version='1.3.2',
     install_requires=['purl', 'dateutils', 'lxml', 'cssselect'],
     author='Karan Goel',
     author_email='karan@goel.im',
