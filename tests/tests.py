@@ -129,6 +129,8 @@ class TorrentTestCase(RemoteTestCase):
         self.assertEqualDatetimes(torrent.created, datetime.now() - timedelta(hours=1))
         torrent._created = ('Today', time.time())
         self.assertEqual(torrent.created.date(), datetime.now().date())
+        torrent._created = ('Y-day', time.time())
+        self.assertEqual(torrent.created.date(), (datetime.now() - timedelta(days=1)).date())
         torrent._created = ('1 sec ago', time.time() - 60*60*24)
         self.assertEqualDatetimes(torrent.created, datetime.now() -
                 timedelta(days=1, seconds=1))

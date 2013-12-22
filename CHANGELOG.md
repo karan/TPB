@@ -1,5 +1,9 @@
 ### Master
 
+### v1.3.1
+
+* Add: yesterday creation date handling
+
 ### v1.3.0
 
 * Fix: TPB moved to a `.gy` domain
