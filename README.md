@@ -91,11 +91,16 @@ Properties
 Tests
 =====
 
-You need `bottle` and `testscenarios` installed to run the tests.
+Tests can be ran using `tox`.
+
+    $ pip install tox
+    $ tox
+
+Alternatively, you will need to install dependencies manually:
 
     $ pip install -r tests/requirements.txt
 
-To execute the tests simply run:
+Then, to execute the tests simply run:
 
     $ python -m unittest discover
 

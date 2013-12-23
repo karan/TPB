@@ -1,5 +1,7 @@
 ### Master
 
+* Add: tox support for running tests
+
 ### v1.3.2
 
 * Fix: use thepiratebay.org redireted domain
