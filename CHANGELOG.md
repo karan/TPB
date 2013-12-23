@@ -1,5 +1,7 @@
 ### Master
 
+### v1.3.3
+
 * Add: tox support for running tests
 
 ### v1.3.2
