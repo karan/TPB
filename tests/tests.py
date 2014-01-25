@@ -220,6 +220,9 @@ class TopTestCase(RemoteTestCase):
         self.assertEqual(str(self.torrents.url),
                 self.url + '/top/100')
 
+    def test_results(self):
+        self.assertEqual(len(list(self.torrents.items())), 100)
+
 
 class TPBTestCase(RemoteTestCase):
     def setUp(self):

@@ -76,7 +76,7 @@ class List(object):
         if table is None:  # no table means no results:
             return []
         else:
-            return table.findall('.//tr')[1:31]  # get all rows but header, pagination
+            return table.findall('.//tr')[1:]  # get all rows but header
 
     def _build_torrent(self, row):
         """

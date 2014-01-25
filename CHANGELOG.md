@@ -1,5 +1,10 @@
 ### Master
 
+### v1.3.4
+
+* Fix: return all the 100 top torrents
+* Fix: readme typo
+
 ### v1.3.3
 
 * Add: tox support for running tests
