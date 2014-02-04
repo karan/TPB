@@ -1,5 +1,9 @@
 ### Master
 
+### v1.3.5
+
+* Fix: 'porn' categy added
+
 ### v1.3.4
 
 * Fix: return all the 100 top torrents

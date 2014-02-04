@@ -116,6 +116,15 @@ class CATEGORIES(Constants):
         IOS = 407
         ANDROID = 408
         OTHER = 499
+    class PORN:
+        ALL = 500
+        MOVIES = 501
+        MOVIES_DVDR = 502
+        PICTURES = 503
+        GAMES = 504
+        HD_MOVIES = 505
+        MOVIE_CLIPS = 506
+        OTHER = 599
     class OTHER:
         EBOOKS = 601
         COMICS = 602
