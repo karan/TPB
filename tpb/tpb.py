@@ -100,7 +100,20 @@ class List(object):
                 torrent_link = None
         except IndexError:
             torrent_link = None
-
+        comments = 0
+        has_cover = 'No'
+        images = cols[1].findall('.//img')
+        for image in images:
+            image_title = image.get('title')
+            if image_title is None:
+                continue
+            if "comments" in image_title:
+                comments = int(image_title.split(" ")[3])
+            if "cover" in image_title:
+                has_cover = 'Yes'
+        user_status = "MEMBER"
+        if links[-2].get('href').startswith("/user/"):
+            user_status = links[-2].find('.//img').get('title')
         meta_col = cols[1].find('.//font').text_content()  # don't need user
         match = self._meta.match(meta_col)
         created = match.groups()[0].replace('\xa0', ' ')
@@ -110,9 +123,9 @@ class List(object):
         # last 2 columns for seeders and leechers
         seeders = int(cols[2].text)
         leechers = int(cols[3].text)
-
         t = Torrent(title, url, category, sub_category, magnet_link,
-                    torrent_link, created, size, user, seeders, leechers)
+                    torrent_link, comments, has_cover, user_status, created,
+                    size, user, seeders, leechers)
         return t
 
 
@@ -308,7 +321,8 @@ class Torrent(object):
     """
 
     def __init__(self, title, url, category, sub_category, magnet_link,
-                 torrent_link, created, size, user, seeders, leechers):
+                 torrent_link, comments, has_cover, user_status, created,
+                 size, user, seeders, leechers):
         self.title = title  # the title of the torrent
         self.url = url  # TPB url for the torrent
         self.id = self.url.path_segments()[1]
@@ -316,6 +330,9 @@ class Torrent(object):
         self.sub_category = sub_category  # the sub category
         self.magnet_link = magnet_link  # magnet download link
         self.torrent_link = torrent_link  # .torrent download link
+        self.comments = comments
+        self.has_cover = has_cover
+        self.user_status = user_status
         self._created = (created, time.time())  # uploaded date, current time
         self.size = size  # size of torrent
         self.user = user  # username of uploader
@@ -385,6 +402,9 @@ class Torrent(object):
         print('Magnet Link: %s' % self.magnet_link)
         print('Torrent Link: %s' % self.torrent_link)
         print('Uploaded: %s' % self.created)
+        print('Comments: %d' % self.comments)
+        print('Has Cover Image: %s' % self.has_cover)
+        print('User Status: %s' % self.user_status)
         print('Size: %s' % self.size)
         print('User: %s' % self.user)
         print('Seeders: %d' % self.seeders)
