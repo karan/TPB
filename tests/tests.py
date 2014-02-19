@@ -112,7 +112,13 @@ class ParsingTestCase(RemoteTestCase):
         self.assertEqual(len(rows), 30)
 
     def test_torrent_build(self):
-        pass
+        for torrent in self.torrents.items():
+            if torrent.title == 'TPB.AFK.2013.720p.h264-SimonKlose' and\
+               torrent.user == 'SimonKlose':
+                self.assertEqual(torrent.user_status, 'VIP')
+                self.assertTrue(torrent.comments >= 313)
+                self.assertEqual(torrent.has_cover, 'Yes')
+                break
 
 
 class TorrentTestCase(RemoteTestCase):
