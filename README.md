@@ -8,50 +8,53 @@ Unofficial Python API for [ThePirateBay](http://thepiratebay.org/).
 
 Installation
 =============
-
-    $ pip install ThePirateBay
+```sh
+$ pip install ThePirateBay
+```
 
 Note that ``ThePirateBay`` depends on ``lxml``. If you run into problems in the compilation of ``lxml`` through ``pip``, install the ``libxml2-dev`` and ``libxslt-dev`` packages on your system.
 
 Usage
 ==========
 
-    from tpb import TPB
-    from tpb import CATEGORIES, ORDERS
+```python
+from tpb import TPB
+from tpb import CATEGORIES, ORDERS
 
-    t = TPB('https://thepiratebay.org') # create a TPB object with default domain
+t = TPB('https://thepiratebay.org') # create a TPB object with default domain
 
-    # search for 'public domain' in 'movies' category
-    search = t.search('public domain', category=CATEGORIES.VIDEO.MOVIES)
+# search for 'public domain' in 'movies' category
+search = t.search('public domain', category=CATEGORIES.VIDEO.MOVIES)
 
-    # return listings from page 2 of this search
-    search.page(2)
+# return listings from page 2 of this search
+search.page(2)
 
-    # sort this search by count of seeders, and return a multipage result
-    search.order(ORDERS.SEEDERS.ASC).multipage()
+# sort this search by count of seeders, and return a multipage result
+search.order(ORDERS.SEEDERS.ASC).multipage()
 
-    # search, order by seeders and return page 3 results
-    t.search('python').order(ORDERS.SEEDERS.ASC).page(3)
+# search, order by seeders and return page 3 results
+t.search('python').order(ORDERS.SEEDERS.ASC).page(3)
 
-    # multipage beginning on page 4
-    t.search('recipe book').page(4).multipage()
+# multipage beginning on page 4
+t.search('recipe book').page(4).multipage()
 
-    # search, in a category and return multipage results
-    t.search('something').category(CATEGORIES.OTHER.OTHER).multipage()
+# search, in a category and return multipage results
+t.search('something').category(CATEGORIES.OTHER.OTHER).multipage()
 
-    # get page 3 of recent torrents
-    t.recent().page(3)
+# get page 3 of recent torrents
+t.recent().page(3)
 
-    # get top torrents in Movies category
-    t.top().category(CATEGORIES.VIDEO.MOVIES)
+# get top torrents in Movies category
+t.top().category(CATEGORIES.VIDEO.MOVIES)
 
-    # print all torrent descriptions
-    for torrent in t.search('public domain'):
-        print(torrent.info)
+# print all torrent descriptions
+for torrent in t.search('public domain'):
+    print(torrent.info)
 
-    # print all torrent files and their sizes
-    for torrent in t.search('public domain'):
-        print(torrent.files)
+# print all torrent files and their sizes
+for torrent in t.search('public domain'):
+    print(torrent.files)
+```
 
 ![](https://blockchain.info/Resources/buttons/donate_64.png)
 =============
@@ -92,23 +95,26 @@ Tests
 =====
 
 Tests can be ran using `tox`.
-
-    $ pip install tox
-    $ tox
+```sh
+$ pip install tox
+$ tox
+```
 
 Alternatively, you will need to install dependencies manually:
-
-    $ pip install -r tests/requirements.txt
+```sh
+$ pip install -r tests/requirements.txt
+```
 
 Then, to execute the tests simply run:
-
-    $ python -m unittest discover
+```sh
+$ python -m unittest discover
+```
 
 By default the tests are ran on a local test server with predownloaded original
 responses. You can activate the remote running option by:
-
-    $ REMOTE=true python -m unittest discover
-
+```sh
+$ REMOTE=true python -m unittest discover
+```
 
 Contribute
 ========
