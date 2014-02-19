@@ -21,6 +21,7 @@ else:
 
 
 class ConstantsTestCase(RemoteTestCase):
+
     def test_extension(self):
         checks = [ORDERS, CATEGORIES]
         while checks:
@@ -33,10 +34,12 @@ class ConstantsTestCase(RemoteTestCase):
     def test_repr(self):
         class Alphanum(Constants):
             greek = True
+
             class Alpha:
                 alpha = 'a'
                 beta = 'b'
                 gamma = 'c'
+
             class Num:
                 alpha = 1
                 beta = 2
@@ -58,6 +61,7 @@ Alphanum:
 
 
 class PathSegmentsTestCase(RemoteTestCase):
+
     def setUp(self):
         self.segments = ['alpha', 'beta', 'gamma']
         self.defaults = ['0', '1', '2']
@@ -81,6 +85,7 @@ class PathSegmentsTestCase(RemoteTestCase):
 
 
 class ParsingTestCase(RemoteTestCase):
+
     def setUp(self):
         self.torrents = Search(self.url, 'tpb afk')
 
@@ -111,29 +116,34 @@ class ParsingTestCase(RemoteTestCase):
 
 
 class TorrentTestCase(RemoteTestCase):
+
     def setUp(self):
         self.torrents = Search(self.url, 'tpb afk')
 
     def assertEqualDatetimes(self, *datetimes):
-        datetimes = [ d.replace(microsecond=0) for d in datetimes ]
+        datetimes = [d.replace(microsecond=0) for d in datetimes]
         return self.assertEqual(*datetimes)
 
     def test_created_timestamp_parse(self):
         for torrent in self.torrents.items():
             torrent.created
         torrent._created = ('1 sec ago', time.time())
-        self.assertEqualDatetimes(torrent.created, datetime.now() - timedelta(seconds=1))
+        self.assertEqualDatetimes(
+            torrent.created, datetime.now() - timedelta(seconds=1))
         torrent._created = ('1 min ago', time.time())
-        self.assertEqualDatetimes(torrent.created, datetime.now() - timedelta(minutes=1))
+        self.assertEqualDatetimes(
+            torrent.created, datetime.now() - timedelta(minutes=1))
         torrent._created = ('1 hour ago', time.time())
-        self.assertEqualDatetimes(torrent.created, datetime.now() - timedelta(hours=1))
+        self.assertEqualDatetimes(
+            torrent.created, datetime.now() - timedelta(hours=1))
         torrent._created = ('Today', time.time())
         self.assertEqual(torrent.created.date(), datetime.now().date())
         torrent._created = ('Y-day', time.time())
-        self.assertEqual(torrent.created.date(), (datetime.now() - timedelta(days=1)).date())
-        torrent._created = ('1 sec ago', time.time() - 60*60*24)
+        self.assertEqual(torrent.created.date(),
+                         (datetime.now() - timedelta(days=1)).date())
+        torrent._created = ('1 sec ago', time.time() - 60 * 60 * 24)
         self.assertEqualDatetimes(torrent.created, datetime.now() -
-                timedelta(days=1, seconds=1))
+                                  timedelta(days=1, seconds=1))
 
     def test_info(self):
         for torrent in self.torrents.items():
@@ -145,6 +155,7 @@ class TorrentTestCase(RemoteTestCase):
 
 
 class PaginationTestCase(RemoteTestCase):
+
     def setUp(self):
         self.torrents = Search(self.url, 'tpb afk')
 
@@ -160,12 +171,14 @@ class PaginationTestCase(RemoteTestCase):
     def test_last_page(self):
         class DummyList(List):
             pages_left = 5
+
             def items(self):
                 if self.pages_left == 0:
                     raise StopIteration()
                 for i in range(10):
                     yield i
                 self.pages_left -= 1
+
         class DummySearch(Search, Paginated, DummyList):
             pass
         self.torrents = DummySearch(self.url, 'tpb afk').multipage()
@@ -173,12 +186,13 @@ class PaginationTestCase(RemoteTestCase):
 
 
 class SearchTestCase(RemoteTestCase):
+
     def setUp(self):
         self.torrents = Search(self.url, 'tpb afk')
 
     def test_url(self):
         self.assertEqual(str(self.torrents.url),
-                self.url + '/search/tpb%20afk/0/7/0')
+                         self.url + '/search/tpb%20afk/0/7/0')
         self.torrents.query('something').page(1).next().previous()
         self.torrents.order(9).category(100)
         self.assertEqual(self.torrents.query(), 'something')
@@ -186,7 +200,7 @@ class SearchTestCase(RemoteTestCase):
         self.assertEqual(self.torrents.order(), 9)
         self.assertEqual(self.torrents.category(), 100)
         self.assertEqual(str(self.torrents.url),
-                self.url + '/search/something/1/9/100')
+                         self.url + '/search/something/1/9/100')
 
     def test_torrents(self):
         for item in self.torrents:
@@ -198,33 +212,36 @@ class SearchTestCase(RemoteTestCase):
 
 
 class RecentTestCase(RemoteTestCase):
+
     def setUp(self):
         self.torrents = Recent(self.url)
 
     def test_url(self):
         self.assertEqual(str(self.torrents.url),
-                self.url + '/recent/0')
+                         self.url + '/recent/0')
         self.torrents.page(1).next().previous()
         self.assertEqual(str(self.torrents.url),
-                self.url + '/recent/1')
+                         self.url + '/recent/1')
 
 
 class TopTestCase(RemoteTestCase):
+
     def setUp(self):
         self.torrents = Top(self.url)
 
     def test_url(self):
         self.assertEqual(str(self.torrents.url),
-                self.url + '/top/0')
+                         self.url + '/top/0')
         self.torrents.category(100)
         self.assertEqual(str(self.torrents.url),
-                self.url + '/top/100')
+                         self.url + '/top/100')
 
     def test_results(self):
         self.assertEqual(len(list(self.torrents.items())), 100)
 
 
 class TPBTestCase(RemoteTestCase):
+
     def setUp(self):
         self.tpb = TPB(self.url)
 

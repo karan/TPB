@@ -43,6 +43,7 @@ def self_if_parameters(func):
 
 
 class List(object):
+
     """
     Abstract class for parsing a torrent list at some url and generate torrent
     objects to iterate over. Includes a resource path parser.
@@ -60,7 +61,7 @@ class List(object):
         document = html.parse(request)
         root = document.getroot()
         items = [self._build_torrent(row) for row in
-                self._get_torrent_rows(root)]
+                 self._get_torrent_rows(root)]
         for item in items:
             yield item
 
@@ -83,24 +84,24 @@ class List(object):
         Builds and returns a Torrent object for the given parsed row.
         """
         # Scrape, strip and build!!!
-        cols = row.findall('.//td') # split the row into it's columns
+        cols = row.findall('.//td')  # split the row into it's columns
 
         # this column contains the categories
         [category, sub_category] = [c.text for c in cols[0].findall('.//a')]
 
         # this column with all important info
-        links = cols[1].findall('.//a') # get 4 a tags from this columns
+        links = cols[1].findall('.//a')  # get 4 a tags from this columns
         title = unicode(links[0].text)
         url = self.url.build().path(links[0].get('href'))
-        magnet_link = links[1].get('href') # the magnet download link
+        magnet_link = links[1].get('href')  # the magnet download link
         try:
-            torrent_link = links[2].get('href') # the torrent download link
+            torrent_link = links[2].get('href')  # the torrent download link
             if not torrent_link.endswith('.torrent'):
                 torrent_link = None
         except IndexError:
             torrent_link = None
 
-        meta_col = cols[1].find('.//font').text_content() # don't need user
+        meta_col = cols[1].find('.//font').text_content()  # don't need user
         match = self._meta.match(meta_col)
         created = match.groups()[0].replace('\xa0', ' ')
         size = match.groups()[1].replace('\xa0', ' ')
@@ -116,10 +117,12 @@ class List(object):
 
 
 class Paginated(List):
+
     """
     Abstract class on top of ``List`` for parsing a torrent list with
     pagination capabilities.
     """
+
     def __init__(self, *args, **kwargs):
         super(Paginated, self).__init__(*args, **kwargs)
         self._multipage = False
@@ -182,6 +185,7 @@ class Paginated(List):
 
 
 class Search(Paginated):
+
     """
     Paginated search featuring query, category and order management.
     """
@@ -190,9 +194,9 @@ class Search(Paginated):
     def __init__(self, base_url, query, page='0', order='7', category='0'):
         super(Search, self).__init__()
         self.url = URL(base_url, self.base_path,
-                        segments=['query', 'page', 'order', 'category'],
-                        defaults=[query, str(page), str(order), str(category)],
-                        )
+                       segments=['query', 'page', 'order', 'category'],
+                       defaults=[query, str(page), str(order), str(category)],
+                       )
 
     @self_if_parameters
     def query(self, query=None):
@@ -226,6 +230,7 @@ class Search(Paginated):
 
 
 class Recent(Paginated):
+
     """
     Paginated most recent torrents.
     """
@@ -234,12 +239,13 @@ class Recent(Paginated):
     def __init__(self, base_url, page='0'):
         super(Recent, self).__init__()
         self.url = URL(base_url, self.base_path,
-                        segments=['page'],
-                        defaults=[str(page)],
-                        )
+                       segments=['page'],
+                       defaults=[str(page)],
+                       )
 
 
 class Top(List):
+
     """
     Top torrents featuring category management.
     """
@@ -247,9 +253,9 @@ class Top(List):
 
     def __init__(self, base_url, category='0'):
         self.url = URL(base_url, self.base_path,
-                        segments=['category'],
-                        defaults=[str(category)],
-                        )
+                       segments=['category'],
+                       defaults=[str(category)],
+                       )
 
     @self_if_parameters
     def category(self, category=None):
@@ -263,6 +269,7 @@ class Top(List):
 
 
 class TPB(object):
+
     """
     TPB API with searching, most recent torrents and top torrents support.
     Passes on base_url to the instantiated Search, Recent and Top classes.
@@ -295,24 +302,25 @@ class TPB(object):
 
 
 class Torrent(object):
+
     """
     Holder of a single TPB torrent.
     """
 
     def __init__(self, title, url, category, sub_category, magnet_link,
                  torrent_link, created, size, user, seeders, leechers):
-        self.title = title # the title of the torrent
-        self.url = url # TPB url for the torrent
+        self.title = title  # the title of the torrent
+        self.url = url  # TPB url for the torrent
         self.id = self.url.path_segments()[1]
-        self.category = category # the main category
-        self.sub_category = sub_category # the sub category
-        self.magnet_link = magnet_link # magnet download link
-        self.torrent_link = torrent_link # .torrent download link
-        self._created = (created, time.time()) # uploaded date, current time
-        self.size = size # size of torrent
-        self.user = user # username of uploader
-        self.seeders = seeders # number of seeders
-        self.leechers = leechers # number of leechers
+        self.category = category  # the main category
+        self.sub_category = sub_category  # the sub category
+        self.magnet_link = magnet_link  # magnet download link
+        self.torrent_link = torrent_link  # .torrent download link
+        self._created = (created, time.time())  # uploaded date, current time
+        self.size = size  # size of torrent
+        self.user = user  # username of uploader
+        self.seeders = seeders  # number of seeders
+        self.leechers = leechers  # number of leechers
         self._info = None
         self._files = {}
 
@@ -358,7 +366,8 @@ class Torrent(object):
                 current -= quantity * 60 * 60
             return datetime.datetime.fromtimestamp(current)
         current = datetime.datetime.fromtimestamp(current)
-        timestamp = timestamp.replace('Y-day', str(current.date() - datetime.timedelta(days=1)))
+        timestamp = timestamp.replace(
+            'Y-day', str(current.date() - datetime.timedelta(days=1)))
         timestamp = timestamp.replace('Today', current.date().isoformat())
         try:
             return dateutil.parser.parse(timestamp)
