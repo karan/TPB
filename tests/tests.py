@@ -76,7 +76,7 @@ class PathSegmentsTestCase(RemoteTestCase):
             self.assertTrue(hasattr(other_url, other_segment))
             self.assertFalse(hasattr(self.url, other_segment))
 
-    def test_propierties(self):
+    def test_properties(self):
         self.assertEqual(str(self.url), '/0/1/2')
         self.url.alpha = '9'
         self.url.beta = '8'
