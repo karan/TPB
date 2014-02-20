@@ -7,8 +7,8 @@ else:
     class_type = classobj
 
 
-
 class ConstantType(type):
+
     """
     Tree representation metaclass for class attributes. Metaclass is extended
     to all child classes too.
@@ -23,7 +23,8 @@ class ConstantType(type):
                 # substitute attr with a new class with Constants as
                 # metaclass making it possible to spread this same method
                 # to all child classes
-                attr = ConstantType(attr.__name__, attr.__bases__, attr.__dict__)
+                attr = ConstantType(
+                    attr.__name__, attr.__bases__, attr.__dict__)
             attrs[name] = attr
         return super(ConstantType, cls).__new__(cls, clsname, bases, attrs)
 
@@ -41,7 +42,8 @@ class ConstantType(type):
                 if not isinstance(attr, ConstantType):
                     output = '{}: {}'.format(name, output)
                 # indent all child attrs
-                tree += '\n'.join([ ' '*4 + line for line in output.splitlines() ]) + '\n'
+                tree += '\n'.join([' ' * 4 + line
+                                  for line in output.splitlines()]) + '\n'
         return tree
 
     def __str__(cls):
@@ -52,24 +54,31 @@ Constants = ConstantType('Constants', (object,), {})
 
 
 class ORDERS(Constants):
+
     class NAME:
         DES = 1
         ASC = 2
+
     class UPLOADED:
         DES = 3
         ASC = 4
+
     class SIZE:
         DES = 5
         ASC = 6
+
     class SEEDERS:
         DES = 7
         ASC = 8
+
     class LEECHERS:
         DES = 9
         ASC = 10
+
     class UPLOADER:
         DES = 11
         ASC = 12
+
     class TYPE:
         DES = 13
         ASC = 14
@@ -77,6 +86,7 @@ class ORDERS(Constants):
 
 class CATEGORIES(Constants):
     ALL = 0
+
     class AUDIO:
         ALL = 100
         MUSIC = 101
@@ -84,6 +94,7 @@ class CATEGORIES(Constants):
         SOUND_CLIPS = 103
         FLAC = 104
         OTHER = 199
+
     class VIDEO:
         ALL = 200
         MOVIES = 201
@@ -96,6 +107,7 @@ class CATEGORIES(Constants):
         HD_TV_SHOWS = 208
         THREE_DIMENSIONS = 209
         OTHER = 299
+
     class APPLICATIONS:
         ALL = 300
         WINDOWS = 301
@@ -105,6 +117,7 @@ class CATEGORIES(Constants):
         IOS = 305
         ANDROID = 306
         OTHER = 399
+
     class GAMES:
         ALL = 400
         PC = 401
@@ -116,6 +129,7 @@ class CATEGORIES(Constants):
         IOS = 407
         ANDROID = 408
         OTHER = 499
+
     class PORN:
         ALL = 500
         MOVIES = 501
@@ -125,6 +139,7 @@ class CATEGORIES(Constants):
         HD_MOVIES = 505
         MOVIE_CLIPS = 506
         OTHER = 599
+
     class OTHER:
         EBOOKS = 601
         COMICS = 602

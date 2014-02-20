@@ -18,6 +18,7 @@ def template_response(func):
 
 
 class TPBApp(Bottle):
+
     def __init__(self, host='localhost', port=8000):
         super(TPBApp, self).__init__()
         self.host = host
@@ -42,25 +43,30 @@ class TPBApp(Bottle):
 
 tpb = TPBApp()
 
+
 @tpb.route('/search/<query>/<page>/<ordering>/<category>')
 @template_response
 def search(**kwargs):
     return 'search.html'
+
 
 @tpb.route('/recent/<page>')
 @template_response
 def recent(**kwargs):
     return 'recent.html'
 
+
 @tpb.route('/top/<category>')
 @template_response
 def top(**kwargs):
     return 'top.html'
 
+
 @tpb.route('/torrent/<id>/<name>')
 @template_response
 def torrent(**kwargs):
     return 'torrent.html'
+
 
 @tpb.route('/ajax_details_filelist.php')
 @template_response

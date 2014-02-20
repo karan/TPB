@@ -24,10 +24,12 @@ def URL(base, path, segments=None, defaults=None):
 
 
 class Segments(object):
+
     """
     URL segment handler, not intended for direct use. The URL is constructed by
     joining base, path and segments.
     """
+
     def __init__(self, base, path, segments, defaults):
         # Preserve the base URL
         self.base = PURL(base, path=path)
@@ -56,6 +58,6 @@ class Segments(object):
         Returns a property capable of setting and getting a segment.
         """
         return property(
-                fget=lambda x: cls._get_segment(x, segment),
-                fset=lambda x, v: cls._set_segment(x, segment, v),
-                )
+            fget=lambda x: cls._get_segment(x, segment),
+            fset=lambda x, v: cls._set_segment(x, segment, v),
+        )
