@@ -106,7 +106,8 @@ responses. You can activate the remote running option by:
 $ REMOTE=true python -m unittest discover
 ```
 
-### Donations
+Donations
+========
 
 If *TPB* has helped you in any way, and you'd like to help the developer, please consider donating.
 
