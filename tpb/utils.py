@@ -9,7 +9,7 @@ def URL(base, path, segments=None, defaults=None):
     URL is constructed by joining base, path and segments.
 
     For each segment a property capable of getting and setting that segment is
-    created dinamically.
+    created dynamically.
     """
     # Make a copy of the Segments class
     url_class = type(Segments.__name__, Segments.__bases__,
