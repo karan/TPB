@@ -2,3 +2,4 @@ purl==0.8
 lxml==3.2.3
 python-dateutil==2.2
 cssselect==0.9.1
+requests==2.3.0
