@@ -20,11 +20,10 @@ import time
 
 from .utils import URL
 
+from requests import get
+
 if sys.version_info >= (3, 0):
-    from urllib.request import urlopen
     unicode = str
-else:
-    from urllib2 import urlopen
 
 
 def self_if_parameters(func):
@@ -57,9 +56,8 @@ class List(object):
         Request URL and parse response. Yield a ``Torrent`` for every torrent
         on page.
         """
-        request = urlopen(str(self.url))
-        document = html.parse(request)
-        root = document.getroot()
+        request = get(str(self.url))
+        root = html.fromstring(request.text)
         items = [self._build_torrent(row) for row in
                  self._get_torrent_rows(root)]
         for item in items:
@@ -344,9 +342,8 @@ class Torrent(object):
     @property
     def info(self):
         if self._info is None:
-            request = urlopen(str(self.url))
-            document = html.parse(request)
-            root = document.getroot()
+            request = get(str(self.url))
+            root = html.fromstring(request.text)
             info = root.cssselect('#details > .nfo > pre')[0].text_content()
             self._info = info
         return self._info
@@ -356,9 +353,8 @@ class Torrent(object):
         if not self._files:
             path = '/ajax_details_filelist.php?id={id}'.format(id=self.id)
             url = self.url.path(path)
-            request = urlopen(str(url))
-            document = html.parse(request)
-            root = document.getroot()
+            request = get(str(url))
+            root = html.fromstring(request.text)
             rows = root.findall('.//tr')
             for row in rows:
                 name, size = [unicode(v.text_content())
