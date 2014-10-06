@@ -113,7 +113,7 @@ If *TPB* has helped you in any way, and you'd like to help the developer, please
 
 **- BTC: [19dLDL4ax7xRmMiGDAbkizh6WA6Yei2zP5](http://i.imgur.com/bAQgKLN.png)**
 
-**- Gittip: [https://www.gittip.com/karan/](https://www.gittip.com/karan/)**
+**- Gratipay: [https://www.gratipay.com/karan/](https://www.gittip.com/karan/)**
 
 **- Flattr: [https://flattr.com/profile/thekarangoel](https://flattr.com/profile/thekarangoel)**
 
